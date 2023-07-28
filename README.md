@@ -14,7 +14,7 @@ With PyScript you can now build and learn about AI and machine learning, and you
 
 ## Books in this series
 
-* Volume 1: KNN and PyScript
+* Volume 1: PyScript and KNN
 
 ## Author
 
