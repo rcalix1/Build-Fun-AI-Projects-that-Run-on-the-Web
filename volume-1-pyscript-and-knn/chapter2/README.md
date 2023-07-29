@@ -6,3 +6,4 @@
 
 * Numpy 2 Floats: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpy2floats/index.html
 
+* Numpy 3 Matrix: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpy3matrix/index.html
