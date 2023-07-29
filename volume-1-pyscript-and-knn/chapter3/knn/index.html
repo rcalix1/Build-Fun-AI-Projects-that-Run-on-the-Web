@@ -81,7 +81,10 @@
 
                     url1 = ("https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter3/knn/iris.csv")
                     iris_pd = pd.read_csv(open_url(url1))
+                    iris_pd = iris_pd['species'].replace({'setosa':0, 'versicolor':1 , 'virginica':2})
                     iris_np = iris_pd.to_numpy()
+
+                    
                     
                     ## pd_ids_train_np          = pd_ids_train_np[1:, 1:]
 
