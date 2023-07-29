@@ -1,4 +1,4 @@
-# Build-Fun-AI-Projects-that-Run-on-the-Web
+# Build Fun AI Projects that Run on the Web
 
 This is the official repo for my series of books titled: Build Fun AI Projects that Run on the Web
 
