@@ -4,7 +4,7 @@ This is the official repo for my series of books titled: Build Fun AI Projects t
 
 ## Description
 
-Each work book is meant to help you to develop an AI project that can be deployed and run on the web just by using a browser. The onlcy things you will need to complete these projects are GitHub, a computer with internet access and a browser, this work book, and some willingness to learn and fave fun. 
+Each work book is meant to help you to develop an AI project that can be deployed and run on the web just by using a browser. The only things you will need to complete these projects are GitHub, a computer with internet access and a browser, this work book, and some willingness to learn and fave fun. 
 
 ## Motivation
 
