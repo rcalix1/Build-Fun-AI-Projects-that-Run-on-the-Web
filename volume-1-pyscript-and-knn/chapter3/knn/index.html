@@ -13,6 +13,8 @@
         <div>Press Button</div>
         <button id="get-time" py-click="my_gen_function()"  class="py-button">Generate</button>
 
+        <div id="test-output"></div>
+
         <section class="pyscript"> 
             <div id="mpl"></div>
 
@@ -30,6 +32,9 @@
                     import numpy as np
                     import sklearn
                     import pandas as pd
+                    import matplotlib.pyplot as plt
+                    import matplotlib.tri as tri
+                    from pyodide.http import open_url
 
                     ## from sklearn.preprocessing import LabelEncoder
                     ## from sklearn.model_selection import train_test_split
@@ -38,10 +43,16 @@
                     ## from sklearn.metrics import precision_score
                     ## from sklearn.metrics import recall_score, accuracy_score, f1_score
 
+                    #############################################################################
+
                     k = 5
+
+                    #############################################################################
 
                     def euclidean_distance(v1, v2):
                         return np.sqrt( np.sum(   (v1 - v2)**2   )   )
+
+                    #############################################################################
 
                     def predict(test_x):
                         ## calculate distances between test_x and all dta samples in x
@@ -63,12 +74,26 @@
                         most_common_label = Counter(labels).most_common(1)
                         return most_common_label
 
-                    url1 = ("https://rcalix1.github.io/ProbabilityDensityFunctionsFromNeuralNets/experiments/2023/july2023/GANs/PyScriptExamples/example3/PD_ids_train.csv")
-                    pd_ids_train = pd.read_csv(open_url(url1))
-                    pd_ids_train_np = pd_ids_train.to_numpy()
-                    pd_ids_train_np          = pd_ids_train_np[1:, 1:]
+                    #####################################################################
+
+                    url1 = ("https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter3/knn/iris.csv")
+                    iris_pd = pd.read_csv(open_url(url1))
+                    iris_np = iris_pd.to_numpy()
+                    ## pd_ids_train_np          = pd_ids_train_np[1:, 1:]
+
+                  
+                    #####################################################
+                    text1 = str(iris_np.shape)
+                    ## text2 = str(pd_ids_train_np.shape)
+                    ## text3 = str(pd_imgs_np_train_np.shape)
+                    ## text4 = str(test_x.shape)
+                    text = text1 ## + text2 + text3 + text4
+                    Element('test-output').element.innerText =  text   
+                    #####################################################
 
 
+                    '''
+                    
                     df = pd.read_csv("iris.csv", header=None)
                     X = df.loc[1:, :3].values
                     X = X.astype(float)
@@ -91,7 +116,8 @@
                         temp_pred = predict_batches(test_x)
                         ## print(temp_pred[0][0] )
                         list_of_pred_labels.append(     temp_pred[0][0]      )
-    
+
+                    '''
 
                     def my_gen_function():
 
