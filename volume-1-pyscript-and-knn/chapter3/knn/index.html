@@ -89,11 +89,10 @@
                     #####################################################
                     text1 = str(iris_np.shape)
                     
-                    ## text2 = str(pd_ids_train_np.shape)
-                    ## text3 = str(pd_imgs_np_train_np.shape)
-                    ## text4 = str(test_x.shape)
+                    str_iris_np = np.array2string(iris_np, precision=0, separator=',', suppress_small=True)
+                    text2 = str(str_iris_np)
                     
-                    text = text1 ## + text2 + text3 + text4
+                    text = text2
                     Element('test-output').element.innerText =  text   
                     #####################################################
 
