@@ -1,3 +1,3 @@
 ## Chapter 2 Code
 
-* https://rcalix1.github.io/ProbabilityDensityFunctionsFromNeuralNets/experiments/2023/july2023/GANs/PyScriptExamples/example3/index.html
+* Hello World: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/HelloWorld.html
