@@ -87,9 +87,9 @@
                     #####################################################################
 
                     indices = np.arange(150)
-                    shuffled_indices = np.random.shuffle(indices)
+                    np.random.shuffle(indices)
 
-                    X = iris_np[shuffled_indices, :]
+                    X = iris_np[indices, :]
 
                     #####################################################################
                     ## This is just used to view and debug the data or code
@@ -101,8 +101,8 @@
                     str_iris_np = np.array2string(iris_np, precision=2, separator=',', suppress_small=True)
                     text2 = str(str_iris_np)
 
-                    str_shuffled_indices = np.array2string(shuffled_indices, precision=0, separator=',', suppress_small=True)
-                    text3 = str_shuffled_indices
+                    str_indices = np.array2string(indices, precision=0, separator=',', suppress_small=True)
+                    text3 = str_indices
                     
                     text = text3
                     Element('test-output').element.innerText =  text 
