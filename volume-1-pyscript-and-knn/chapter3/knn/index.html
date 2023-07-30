@@ -39,16 +39,14 @@
                  
                     #############################################################################
 
-                    k = 5
-
-                    #############################################################################
-
                     def euclidean_distance(v1, v2):
                         return np.sqrt( np.sum(   (v1 - v2)**2   )   )
 
                     #############################################################################
 
                     def predict(test_x):
+                        k = 5
+                     
                         ## calculate distances between test_x and all data samples in x
                         ## this distances vector is a vector of distances
                         ## distances = [ euclidean_distance(test_x , x)  for x in X_train    ]
@@ -61,6 +59,8 @@
                         ## np.argsort returns the indices of the k neares neighbors
                     
                         k_neighbor_indices = np.argsort(distances)[:k]
+
+                        print(k_neighbor_indices)
     
                         ## with indices, extract labels from y_train 
                     
