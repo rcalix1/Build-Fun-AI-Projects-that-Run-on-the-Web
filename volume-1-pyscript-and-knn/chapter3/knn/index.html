@@ -112,20 +112,16 @@
 
                     #####################################################################
 
-               
-
                     ## look at data
                     str_np = np.array2string( X_train, precision=2, separator=',', suppress_small=True)
                     ## str_np = np.array2string( y_train, precision=2, separator=',', suppress_small=True)
                     ## str_np = np.array2string( X_test, precision=2, separator=',', suppress_small=True)
                     ## str_np = np.array2string( y_test, precision=2, separator=',', suppress_small=True)
+                    
                     text = str(str_np)
-
                     Element('test-output').element.innerText =  text   
                     
                     ######################################################################
-
-              
 
                     def my_gen_function():
 
@@ -136,6 +132,7 @@
                             text2 = str( y_test[i] )
                             text3 = str( the_pred )
                             Element('mpl').element.innerText =  text1 + "...." + text2 + "...." + text3
+                    
  
                 </script>
         </section>
