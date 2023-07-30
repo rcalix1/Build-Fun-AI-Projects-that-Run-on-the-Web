@@ -58,6 +58,8 @@
                         ## sort by distance value and return the k nearest neighbors
                         ## np.argsort returns the indices of the k neares neighbors
                     
+                        print(distances)
+                    
                         k_neighbor_indices = np.argsort(distances)[:k]
 
                         print(k_neighbor_indices)
@@ -130,7 +132,7 @@
 
                         for i, test_x in enumerate( X_test ):
                             the_pred = predict(test_x)
-                            ## print(temp_pred[0][0] )
+                   
                             text1 = np.array2string( test_x , precision=2, separator=',', suppress_small=True)
                             text2 = str( y_test[i] )
                             text3 = str( the_pred )
