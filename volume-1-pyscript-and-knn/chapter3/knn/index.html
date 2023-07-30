@@ -91,12 +91,6 @@
 
                     X = iris_np[shuffled_indices, :]
 
-                    X_train   = X[1:130, :4]
-                    y_train   = X[1:130,  4]
-                    
-                    X_test    = X[130:150, :4]
-                    y_test    = X[130:150, 4]
-
                     #####################################################################
                     ## This is just used to view and debug the data or code
 
@@ -114,6 +108,17 @@
                     
                     #####################################################################
 
+                    X_train   = X[1:130, :4]
+                    y_train   = X[1:130,  4]
+                    
+                    X_test    = X[130:150, :4]
+                    y_test    = X[130:150, 4]
+
+
+                    #####################################################################
+
+                    '''
+
                     ## look at data
                     str_np = np.array2string( X_train, precision=2, separator=',', suppress_small=True)
                     ## str_np = np.array2string( y_train, precision=2, separator=',', suppress_small=True)
@@ -124,6 +129,8 @@
                     Element('test-output').element.innerText =  text   
                     
                     ######################################################################
+
+                    '''
 
                     def my_gen_function():
 
