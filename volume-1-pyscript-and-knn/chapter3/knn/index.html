@@ -101,7 +101,8 @@
                     str_iris_np = np.array2string(iris_np, precision=2, separator=',', suppress_small=True)
                     text2 = str(str_iris_np)
 
-                    text3 = shuffled_indices
+                    str_shuffled_indices = np.array2string(shuffled_indices, precision=0, separator=',', suppress_small=True)
+                    text3 = str_shuffled_indices
                     
                     text = text3
                     Element('test-output').element.innerText =  text 
