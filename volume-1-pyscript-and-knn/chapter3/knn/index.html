@@ -82,20 +82,7 @@
                     iris_np = iris_pd.to_numpy()
                     ## pd_ids_train_np          = pd_ids_train_np[1:, 1:]
 
-                    #####################################################################
-                    ## This is just used to view and debug the data or code
-
-                    ## look at shape
-                    text1 = str(iris_np.shape)
-
-                    ## look at data
-                    str_iris_np = np.array2string(iris_np, precision=2, separator=',', suppress_small=True)
-                    text2 = str(str_iris_np)
-
-                    text3 = shuffled_indices
-                    
-                    text = text3
-                    Element('test-output').element.innerText =  text   
+                      
 
                     #####################################################################
 
@@ -109,6 +96,21 @@
                     
                     X_test    = X[130:150, :4]
                     y_test    = X[130:150, 4]
+
+                    #####################################################################
+                    ## This is just used to view and debug the data or code
+
+                    ## look at shape
+                    text1 = str(iris_np.shape)
+
+                    ## look at data
+                    str_iris_np = np.array2string(iris_np, precision=2, separator=',', suppress_small=True)
+                    text2 = str(str_iris_np)
+
+                    text3 = shuffled_indices
+                    
+                    text = text3
+                    Element('test-output').element.innerText =  text 
                     
                     #####################################################################
 
