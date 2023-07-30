@@ -113,9 +113,9 @@
                     #####################################################################
 
                     ## look at data
-                    str_np = np.array2string( X_train, precision=2, separator=',', suppress_small=True)
+                    ## str_np = np.array2string( X_train, precision=2, separator=',', suppress_small=True)
                     ## str_np = np.array2string( y_train, precision=2, separator=',', suppress_small=True)
-                    ## str_np = np.array2string( X_test, precision=2, separator=',', suppress_small=True)
+                    str_np = np.array2string( X_test, precision=2, separator=',', suppress_small=True)
                     ## str_np = np.array2string( y_test, precision=2, separator=',', suppress_small=True)
                     
                     text = str(str_np)
@@ -125,13 +125,16 @@
 
                     def my_gen_function():
 
+                        accum_res = ""
+
                         for i, test_x in enumerate( X_test ):
                             the_pred = predict(test_x)
                             ## print(temp_pred[0][0] )
                             text1 = np.array2string( test_x , precision=2, separator=',', suppress_small=True)
                             text2 = str( y_test[i] )
                             text3 = str( the_pred )
-                            Element('mpl').element.innerText =  text1 + "...." + text2 + "...." + text3
+                            accum_res = accum_res + text1 + "___" + text2 + "___" + text3 + "</br>"
+                        Element('mpl').element.innerText =  accum_res
                     
  
                 </script>
