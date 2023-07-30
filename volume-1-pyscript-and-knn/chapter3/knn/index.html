@@ -49,32 +49,24 @@
                      
                         ## calculate distances between test_x and all data samples in x
                         ## this distances vector is a vector of distances
-                        ## distances = [ euclidean_distance(test_x , x)  for x in X_train    ]
-                    
-                        for x in X_train:
-                            distances = euclidean_distance(test_x , x) 
+                        
+                        distances = [ euclidean_distance(test_x , x)  for x in X_train    ]
                     
                         ## distances - > [23, 3, 145, 17, ...]
                         ## sort by distance value and return the k nearest neighbors
                         ## np.argsort returns the indices of the k neares neighbors
                     
-                        print(distances)
-                    
                         k_neighbor_indices = np.argsort(distances)[:k]
 
-                        print(k_neighbor_indices)
-    
                         ## with indices, extract labels from y_train 
                     
                         labels = [ y_train[i]  for i in k_neighbor_indices  ]
                     
                         ## imagine labels = [ 1, 1, 2, 0, 1]
 
-                        ## labels_np = np.array( labels  )
-                        ## pred = int( np.mean(labels_np)  )
+                        labels_np = np.array( labels  )
+                        pred = int( np.mean(labels_np)  )
 
-                        pred = str(labels)
-    
                         return pred
 
                     #####################################################################
@@ -137,8 +129,8 @@
                             text2 = str( y_test[i] )
                             text3 = str( the_pred )
                             print(text1 + "___" + text2 + "___" + text3 )
-                            ## accum_res = accum_res + text1 + "___" + text2 + "___" + text3 + "</br>"
-                        ## Element('mpl').element.innerText =  accum_res
+                            accum_res = accum_res + text1 + "___" + text2 + "___" + text3 + "</br>"
+                        Element('mpl').element.innerText =  accum_res
                     
  
                 </script>
