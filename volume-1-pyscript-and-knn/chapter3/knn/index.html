@@ -35,8 +35,6 @@
                     import matplotlib.tri as tri
                     from pyodide.http import open_url
 
-                    ## from collections import Counter
-                 
                     #############################################################################
 
                     def euclidean_distance(v1, v2):
@@ -75,8 +73,7 @@
                     iris_pd = pd.read_csv(open_url(url1))
                     iris_pd['species'] = iris_pd['species'].replace({'setosa':0, 'versicolor':1 , 'virginica':2})
                     iris_np = iris_pd.to_numpy()
-                    ## pd_ids_train_np          = pd_ids_train_np[1:, 1:]
-
+                 
                     #####################################################################
 
                     np.random.shuffle(iris_np)
@@ -85,18 +82,16 @@
                     ## This is just used to view and debug the data or code
 
                     ## look at shape
-                    text1 = str(iris_np.shape)
+                    ## text1 = str(iris_np.shape)
 
                     ## look at data
-                    str_iris_np = np.array2string(iris_np, precision=2, separator=',', suppress_small=True)
-                    text2 = str(str_iris_np)
+                    ## str_iris_np = np.array2string(iris_np, precision=2, separator=',', suppress_small=True)
+                    ## text2 = str(str_iris_np)
                     
-                    text = text2
-                    Element('test-output').element.innerText =  text 
+                    ## text = text2
+                    ## Element('test-output').element.innerText =  text 
                     
                     #####################################################################
-
-                    iris_np
 
                     X_train   = iris_np[1:130, :4]
                     y_train   = iris_np[1:130,  4]
@@ -104,27 +99,24 @@
                     X_test    = iris_np[130:150, :4]
                     y_test    = iris_np[130:150, 4]
 
-
                     #####################################################################
 
                     ## look at data
                     ## str_np = np.array2string( X_train, precision=2, separator=',', suppress_small=True)
                     ## str_np = np.array2string( y_train, precision=2, separator=',', suppress_small=True)
-                    str_np = np.array2string( X_test, precision=2, separator=',', suppress_small=True)
+                    ## str_np = np.array2string( X_test, precision=2, separator=',', suppress_small=True)
                     ## str_np = np.array2string( y_test, precision=2, separator=',', suppress_small=True)
                     
-                    text = str(str_np)
-                    Element('test-output').element.innerText =  text   
+                    ## text = str(str_np)
+                    ## Element('test-output').element.innerText =  text   
                     
                     ######################################################################
 
                     def my_gen_function():
 
                         accum_res = ""
-
                         for i, test_x in enumerate( X_test ):
                             the_pred = predict(test_x)
-                   
                             text1 = np.array2string( test_x , precision=2, separator=',', suppress_small=True)
                             text2 = str( y_test[i] )
                             text3 = str( the_pred )
