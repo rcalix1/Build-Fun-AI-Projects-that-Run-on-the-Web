@@ -81,12 +81,7 @@
                     ## pd_ids_train_np          = pd_ids_train_np[1:, 1:]
 
                     #####################################################################
-
-                    indices = np.arange(150)
-                    shuffled_indices = np.random.shuffle(indices)
-                    
-                    #####################################################################
-                    ## This is just used to view and debug the data
+                    ## This is just used to view and debug the data or code
 
                     ## look at shape
                     text1 = str(iris_np.shape)
@@ -99,26 +94,39 @@
                     
                     text = text3
                     Element('test-output').element.innerText =  text   
-                    #####################################################
+
+                    #####################################################################
+
+                    indices = np.arange(150)
+                    shuffled_indices = np.random.shuffle(indices)
+
+                    X = iris_np[shuffled_indices, :]
+
+                    X_train   = X[1:130, :4]
+                    y_train   = X[1:130,  4]
+                    
+                    X_test    = X[130:150, :4]
+                    y_test    = X[130:150, 4]
+                    
+                    #####################################################################
+
+                    ## look at data
+                    str_np = np.array2string( X_train, precision=2, separator=',', suppress_small=True)
+                    text = str(str_np)
+
+                    Element('test-output').element.innerText =  text   
+                    
+                    ######################################################################
 
                     
 
 
-                    #####################################################
-
-
                     '''
                    
-                    X = X.astype(float)
-                    y = df.loc[1:, 4].values
-                    len(y)
-                    X.shape
-                    y.shape
-                    le = LabelEncoder()
-                    y = le.fit_transform(  y  )
+                   
     
 
-                    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+                    
 
                     print(X_train.shape)
                     print(X_test.shape)
