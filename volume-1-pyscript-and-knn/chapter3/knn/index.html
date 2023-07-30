@@ -49,8 +49,8 @@
                     #############################################################################
 
                     def predict(test_x):
-                        ## calculate distances between test_x and all dta samples in x
-                        ## this distances vector is a vector of 45 distances
+                        ## calculate distances between test_x and all data samples in x
+                        ## this distances vector is a vector of distances
                         ## distances = [ euclidean_distance(test_x , x)  for x in X_train    ]
                     
                         for x in X_train:
@@ -67,10 +67,12 @@
                         labels = [ y_train[i]  for i in k_neighbor_indices  ]
                     
                         ## imagine labels = [ 1, 1, 2, 0, 1]
+
+                        labels_np = np.array( labels  )
+
+                        pred = int( np.mean(labels_np)  )
     
-                        ## from labels, select the most common label
-                        most_common_label = Counter(labels).most_common(1)
-                        return most_common_label
+                        return pred
 
                     #####################################################################
 
@@ -118,35 +120,15 @@
                     
                     ######################################################################
 
-                    
-
-
-                    '''
-                   
-                   
-    
-
-                    
-
-                    print(X_train.shape)
-                    print(X_test.shape)
-                    print(y_train.shape)
-                    print(y_test.shape)
-
-                    for test_x in X_test:
-                        temp_pred = predict_batches(test_x)
-                        ## print(temp_pred[0][0] )
-                        list_of_pred_labels.append(     temp_pred[0][0]      )
-
-                    '''
-
                     def my_gen_function():
 
-                        list_of_lists = [[1, 2, 3], [4, 4, 5] , [6, 2, 11]] 
-                        a = np.array(list_of_lists)
-                        text = str(a)
-                    
-                        Element('mpl').element.innerText =  text   
+                        for i, test_x in enumerate( X_test ):
+                            the_pred = predict(test_x)
+                            ## print(temp_pred[0][0] )
+                            text1 = np.array2string( test_x , precision=2, separator=',', suppress_small=True)
+                            text2 = str( y_test[i] )
+                            text3 = str( the_pred )
+                            Element('mpl').element.innerText =  text1 + "...." + text2 + "...." + text3
  
                 </script>
         </section>
