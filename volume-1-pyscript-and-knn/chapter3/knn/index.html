@@ -82,21 +82,20 @@
                     url1 = ("https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter3/knn/iris.csv")
                     iris_pd = pd.read_csv(open_url(url1))
                     iris_pd['species'] = iris_pd['species'].replace({'setosa':0, 'versicolor':1 , 'virginica':2})
-                    
                     iris_np = iris_pd.to_numpy()
-
-                    
-                    
                     ## pd_ids_train_np          = pd_ids_train_np[1:, 1:]
 
-                  
                     #####################################################
+                    ## This is just used to view and debug the data
+
+                    ## look at shape
                     text1 = str(iris_np.shape)
-                    
-                    str_iris_np = np.array2string(iris_np, precision=0, separator=',', suppress_small=True)
+
+                    ## look at data
+                    str_iris_np = np.array2string(iris_np, precision=2, separator=',', suppress_small=True)
                     text2 = str(str_iris_np)
                     
-                    text = text2
+                    text = text1
                     Element('test-output').element.innerText =  text   
                     #####################################################
 
