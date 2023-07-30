@@ -134,8 +134,9 @@
                             text1 = np.array2string( test_x , precision=2, separator=',', suppress_small=True)
                             text2 = str( y_test[i] )
                             text3 = str( the_pred )
-                            accum_res = accum_res + text1 + "___" + text2 + "___" + text3 + "</br>"
-                        Element('mpl').element.innerText =  accum_res
+                            print(text1 + "___" + text2 + "___" + text3 )
+                            ## accum_res = accum_res + text1 + "___" + text2 + "___" + text3 + "</br>"
+                        ## Element('mpl').element.innerText =  accum_res
                     
  
                 </script>
