@@ -2,7 +2,7 @@
 
 This is the official repo for my series of books titled: Build Fun AI Projects that Run on the Web
 
-![Vol1Cover](bookCover.jpg)
+![Vol1Cover](coverDONEclx.jpg)
 
 ## Description
 
