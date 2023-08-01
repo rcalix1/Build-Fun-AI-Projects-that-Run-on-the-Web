@@ -129,7 +129,7 @@
                         the_pred = predict(test_x)
                         text1 = np.array2string( test_x , precision=2, separator=',', suppress_small=True)
                         text3 = str( the_pred )
-                        accum_res = text1 + "___"  + text3 + "\n"
+                        accum_res = "*******************\n" + "Predicted Class: " + text1 + "___"  + text3 + "\n"
                         Element('mpl').element.innerText =  accum_res
                     
  
