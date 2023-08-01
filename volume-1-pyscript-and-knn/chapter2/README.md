@@ -10,5 +10,5 @@
 
 * Numpy 5 Initialize Tensors: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpy5initializeMatrixOnes/index.html
 
-* Numpy 5 Create vector sequences: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpy6createVectors/index.html
+* Numpy 6 Create vector sequences: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpyCreateVectors/index.html
 
