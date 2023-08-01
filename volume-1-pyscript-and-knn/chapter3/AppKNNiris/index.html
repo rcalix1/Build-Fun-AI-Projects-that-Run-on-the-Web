@@ -10,7 +10,28 @@
     </head>
 
     <body>
-        <div>Press Button</div>
+       
+
+        <div>Type features here and then press the button: </div>
+   
+    <table>
+ 
+     <tr>
+     <td>x1 </td>
+     <td> <input type="text" style="border:3px solid #F7730E;" value="3" id="testInput1"/> </td>
+
+       <td> x2 </td>
+     <td>   <input type="text" style="border:3px solid #F7730E;" value="3" id="testInput2"/> </td>
+
+       <td> x3 </td>
+     <td>  <input type="text" style="border:3px solid #F7730E;" value="2" id="testInput3"/> </td>
+
+       <td> x4 </td>
+     <td>   <input type="text" style="border:3px solid #F7730E;" value="3.4" id="testInput4"/> </td>
+  </tr>
+
+    </table>
+        
         <button id="get-time" py-click="my_gen_function()"  class="py-button">Generate</button>
 
         <div id="test-output"></div>
@@ -102,25 +123,32 @@
                     #####################################################################
 
                     ## look at data
-                    ## str_np = np.array2string( X_train, precision=2, separator=',', suppress_small=True)
-                    ## str_np = np.array2string( y_train, precision=2, separator=',', suppress_small=True)
-                    ## str_np = np.array2string( X_test, precision=2, separator=',', suppress_small=True)
-                    ## str_np = np.array2string( y_test, precision=2, separator=',', suppress_small=True)
-                    
-                    ## text = str(str_np)
+                    str_np = np.array2string( iris_np, precision=2, separator=',', suppress_small=True)
+                    text = str(str_np)
                     ## Element('test-output').element.innerText =  text   
                     
                     ######################################################################
 
-                    def my_gen_function():
+                     def get_np_conditions_vector():
+                        c1 = float( Element('testInput1').element.value )
+                        c2 = float( Element('testInput2').element.value )
+                        c3 = float( Element('testInput3').element.value )
+                        c4 = float( Element('testInput4').element.value )
+                       
+                        conditions_list = [c1, c2, c3, c4]
+                        np_conditions_list = np.array(conditions_list)
+                        np_conditions_list = np.expand_dims(np_conditions_list, axis=0)
 
-                        accum_res = ""
-                        for i, test_x in enumerate( X_test ):
-                            the_pred = predict(test_x)
-                            text1 = np.array2string( test_x , precision=2, separator=',', suppress_small=True)
-                            text2 = str( y_test[i] )
-                            text3 = str( the_pred )
-                            accum_res = accum_res + text1 + "___" + text2 + "___" + text3 + "\n"
+                        return np_conditions_list
+
+                    ######################################################################
+
+                    def my_gen_function():
+                        test_x = get_np_conditions_vector()
+                        the_pred = predict(test_x)
+                        text1 = np.array2string( test_x , precision=2, separator=',', suppress_small=True)
+                        text3 = str( the_pred )
+                        accum_res = accum_res + text1 + "___"  + text3 + "\n"
                         Element('mpl').element.innerText =  accum_res
                     
  
