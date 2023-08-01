@@ -30,10 +30,11 @@
 
                         b2 = np.array([[1, 2, 3, 4], 
                                       [5, 6, 7, 8],
-                                      [9, 10, 11, 12]] )           
-                        text2 = str(b2[:2,:2]) + "\n"
-                        text2a = "a[:-1,:-2]"       + str( b2[:-1,:-2] ) + "\n"     
-                        Element('mpl2').element.innerText =  "******" + "\n" + text2 + text2a
+                                      [9, 10, 11, 12]] )  
+                        text2  =  str(b2) + "\n"
+                        text2a = "b2[:2,:2]"    + str( b2[:2,:2]   ) + "\n"
+                        text2b = "a[:-1,:-2]"   + str( b2[:-1,:-2] ) + "\n"     
+                        Element('mpl2').element.innerText =  "******" + "\n" + text2 + text2a + text2b
                 </script>
         </section>
     </body>
