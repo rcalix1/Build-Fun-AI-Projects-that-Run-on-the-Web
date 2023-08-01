@@ -103,13 +103,14 @@
                     #####################################################################
 
                     ## look at the test data
-                    str_np = np.array2string( iris_np, precision=2, separator=',', suppress_small=True)
+                    testDataXandy = iris_np[130:150, :]
+                    str_np = np.array2string( testDataXandy, precision=2, separator=',', suppress_small=True)
                     text = str(str_np)
                     Element('test-output').element.innerText =  text   
                     
                     ######################################################################
 
-                     def get_np_conditions_vector():
+                    def get_np_conditions_vector():
                         c1 = float( Element('testInput1').element.value )
                         c2 = float( Element('testInput2').element.value )
                         c3 = float( Element('testInput3').element.value )
@@ -128,7 +129,7 @@
                         the_pred = predict(test_x)
                         text1 = np.array2string( test_x , precision=2, separator=',', suppress_small=True)
                         text3 = str( the_pred )
-                        accum_res = accum_res + text1 + "___"  + text3 + "\n"
+                        accum_res = text1 + "___"  + text3 + "\n"
                         Element('mpl').element.innerText =  accum_res
                     
  
