@@ -16,4 +16,6 @@
 
 * Numpy 8 Numpy Indexing: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpyIndexing/index.html
 
+* Numpy 9 Numpy Slicing: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpySlicing/index.html
+
 
