@@ -11,6 +11,7 @@
         <section class="pyscript"> 
             <div id="mpl1"></div>
             <div id="mpl2"></div>
+            <div id="mpl3"></div>
                 <py-config>
                     packages = ["pandas", "numpy"]
                     plugins = []
@@ -25,7 +26,7 @@
                         ## mean 0 and standard deviation 1
                         b2 = np.random.normal(0, 1, (4,4))
                         text2 = str(b2)
-                        Element('mpl2').element.innerText =  text2 
+                        Element('mpl2').element.innerText =  "******" + "\n" + text2 
 
                         b3a = np.random.randint(20, size=6)
                         b3b = np.random.randint(20, size=(3,4)) 
@@ -33,7 +34,7 @@
                         text3a = str(b3a.ndim)
                         text3b = str(b3b.shape)
                         text3c = str(b3c.size)
-                        Element('mpl2').element.innerText =  text3a + "\n" + text3b + "\n" + text3c 
+                        Element('mpl3').element.innerText =  text3a + "\n" + text3b + "\n" + text3c 
                 </script>
         </section>
     </body>
