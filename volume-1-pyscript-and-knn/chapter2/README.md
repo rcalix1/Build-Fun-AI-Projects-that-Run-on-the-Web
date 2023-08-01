@@ -12,3 +12,5 @@
 
 * Numpy 6 Create vector sequences: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpyCreateVectors/index.html
 
+* Numpy 7 Create random initialization: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpyRandom/index.html
+
