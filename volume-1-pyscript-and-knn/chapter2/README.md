@@ -8,4 +8,4 @@
 
 * Numpy 3 Matrix: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpy3matrix/index.html
 
-* * Numpy 5 Initialize Tensors: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpy5initialize/index.html
+* Numpy 5 Initialize Tensors: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpy5initializeMatrixOnes/index.html
