@@ -1,0 +1,40 @@
+<html>    
+    <head>
+        <title>Examples</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>       
+    </head>
+    <body>
+        <div>Press Button</div>
+        <button id="get-time" py-click="my_gen_function()"  class="py-button">Generate</button>
+        <section class="pyscript"> 
+            <div id="mpl1"></div>
+            <div id="mpl2"></div>
+                <py-config>
+                    packages = ["pandas", "numpy"]
+                    plugins = []
+                </py-config>
+                <script type="py">
+                    import numpy as np
+                    def my_gen_function():
+                        b1 = np.random.random((4, 4))  
+                        text1 = str(b1)
+                        Element('mpl1').element.innerText =  text1   
+
+                        ## mean 0 and standard deviation 1
+                        b2 = np.random.normal(0, 1, (4,4))
+                        text2 = str(b2)
+                        Element('mpl2').element.innerText =  text2 
+
+                        b3a = np.random.randint(20, size=6)
+                        b3b = np.random.randint(20, size=(3,4)) 
+                        b3c = np.random.randint(20, size=(2,4,6))
+                        text3a = str(b3a.ndim)
+                        text3b = str(b3b.shape)
+                        text3c = str(b3c.size)
+                        Element('mpl2').element.innerText =  text3a + "\n" + text3b + "\n" + text3c 
+                </script>
+        </section>
+    </body>
+</html>
