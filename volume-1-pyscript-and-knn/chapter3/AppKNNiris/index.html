@@ -1,0 +1,130 @@
+<html>    
+    <head>
+        <title>First Numpy Example</title>
+        <meta charset="utf-8" />
+        <link
+            rel="stylesheet"
+            href="https://pyscript.net/latest/pyscript.css"
+        />
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>       
+    </head>
+
+    <body>
+        <div>Press Button</div>
+        <button id="get-time" py-click="my_gen_function()"  class="py-button">Generate</button>
+
+        <div id="test-output"></div>
+
+        <section class="pyscript"> 
+            <div id="mpl"></div>
+
+                <py-config>
+                    packages = [
+                          "pandas",
+                          "matplotlib",
+                          "numpy"
+                    ]
+                    plugins = []
+                </py-config>
+
+                <script type="py">
+                
+                    import numpy as np
+                    import pandas as pd
+                    import matplotlib.pyplot as plt
+                    import matplotlib.tri as tri
+                    from pyodide.http import open_url
+
+                    #############################################################################
+
+                    def euclidean_distance(v1, v2):
+                        return np.sqrt( np.sum(   (v1 - v2)**2   )   )
+
+                    #############################################################################
+
+                    def predict(test_x):
+                        k = 5
+                     
+                        ## calculate distances between test_x and all data samples in x
+                        ## this distances vector is a vector of distances
+                        
+                        distances = [ euclidean_distance(test_x , x)  for x in X_train    ]
+                    
+                        ## distances - > [23, 3, 145, 17, ...]
+                        ## sort by distance value and return the k nearest neighbors
+                        ## np.argsort returns the indices of the k neares neighbors
+                    
+                        k_neighbor_indices = np.argsort(distances)[:k]
+
+                        ## with indices, extract labels from y_train 
+                    
+                        labels = [ y_train[i]  for i in k_neighbor_indices  ]
+                    
+                        ## imagine labels = [ 1, 1, 2, 0, 1]
+
+                        labels_np = np.array( labels  )
+                        pred = int( np.mean(labels_np)  )
+
+                        return pred
+
+                    #####################################################################
+
+                    url1 = ("https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter3/knn/iris.csv")
+                    iris_pd = pd.read_csv(open_url(url1))
+                    iris_pd['species'] = iris_pd['species'].replace({'setosa':0, 'versicolor':1 , 'virginica':2})
+                    iris_np = iris_pd.to_numpy()
+                 
+                    #####################################################################
+
+                    np.random.shuffle(iris_np)
+
+                    #####################################################################
+                    ## This is just used to view and debug the data or code
+
+                    ## look at shape
+                    ## text1 = str(iris_np.shape)
+
+                    ## look at data
+                    ## str_iris_np = np.array2string(iris_np, precision=2, separator=',', suppress_small=True)
+                    ## text2 = str(str_iris_np)
+                    
+                    ## text = text2
+                    ## Element('test-output').element.innerText =  text 
+                    
+                    #####################################################################
+
+                    X_train   = iris_np[1:130, :4]
+                    y_train   = iris_np[1:130,  4]
+                    
+                    X_test    = iris_np[130:150, :4]
+                    y_test    = iris_np[130:150, 4]
+
+                    #####################################################################
+
+                    ## look at data
+                    ## str_np = np.array2string( X_train, precision=2, separator=',', suppress_small=True)
+                    ## str_np = np.array2string( y_train, precision=2, separator=',', suppress_small=True)
+                    ## str_np = np.array2string( X_test, precision=2, separator=',', suppress_small=True)
+                    ## str_np = np.array2string( y_test, precision=2, separator=',', suppress_small=True)
+                    
+                    ## text = str(str_np)
+                    ## Element('test-output').element.innerText =  text   
+                    
+                    ######################################################################
+
+                    def my_gen_function():
+
+                        accum_res = ""
+                        for i, test_x in enumerate( X_test ):
+                            the_pred = predict(test_x)
+                            text1 = np.array2string( test_x , precision=2, separator=',', suppress_small=True)
+                            text2 = str( y_test[i] )
+                            text3 = str( the_pred )
+                            accum_res = accum_res + text1 + "___" + text2 + "___" + text3 + "\n"
+                        Element('mpl').element.innerText =  accum_res
+                    
+ 
+                </script>
+        </section>
+    </body>
+</html>
