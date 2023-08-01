@@ -10,31 +10,26 @@
     </head>
 
     <body>
-       
-
-        <div>Type features here and then press the button: </div>
-   
+    <div>Type features here and then press the button: </div>
     <table>
- 
      <tr>
      <td>x1 </td>
      <td> <input type="text" style="border:3px solid #F7730E;" value="3" id="testInput1"/> </td>
 
-       <td> x2 </td>
+     <td> x2 </td>
      <td>   <input type="text" style="border:3px solid #F7730E;" value="3" id="testInput2"/> </td>
 
-       <td> x3 </td>
+     <td> x3 </td>
      <td>  <input type="text" style="border:3px solid #F7730E;" value="2" id="testInput3"/> </td>
 
-       <td> x4 </td>
+     <td> x4 </td>
      <td>   <input type="text" style="border:3px solid #F7730E;" value="3.4" id="testInput4"/> </td>
-  </tr>
-
-    </table>
+     </tr>
+     </table>
         
-        <button id="get-time" py-click="my_gen_function()"  class="py-button">Generate</button>
+     <button id="get-time" py-click="my_gen_function()"  class="py-button">Generate</button>
 
-        <div id="test-output"></div>
+     <div id="test-output"></div>
 
         <section class="pyscript"> 
             <div id="mpl"></div>
@@ -65,27 +60,11 @@
 
                     def predict(test_x):
                         k = 5
-                     
-                        ## calculate distances between test_x and all data samples in x
-                        ## this distances vector is a vector of distances
-                        
                         distances = [ euclidean_distance(test_x , x)  for x in X_train    ]
-                    
-                        ## distances - > [23, 3, 145, 17, ...]
-                        ## sort by distance value and return the k nearest neighbors
-                        ## np.argsort returns the indices of the k neares neighbors
-                    
                         k_neighbor_indices = np.argsort(distances)[:k]
-
-                        ## with indices, extract labels from y_train 
-                    
                         labels = [ y_train[i]  for i in k_neighbor_indices  ]
-                    
-                        ## imagine labels = [ 1, 1, 2, 0, 1]
-
                         labels_np = np.array( labels  )
                         pred = int( np.mean(labels_np)  )
-
                         return pred
 
                     #####################################################################
@@ -125,7 +104,7 @@
                     ## look at data
                     str_np = np.array2string( iris_np, precision=2, separator=',', suppress_small=True)
                     text = str(str_np)
-                    ## Element('test-output').element.innerText =  text   
+                    Element('test-output').element.innerText =  text   
                     
                     ######################################################################
 
