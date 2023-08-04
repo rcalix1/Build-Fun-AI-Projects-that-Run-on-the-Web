@@ -14,6 +14,12 @@ I love to tinker in my basement. I am always building puzzles, clocks, electroni
 
 With PyScript you can now build and learn about AI and machine learning, and you can also do it all in the web browser with just GitHub. And the fun aspect of this is that when you are done with your project, you will have a working AI tool that runs in the web from anywhere. Wow! What a time we live in. So, since I could not find these AI hobby projects as I wanted them, I decided to build them. This book is the first one in a series of AI project books I plan to create. Hopefully, now your list and my list of home hobby projects will also include AI models that run on the Web!
 
+## GitHub Repo
+
+
+* [GitHub Repo](https://github.com/rcalix1/Build-Fun-AI-Projects-that-Run-on-the-Web)
+
+
 ## Books in this series
 
 
