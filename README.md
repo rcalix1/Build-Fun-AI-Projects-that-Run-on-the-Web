@@ -16,7 +16,14 @@ With PyScript you can now build and learn about AI and machine learning, and you
 
 ## Books in this series
 
-* Volume 1: PyScript and KNN
+
+* [Volume 1: PyScript, GitHub, and KNN](https://www.amazon.com/dp/B0CDNJ64ZL/ref=sr_1_4?qid=1691173483&refinements=p_27%3ARicardo+A+Calix&s=books&sr=1-4&text=Ricardo+A+Calix)
+
+## Book Covers
+
+![Vol1Cover](images/funAIwebCover.jpg)
+
+[![Vol1Cover](images/funAIwebCover.jpg)](https://www.amazon.com/dp/B0CDNJ64ZL/ref=sr_1_4?qid=1691173483&refinements=p_27%3ARicardo+A+Calix&s=books&sr=1-4&text=Ricardo+A+Calix)
 
 ## Author
 
