@@ -18,4 +18,1136 @@
 
 * Numpy 9 Numpy Slicing: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpySlicing/index.html
 
+#####################
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Check out the accompanying book, Even Better Books with LaTeX the Agile Way in 2023, for a discussion of the template and step-by-step instructions. https://amzn.to/3HqwgXM https://leanpub.com/eBBwLtAW/
+% The template was originally created by Clemens Lode, LODE Publishing (www.lode.de), on 1/1/2023. Feel free to use this template for your book project! 
+% I would be happy if you included a short mention in your book in order to help others to create their own books, too ("Book template based on \textit{Even Better Books with LaTeX the Agile Way in 2023} by Clemens Lode").
+% Contact me at mail@lode.de if you need help with the template or are interested in our editing and publishing services.
+% And don't forget to follow us on Instagram! https://www.instagram.com/lodepublishing/ https://www.instagram.com/betterbookswithlatex/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%
+% This is an excerpt from the accompanying book, Even Better Books with LaTeX the Agile Way in 2023. https://www.amazon.com/Better-Books-LaTeX-Agile-Book-ebook/dp/B0BMZJ5LF7
+%%%%%%%%%%%%%%%%%
+
+\chapter{Coding with HTML and PyScript}
+
+
+The focus of this chapter is to build up your skills before starting to implement the KNN algorithm in chapter 3. First, we will develop a simple website that uses PyScript. This will be the equivalent of building your first Hello World application. After that, I will show you some examples of the power of PyScript by doing some exercises which include Python and Numpy code. These exercises will gradually help you to better grasp coding in Python with Numpy, and will help you to better understand how to run everything on the browser with PyScript. 
+
+\textbf{ \underline{Objective:}} To write my first Hello World program with PyScript.
+
+The chapter has 2 basic sections. One section focuses on creating your first Hello World program. The second section consists of a set of exercises to get more comfortable with Numpy and PyScript. I often give exercises like these to my machine learning students. I often recommend that they should type up the code themselves (instead of copying) and run it line by line. I feel that by doing this one can develop a type of muscle memory. Hopefully, after doing many of these problems, you will start to become more comfortable with how Numpy works with Python.
+
+
+So, in summary, this chapter will focus on the following tasks:
+
+\begin{itemize}
+\item Build a Hello World program with HTML and PyScript
+\item Practice and appreciate the power of Numpy and PyScript
+\end{itemize}
+
+
+This chapter assumes that you have completed chapter 1, and that you have now completed the setup of your GitHub account and completed all other related configurations.
+
+\section{Hello World program with HTML and PyScript}
+
+The following code listing shows the entire program using HTML, PyScript, and Python. So, what is Hello World anyway? Hello World is usually the first program you write in any programming language. In this listing, I show all the code you need to run Hello World. I do this so that you can see the big picture and so that you get a sense of how big it is. Running this program will write "Hello World" to your website. The results can be seen in the figure after the listing. 
+
+
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{showstringspaces=false}  %% remove weird symbol in spaces
+\lstset{frame=lines}
+\lstset{caption={Hello World code}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+<html>
+    <head>
+        <title>Hello World</title>
+        <meta charset="utf-8" />
+        
+        <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar" style="background-color: #000000">
+            <div class="app-header">
+                <a class="title" href="" style="color: #f0ab3c">Hello World</a>
+            </div>
+        </nav>
+
+        <div>Press the button to print hello world </div>
+        <button id="get-time" py-click="my_gen_function()"  class="py-button">Generate</button>
+                                       
+        <p id="current-val"></p>
+        <div id="test-output"></div>
+
+        <section class="pyscript"> 
+            <div id="mpl"></div>
+
+                <py-config>
+                    packages = []
+                    plugins = ["https://pyscript.net/latest/plugins/python/py_tutor.py"]
+                </py-config>
+
+                <script type="py">
+
+                    def my_gen_function():
+                        ## Element('test-output').element.innerText =  text   
+                        Element('mpl').element.innerText = "Hello World" 
+                       
+                </script>
+        </section>
+    
+    </body>
+</html>
+
+\end{lstlisting}
+\end{minipage}
+
+The listings following the next figure in this section will focus on the different parts of the Hello World rogram. It will make it easier for me to discuss what each part is doing. Your Hello World program should look like this when you finish and run it: 
+
+\begin{figure}[H]\centering
+\adjustbox{max height=.35\textheight}{
+    \includegraphics{images/HelloWorld.png}
+}
+\caption{Hello World output}
+\label{RegLin:fig}
+\end{figure}
+
+In the next listing, I will only discuss the head section of the code denoted by the head tags: \textbf{<head> ... </head>}. The title tag \textbf{<title>} is used to provide a title for your website and is useful for search engine indexing. The \textbf{<meta charset="utf-8" />} is used to define character encoding for your website.  The next 2 lines are very important and we will be using them on all our programs. They are both provided by the PyScript project (\babelEN{\cite{pyscriptref}}). The line denoted by the \textbf{<link>} tag references the stylesheet which is a file with extension .css. This style sheet just makes our website look more slick when it is running. We could do without it or create our own. But let us just use what the PyScript project provided. CSS files are especially formatted files where we define common things realted to style about our website like fonts, positioning, colors, etc. The last line with the \textbf{<script>} tag is required. It imports pyscript.js. Websites can import many other code modules from the internet. This helps to extend their capabilities. So, websites import these .js files. This \textbf{pyscript.js} file will help us to run PyScript on our browser. 
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Hello World code - head section}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+<html>
+    <head>
+        <title>Hello World</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    </head>
+    
+     ...
+     
+</html>
+
+\end{lstlisting}
+\end{minipage}
+
+The following code listing shows the navbar segment. This is what provides a navigation bar at the top of the page. Here, it is  used mostly for presentation. You can ignore this part or consider removing it once you understand how the code works. It is a good exercise to test your understanding. This nav bar can work in conjunction with the .css file we previously discussed. 
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{showstringspaces=false}  %% remove weird symbol in spaces
+\lstset{frame=lines}
+\lstset{caption={Hello World code} the nav tag}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+<html>
+
+   ...
+
+    <body>
+        <nav class="navbar" style="background-color: #000000">
+            <div class="app-header">
+                <a class="title" href="" style="color: #f0ab3c">Hello World</a>
+            </div>
+        </nav>
+
+        ...
+    
+    </body>
+</html>
+
+\end{lstlisting}
+\end{minipage}
+
+The next listing shows the part of the Hello World code related to triggering events. There are 2 \textbf{div} tags, one \textbf{p} tag, and one \textbf{button} tag. The \textbf{p} tag defines paragraphs in your website. You can reference the \textbf{p} tag by its \textbf{id=current-val}. In general, tags can have ids so they can be referenced. As we will see later, we can call our tags by \textbf{id} and write something to them. The \textbf{div} with \textbf{id=test-output} can be used in the same way. Notice the first \textbf{div} does not have an \textbf{id} and it is just used to write out some instructions to the website once it is running. 
+
+Okay, I saved the best for last. The button tag (\textbf{<button>}) is used to create a button on your website. When you press the button, it will call the function name \textbf{my\_gen\_function()}. Notice that it is associated with the \textbf{py-click} option. This means that this is a function written in Python. And just like that, this is how from HTML, we can call Python code. Now all that remains is to encapsulate our python code. We will see that in the next code listing. 
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Hello World code - divs and buttons}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+<html>
+   ...
+    <body>
+        ...
+
+        <div>Press the button to print hello world </div>
+        <button id="get-time" py-click="my_gen_function()"  class="py-button">Generate</button>
+                                       
+        <p id="current-val"></p>
+        <div id="test-output"></div>
+
+       ...
+    
+    </body>
+</html>
+
+\end{lstlisting}
+\end{minipage}
+
+We have now made it to PyScript! In the next code segment you can see that we have made it to the section we wanted to get to. This section is encapsulated within the  \textbf{<section class="pyscript">} tags. This section includes a div ( \textbf{<div id="mpl"></div>} ) with \textbf{id} equal to \textbf{"mpl"}. Similar to the previous divs, we can select this div by id and write data to it. In fact, we will write Hello World to this div, but you can write to the other divs as well and I recommend you try to do just that as an exercise. 
+
+The next part in the code is denoted by the \textbf{<py-config>} tag. You can use this to add any packages you want into the list packages = []. In the future, we will add packages like Numpy, etc. Finally, we have made it to the tag where we actually write our Python code. The tag is called  \textbf{<script type="py">}. It is a script tag just like for JavaScript but with type "py", which you guessed it, stands for Python. And inside this tag we can define all the python code we want. Here, we define the function \textbf{my\_gen\_function()} that is invoked by pressing the button. The rules of Python apply here such as indentation. Make sure all your Python code here has the exact same indentation or you will have errors and will need to debug. The Python syntax is the same. 
+
+PyScript provides keywords that you can use in the Python code so that Python can interact with the HTML and the website itself. One such keyword is \textbf{Element}. Notice here that \textbf{Element} grabs the div with id=mpl and assigns to its "innerText" attribute the text "Hello World". And that is it. This is how PyScript and HTML work together to run Python code on the browser. I recommend that you now go try what you learned and build and deploy your Hello World program from your own repo. 
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{showstringspaces=false}  %% remove weird symbol in spaces
+\lstset{frame=lines}
+\lstset{caption={Hello World code - PyScript tags}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+<html>
+   ...
+
+    <body>
+       ...
+
+        <section class="pyscript"> 
+                <div id="mpl"></div>
+
+                <py-config>
+                    packages = []
+                    plugins  = []
+                </py-config>
+
+                <script type="py">
+
+                    def my_gen_function():
+                        ## Element('test-output').element.innerText =  text   
+                        Element('mpl').element.innerText = "Hello World" 
+                       
+                </script>
+        </section>
+    
+    </body>
+</html>
+
+\end{lstlisting}
+\end{minipage}
+
+That concludes the Hello World program discussion. Even though most of our websites going forward will include these same sections, I will not discuss or describe them again. Instead, going forward I will only focus on the PyScript section and specifically in the Python or Numpy code. I will describe any new PyScript or HTML elements as needed. 
+
+
+\clearpage
+\section{The Power of Numpy and PyScript}
+
+
+In this section, I will present some of the most useful techniques used in this book, or in the deep learning field as a whole, for dealing with data. In general, we want to be very efficient in our processing of the data so we do not use Python lists and “for” loops for everything. Instead, we use Numpy to process tensors in very efficient and clever ways. Numpy borrows many techniques from a field of mathematics called linear algebra. Numpy arrays of different dimensions (scalars, vectors, matrices, hyper-matrices) are more generally  referred to as tensors. 
+
+
+The advantage of this approach is that we can perform a lot of linear algebra based math operations like the matrix multiplication, the transpose, etc. on our data using Python’s Numpy library.
+I will not go into any linear algebra theory. Instead, the best way to learn about this approach for AI projects is to do a series of exercises. Eventually you can study the math background if you want to. And because you already have examples of its use, you will be more motivated to study it. I will start with simple examples of Numpy array operations and then move to more complex operations. Along the way, I will point out some terminology or concepts from math. 
+
+As previously described, this section assumes you have completed chapter 1. In this chapter, I will mainly focus on describing the Python and Numpy code that goes inside the PyScript section of the HTML code. For a few examples, I will include the whole HTML code, but as we move through the material, I will include less and less of the HTML and just focus on the specific parts we want to cover. 
+
+Okay, so let’s get started. In the following code listing we import numpy as np. Then we initialize a Numpy array with values [4 5 2 6 8].  The statement 
+
+\textbf{text = str(a)}
+
+converts the array to a string and we can finally display it on the website using the statement: 
+
+
+\textbf{Element('mpl').element.innerText =  text}
+
+
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Initialize numpy array and display it on website}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+
+<html>    
+    <head>
+        <title>First Numpy Example</title>
+        <meta charset="utf-8" />
+        <link
+            rel="stylesheet"
+            href="https://pyscript.net/latest/pyscript.css"
+        />
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>       
+    </head>
+
+    <body>
+        <div>Press Button</div>
+        <button id="get-time" py-click="my_gen_function()"  class="py-button">Generate</button>
+
+        <section class="pyscript"> 
+            <div id="mpl"></div>
+
+                <py-config>
+                    packages = [
+                          "pandas",
+                          "numpy"
+                    ]
+                    plugins = []
+                </py-config>
+
+                <script type="py">
+                
+                    import numpy as np
+
+                    def my_gen_function():
+                        a = np.array([4,5,2,6,8]) 
+                        text = str(a)
+                        Element('mpl').element.innerText =  text   
+ 
+                </script>
+        </section>
+    </body>
+</html>
+
+\end{lstlisting}
+\end{minipage}
+
+
+In the next code listing we do the same as before but we initialize the array to type float. Notice that we provide a Python list and change the data type with the \textbf{dtype} field. 
+
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Numpy array of floats}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+<html>    
+    ...
+
+    <body>
+        <div>Press Button</div>
+        <button id="get-time" py-click="my_gen_function()"  class="py-button">Generate</button>
+
+        <section class="pyscript"> 
+            <div id="mpl"></div>
+
+                <py-config>
+                    packages = [
+                          "pandas",
+                          "numpy"
+                    ]
+                    plugins = []
+                </py-config>
+
+                <script type="py">
+                
+                    import numpy as np
+
+                    def my_gen_function():
+
+                        a = np.array([1, 3, 2, 5] , dtype='float32' ) 
+                        text = str(a)
+                        Element('mpl').element.innerText =  text   
+ 
+                </script>
+        </section>
+    </body>
+</html>
+
+
+\end{lstlisting}
+\end{minipage}
+
+ You can see that the values can now have decimal points. This gives us [1. 3. 2. 5.] and pressing the button calls the function \textbf{my\_gen\_function} which runs the Numpy code. Again, the array is converted to a string and assigned to the div with \textbf{id} equal to \textbf{mpl} using the following code segment: 
+
+  \textbf{Element('mpl').element.innerText =  text }  
+
+ The following figure shows the result of running this in the browser. 
+ 
+
+\begin{figure}[H]\centering
+\adjustbox{max height=.35\textheight}{
+    \includegraphics{images/numpyFloats.png}
+}
+\caption{Numpy array of floats}
+\label{RegLin:fig}
+\end{figure}
+
+Going forward, to reduce copying too much repetitive code, I will only discuss and show the parts inside the PyScript section denoted by: 
+
+\begin{center}
+   \textbf{<section class="pyscript"> </section>}
+\end{center}
+
+
+Everything else should be the same. 
+
+
+A Numpy matrix (2D np array) can be declared like so:
+
+\begin{center}
+  \textbf{list\_of\_lists = [ [1, 2, 3], [4, 4, 5] , [6, 2, 11] ] }
+\end{center}
+
+
+                      
+This Python list can be converted to a Numpy array using \textbf{np.array()}. The following listing shows the code sequence and how to assign it to the "mpl" div. 
+
+
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Numpy Matrix}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+
+        <section class="pyscript"> 
+            <div id="mpl"></div>
+
+                <py-config>
+                    packages = [
+                          "pandas",
+                          "numpy"
+                    ]
+                    plugins = []
+                </py-config>
+
+                <script type="py">
+                
+                    import numpy as np
+
+                    def my_gen_function():
+
+                        list_of_lists = [[1, 2, 3], [4, 4, 5] , [6, 2, 11]] 
+                        a = np.array(list_of_lists)
+                        text = str(a)
+                        Element('mpl').element.innerText =  text   
+ 
+                </script>
+        </section>
+
+\end{lstlisting}
+\end{minipage}
+
+Running this code gives us a 3x3 matrix as can be seen in the following figure. 
+
+
+
+\begin{figure}[H]\centering
+\adjustbox{max height=.30\textheight}{
+    \includegraphics{images/numpyMatrx.png}
+}
+\caption{Numpy Matrix}
+\label{RegLin:fig}
+\end{figure}
+
+Numpy has special functions to initialize a matrix. In the next code listing, three Numpy tensors are created. The first generates a Numpy array of size 10 made up of all zeros like so: 
+
+\textbf{[0 0 0 0 0 0 0 0 0 0] }
+
+This is achieved with the following code segment: 
+
+\textbf{b1 = np.zeros(10, dtype=int)}
+
+The second tensor consists of a 4x6 matrix of all ones. This is achieved with the Numpy statement: 
+
+\textbf{b2 = np.ones((4, 6), dtype=float)}
+
+The final tensor is a 3x3 matrix where all the values are 42. This is achieved with the statement: 
+
+\textbf{b3 = np.full((3, 3), 42)}
+
+
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Initialize 3 matrices}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+<html>    
+    ...
+    <body>
+        <div>Press Button</div>
+        <button id="get-time" py-click="my_gen_function()"  class="py-button">Generate</button>
+        <section class="pyscript"> 
+            <div id="mpl1"></div>
+            <div id="mpl2"></div>
+            <div id="mpl3"></div>
+                <py-config>
+                    packages = ["pandas", "numpy"]
+                    plugins = []
+                </py-config>
+                <script type="py">
+                    import numpy as np
+                    def my_gen_function():
+                    
+                        b1 = np.zeros(10, dtype=int) 
+                        text1 = str(b1)
+                        Element('mpl1').element.innerText =  text1   
+                        
+                        b2 = np.ones((4, 6), dtype=float) 
+                        text2 = str(b2)
+                        Element('mpl2').element.innerText =  text2 
+                        
+                        b3 = np.full((3, 3), 42) 
+                        text3 = str(b3)
+                        Element('mpl3').element.innerText =  text3 
+                </script>
+        </section>
+    </body>
+</html>
+
+\end{lstlisting}
+\end{minipage}
+
+Notice that the code now includes 3 div tags with ids: \textbf{mpl1}, \textbf{mpl2}, and \textbf{mpl3}. The 3 tensors are assigned to each of these div tags, respectively. The results can be seen in the following figure. 
+
+\begin{figure}[H]\centering
+\adjustbox{max height=.35\textheight}{
+    \includegraphics{images/numpyInitializeSeveral.png}
+}
+\caption{Numpy Initialization }
+\label{RegLin:fig}
+\end{figure}
+
+
+
+Sometimes we need Numpy arrays with different data in them. Numpy has quick ways of creating arrays with different data in them. The \textbf{np.arange} function is useful for this. For example, in the following listing, the code creates a Numpy array with 10 values in the range from 1 to 28 with a step of size 3 like so:
+
+\textbf{[1 4 7 10 13 16 19 22 25 28]}
+
+The function \textbf{np.linspace} is another way of generating Numpy arrays with data in them. Here, we generate 20 data points from 0 to 1 spaced by a step size of around 0.05.
+
+
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Initialize Sequences}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+
+<html>    
+    ...
+
+    <body>
+       ...
+        <section class="pyscript"> 
+            <div id="mpl1"></div>
+            <div id="mpl2"></div>
+                <py-config>
+                    packages = ["pandas", "numpy"]
+                    plugins = []
+                </py-config>
+                <script type="py">
+                
+                    import numpy as np
+                    def my_gen_function():
+
+                        b1 = np.arange(1, 30, 3)  
+                        text1 = str(b1)
+                        Element('mpl1').element.innerText =  text1   
+
+                        b2 = np.linspace(0, 1, 20) 
+                        text2 = str(b2)
+                        Element('mpl2').element.innerText =  text2 
+
+                </script>
+        </section>
+    </body>
+</html>
+
+\end{lstlisting}
+\end{minipage}
+
+The results of using \textbf{np.arange()} and \textbf{np.linspace()} can be seen in the following figure. Go ahead and calculate the differences between each number and the next and you will find that they equal the step size.
+
+\begin{figure}[H]\centering
+\adjustbox{max height=.35\textheight}{
+    \includegraphics{images/numpyCreateVectorSequences.png}
+}
+\caption{Numpy Initialization sequences}
+\label{RegLin:fig}
+\end{figure}
+
+The following code listing introduces us to some of Numpy's random functions. With 
+
+\textbf{np.random.random((4, 4))  }
+
+we can generate random data in the form of  a 4x4 matrix with random values.
+
+
+If we want random data with a mean of 0 and standard deviation of 1 we can write: 
+
+\textbf{np.random.normal(0, 1, (4,4))}
+
+Here, we get a 4x4 matrix of random data with mean 0 and standard deviation 1.
+
+
+Finally, to get the dimensions of matrices we can use \textbf{.shape}, \textbf{.ndim}, \textbf{.size}. In our below code listing, this is done with the following statements:
+
+
+\textbf{text3a = str(b3a.ndim)}
+
+
+
+\textbf{text3b = str(b3b.shape)}
+
+
+
+\textbf{text3c = str(b3c.size)}
+
+
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Numpy random initialization and shapes}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+<html>    
+    ...
+    <body>
+        ...
+        <section class="pyscript"> 
+            <div id="mpl1"></div>
+            <div id="mpl2"></div>
+            <div id="mpl3"></div>
+                <py-config>
+                    packages = ["pandas", "numpy"]
+                    plugins = []
+                </py-config>
+                <script type="py">
+                    import numpy as np
+                    def my_gen_function():
+                        b1 = np.random.random((4, 4))  
+                        text1 = str(b1)
+                        Element('mpl1').element.innerText =  text1   
+
+                        ## mean 0 and standard deviation 1
+                        b2 = np.random.normal(0, 1, (4,4))
+                        text2 = str(b2)
+                        Element('mpl2').element.innerText =  "******" + "\n" + text2 
+
+                        b3a = np.random.randint(20, size=6)
+                        b3b = np.random.randint(20, size=(3,4)) 
+                        b3c = np.random.randint(20, size=(2,4,6))
+                        text3a = str(b3a.ndim)
+                        text3b = str(b3b.shape)
+                        text3c = str(b3c.size)
+                        Element('mpl3').element.innerText =  text3a + "\n" + text3b + "\n" + text3c 
+                </script>
+        </section>
+    </body>
+</html>
+
+\end{lstlisting}
+\end{minipage}
+
+The result of running the previous Numpy code on the browser can be seen in the figure below. The dimensions from  \textbf{.shape}, \textbf{.ndim}, and \textbf{.size} can be seen at the bottom of the figure.
+
+\begin{figure}[H]\centering
+\adjustbox{max height=.35\textheight}{
+    \includegraphics{images/numpyRandomShapes.png}
+}
+\caption{Numpy random initialization and shapes}
+\label{RegLin:fig}
+\end{figure}
+
+Knowing how to index a Numpy array is very important. The following code listing shows different ways of indexing a Numpy array. Indexing just means extracting values from the Numpy array or matrix by index value. For example, for the vector 
+
+[1. 3. 2. 5.]
+
+We can get the following by index: 
+
+First value 1.0 
+
+Third value 2.0
+
+Last value 5.0 
+
+Before last value 2.0
+
+The next code listing shows the use of indexing for each of the previously mentioned cases. 
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{showstringspaces=false}  %% remove weird symbol in spaces
+\lstset{frame=lines}
+\lstset{caption={Indexing}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+<html>    
+  ...
+    <body>
+       ...
+        <section class="pyscript"> 
+            <div id="mpl1"></div>
+            <div id="mpl2"></div>
+            <div id="mpl3"></div>
+                <py-config>
+                    ...
+                </py-config>
+                <script type="py">
+                    import numpy as np
+                    def my_gen_function():
+
+                        b1 = np.array([1, 3, 2, 5] , dtype='float32' ) 
+                        text1 =  str(b1) + "\n"
+                        text1a = "first "       + str( b1[0]  ) + "\n"
+                        text1b = "third "       + str( b1[2]  ) + "\n"
+                        text1c = "last "        + str( b1[-1] ) + "\n"
+                        text1d = "before last " + str( b1[-2] ) + "\n"
+                        Element('mpl1').element.innerText =  text1 + text1a + text1b + text1c + text1d
+
+                        b2 = np.array([[1, 2, 3, 4], 
+                                      [5, 6, 7, 8],
+                                      [9, 10, 11, 12]] )           
+                        text2 = str(b2) + "\n"
+                        text2a = "first " + str( b2[0,0] )    + "\n"
+                        text2b = "last "  + str( b2[2, -1] )  + "\n"
+                        Element('mpl2').element.innerText =  "******" + "\n" + text2 + text2a + text2b 
+                </script>
+        </section>
+    </body>
+</html>
+
+\end{lstlisting}
+\end{minipage}
+
+We can also index matrices. The statements 
+
+\textbf{b2[0,0]} and \textbf{b2[2, -1] }
+
+are examples of indexing matrix b2 as defined in the previous code listing. The results can be seen in the following figure. 
+
+
+\begin{figure}[H]\centering
+\adjustbox{max height=.55\textheight}{
+    \includegraphics{images/numpyIndexing.png}
+}
+\caption{Numpy Indexing}
+\label{RegLin:fig}
+\end{figure}
+
+
+\clearpage
+One important concept when dealing with Numpy arrays or tensors is slicing. I was almost tempted to create a section just for slicing since it is so important. However, given that it is just another Numpy operation, I decided not to do that. That being said, slicing is very important and you will use it a lot. So, instead of giving it a whole section,  I decided to make it a cake. Here it is. 
+
+\begin{figure}[H]\centering
+\adjustbox{max height=.55\textheight}{
+    \includegraphics{images/numpySliceCake.jpg}
+}
+\caption{Slicing a cake}
+\label{RegLin:fig}
+\end{figure}
+
+
+Slicing helps us to extract slices of data from a vector, matrix, or any other tensor, like extracting 2 middle column vectors in a matrix. We can slice any tensor. As previously mentioned, Tensor is the generic name for an array of any dimension. From a vector to hyper dimensional matrices. 
+
+Let us do an example with a vector. Given a Numpy array \textbf{x} with 15 values like so:
+
+\textbf{[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14]}
+
+How can you get the following?
+
+a) The first 4 elemets: [0 1 2 3]
+
+b) All values after 3: [3 4 5 6 7 8 9 10 11 12 13 14] 
+
+c) All even indeces: [0 2 4 6 8 10 12 14]
+
+d) All uneven indeces: [1 3 5 7 9 11 13]
+
+e) The reverse:  [14 13 12 11 10 9 8 7 6 5 4 3 2 1 0]
+
+
+
+Once you understand slicing, you will be able to do all that and it will be really easy. The following code listing shows the programming statements to do just that. And the figure after shows the results. 
+
+\textbf{Note}: Whenever we want the last value of a matrix, vector, or tensor, we can just use the -1 index.
+
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{showstringspaces=false}  %% remove weird symbol in spaces
+\lstset{frame=lines}
+\lstset{caption={Numpy Slicing}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+...
+    <script type="py">
+        import numpy as np
+        def my_gen_function():
+
+            b1 = np.arange(15)
+            text1 =  str(b1) + "\n"
+            text1a = "first 4 elemets "   + str( b1[:4]  ) + "\n"
+            text1b = "all after 3 "       + str( b1[3:]  ) + "\n"
+            text1c = "even indeces "      + str( b1[::2]  ) + "\n"
+            text1d = "uneven indeces "    + str( b1[1::2] ) + "\n"
+            Element('mpl1').element.innerText =  text1 + text1a + text1b + text1c + text1d
+
+            b2 = np.array([[1, 2, 3, 4], 
+                           [5, 6, 7, 8],
+                           [9, 10, 11, 12]] )  
+            text2  = "***" + "\n" + str(b2) + "\n"
+            text2a = "***" + "\n" + "b2[:2,:2] "   + "\n"   + str(b2[:2,:2] ) + "\n"
+            text2b = "***" + "\n" + "b2[:-1,:-2] "  + "\n"   + str(b2[:-1,:-2]) + "\n"     
+            Element('mpl2').element.innerText =  "***" + "\n" + text2 + text2a + text2b
+    </script>
+ ...
+
+\end{lstlisting}
+\end{minipage}
+
+As we can see in the previous code listing, the answers are as follows:
+
+a) For the first 4 elements we can use: \textbf{b1[:4]} where the colon indicates range from blank (the start) to 4. 
+
+b) For all after 3 we can use: \textbf{b1[3:]} where 3 is the start and the colon indicates range until blank (the end).
+
+c) For all even indeces we can use \textbf{b1[::2]} where the first colon indicates the range from start to finish. The second colon indicates a step of 2. 
+
+d) For all uneven indeces we can use \textbf{b1[1::2]} where this is the same as before but the start is at 1 instead of zero. Remember that in Python, array indeces start at 0. 
+
+
+
+\begin{figure}[H]  \centering
+\adjustbox{max height=.60\textheight}{
+    \includegraphics{images/numpySlicing.png}
+}
+\caption{Numpy Slicing}
+\label{RegLin:fig}
+\end{figure}
+
+
+
+
+For the matrix \textbf{b2} in  our previous code listing, we can slice it with \textbf{b2[:-1,:-2]} and get a 2x2 matrix as can be seen in the Numpy Slicing figure.
+
+
+\section{Solve these Problems}
+
+
+
+Okay, so I have given you a lot of examples. As this is a project and work book, how about you try to implement a few Numpy and PyScript problems on your own. For the following I will provide the problem description and the working Python and Numpy code. What you have to do is to run it on your Browser using PyScript and make sure it works correctly as required by the problem. 
+
+\subsection{Problem 1}
+
+In the following code listing we want to slice the second column (column 1). The statement 
+
+\textbf{a[:, 1] }
+
+should do it, and the answer should be: 
+
+\textbf{[2 6 10]}
+
+Go ahead and deploy this to your GitHub repo.
+
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Slicing - All rows of the second column}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+a = np.array([[1, 2, 3, 4], 
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]] )
+
+print(a) 
+print("column1") 
+print(a[:, 1])
+
+\end{lstlisting}
+\end{minipage}
+
+\subsection{Problem 2}
+
+In the following code listing we want to slice the second row (row 1). The statement 
+
+\textbf{a[1, :] }
+
+should do it, and the answer should be: 
+
+\textbf{[5, 6, 7, 8]}
+
+Go ahead and deploy this to your GitHub repo.
+
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Slicing - extract a row vector}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+a = np.array([ [1, 2, 3, 4], 
+               [5, 6, 7, 8],
+               [9, 10, 11, 12] ] )
+
+print(a) 
+print("row1") 
+print(a[1, :])
+
+\end{lstlisting}
+\end{minipage}
+
+\subsection{Problem 3}
+
+Okay, that is it for slicing. Now let us try a few other things. The next problem is about reshaping. In the following code listing, we first initialize a vector \textbf{"a"} with 9 values like so
+
+\textbf{[1 2 3 4 5 6 7 8 9]}
+
+We then reshape it into \textbf{"b"} with \textbf{a.reshape( (3,3) )}. This gives us the matrix:
+
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Reshaped 3x3 matrix}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+[[1 2 3] 
+ [4 5 6] 
+ [7 8 9]]
+
+\end{lstlisting}
+\end{minipage}
+
+
+Go ahead and deploy this to your GitHub repo.
+
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Numpy Reshaping}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+a = np.arange(1, 10)
+b = a.reshape( (3,3) ) 
+print(a)
+print(b)
+
+\end{lstlisting}
+\end{minipage}
+
+
+\subsection{Problem 4}
+
+
+Besides using the reshaping operation, we can sometimes use \textbf{np.newaxis}. The \textbf{np.newaxis} function is critical when we wish to make a row vector into a column vector. The \textbf{np.newaxis()} function is used extensibly in Numpy for broadcasting operations (Advanced topic not needed for this project). An example of creating a new axis can be seen in the code listing below. Try it out. Go ahead and deploy this to your GitHub repo.
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{showstringspaces=false}  %% remove weird symbol in spaces
+\lstset{frame=lines}
+\lstset{caption={Numpy newaxis}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+v =np.array( [1,2,3,4,5] ) 
+v1=np.array( [5,5,5,5,5] )
+
+m = np.array([[1, 2, 3, 4], 
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]] )
+              
+print("reshape as row vector with reshape", v.reshape( (1,5) )) 
+print("reshape as row vector with newaxis ", v1[np.newaxis, :] ) 
+
+print("reshape as column vector with newaxis")
+print( v1[:, np.newaxis] )
+
+print("reshape matrix_m[:, np.newaxis, np.newaxis, :] with newaxis") 
+print( m[:, np.newaxis, np.newaxis, :] )
+
+\end{lstlisting}
+\end{minipage}
+
+\subsection{Problem 5}
+
+Another important Numpy array or tensor technique is concatenation. Natural Language Processing (NLP) approaches use concatenation extensively on some of the models. For example, for language translation and language generation.
+In the following code listing we see how we can use concatenation with the Numpy function \textbf{np.concatenate()}. Try it out. Go ahead and deploy this to your GitHub repo.
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Numpy concatenation}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+a = np.array([1,2,3,4]) 
+b = np.array([5,6,7,8]) 
+c = np.array([9,10,11])
+
+ab  = np.concatenate( [a, b] ) 
+abc = np.concatenate( [a, b, c] )
+
+print(ab) 
+print(abc)
+
+\end{lstlisting}
+\end{minipage}
+
+\subsection{Problem 6}
+
+An example of concatenation with matrices can be seen in the code listing below. Notice the use of \textbf{axis=0} to indicate on what dimension to concatenate. Try it out. Go ahead and deploy this to your GitHub repo.
+
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Numpy matrix concatenate on dimension 0 }}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+m1 = np.array([ [1,2,3], 
+                [4,5,6],
+                [7,8,9] ])
+                
+m2 = np.array([ [10,11,12], 
+                [13,14,14],
+                [16,17,18] ])
+
+m1_m2_concat = np.concatenate([m1, m2], axis=0) 
+
+print(m1_m2_concat)
+
+\end{lstlisting}
+\end{minipage}
+
+\subsection{Problem 7}
+
+You can concatenate on \textbf{axis=1} like in the code listing below. Try it out. Go ahead and deploy this to your GitHub repo.
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Numpy matrix concatenate on dimension 1}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+m1 = np.array([ [1,2,3], 
+                [4,5,6],
+                [7,8,9] ])
+                
+m2 = np.array([ [10,11,12], 
+                [13,14,14],
+                [16,17,18] ])
+                
+
+m1_m2_concat = np.concatenate([m1, m2], axis=1) 
+
+print(m1_m2_concat)
+
+\end{lstlisting}
+\end{minipage}
+
+\clearpage
+\subsection{Problem 8}
+
+Obviously, having data means that you want to perform many kinds of math operations on this data. The following are some examples of some of the most common operations. Try it out. Go ahead and deploy this to your GitHub repo.
+
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Numpy math operations}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+x = np.array([1,2,3,4])
+
+print(x+10)
+print(x-10)
+print(x*10)
+print(x/2)
+print(-x)
+print(x ** 3) 
+print(np.power(4, x)) 
+print(np.log(x))
+print(np.log2(x)) 
+print(np.log10(x) )
+
+\end{lstlisting}
+\end{minipage}
+
+The results of the previous math operations on vector [1 2 3 4] are as follows:
+
+
+For the operation x+10 we get [11 12 13 14] 
+
+For the operation x-10 we get [-9 -8 -7 -6] 
+
+For the operation x*10  we get [10 20 30 40] 
+
+For the operation x/2 we get [0.5  1.0  1.5  2.0] 
+
+For the operation -x we get [-1 -2 -3 -4] 
+
+And so on ...
+
+
+
+## Conclusion
+
+In this chapter, we learned about the basics of PyScript and HTML. We deployed our first Hello World program on the web. We also covered many problems using Numpy and Python and learned how to deploy them to the web. Now we are ready for chapter 3 which will cover our AI project and how to deploy it to the web. 
+
+
+
+
+
+
+
+
 
