@@ -1,6 +1,6 @@
 
 
-\chapter{Introduction}
+## Introduction
 
 This is the first in a series of AI project books that I plan to write. While in the future I want the books to be self contained, this book is definitely the most basic. It is meant to teach all the topics needed for someone who does not know much about AI and/or software. If you are more advanced in your knowledge, I recommend that you skim through the first chapter and then read through the more PyScript focused sections in chapters 2 and 3. 
 
@@ -25,7 +25,7 @@ I hope each work book is fun and that at the end you have a completed project th
 
 
 
-\section{Complete list of Tools and Technologies}
+## Complete list of Tools and Technologies
 
 To build and run the AI project in this work book you will need to use several technological tools. Most of what you need is software. For the project you will be working with code and writing software. However, coding means using several different modules that all work together to achieve a specific goal. Most of the book will focus on introducing these software modules. First, I will explain and provide examples of the different modules. It will be important to understand what they are for and how to use them independently. Then, we will need to combine them to build and run our project. GitHub, which I will describe shortly is a platform for hosting code. Like an Instagram but instead of sharing pictures you can share code, blog posts, web pages, etc. GitHub will be very important to deploy our projects. 
 
@@ -44,14 +44,14 @@ Some of the tools and technologies that we will need or can use include:
 
 KNN which is our AI/machine learning algorithm, will be built and deployed using these previously listed tools. In the next subsections, I will provide brief descriptions of each of these software tools and technologies.
 
-\section{GitHub}
+## GitHub
 
 GitHub is an amazing on line platform. It allows you to upload code, and create files describing your code. These files can be formatted and you can create very impressive pages describing your code. All of that is available through the web of course. GitHub also allows you to create your own websites using the url they create for you or even using your own domain name. This feature is called Pages. GitHub is how you will host, and publish your AI tool on the web. You could also do this by installing web hosting software on your computer or using your own cloud service, but GitHub is cooler. 
 
 To use GitHub to Run your AI project on the web you will need to set up an account with them, create some files with some code, and configure Pages to view your finished AI tool. I will describe these 3 task in the next sections. So, yes, we can basically do everything in the GitHub site without having to install anything else.
 
 
-\subsection{Creating Account with GitHub}
+## Creating Account with GitHub
 
 First we need to create our GitHub account. We can do this by visiting the GitHub website. Once there, click on sign up. You should get a screen that looks like the one on the following figure. In the sign up sheet, you will follow the steps that are common when you sign up to any on-line service such as providing your name, email, and setting up a password. 
 
@@ -66,7 +66,7 @@ First we need to create our GitHub account. We can do this by visiting the GitHu
 
 In the next section we will learn how to create files and folders on GitHub.
 
-\subsection{Creating and Editing Folders and Files on GitHub}
+### Creating and Editing Folders and Files on GitHub
 
 Once you have created your account and completed the sign up on GitHub, you can proceed to create your repository (usually called a repo) on GitHub. The steps should be as follows. Go to the top menu on the main page and click on repositories. Then you can click on the green button that says new on the upper right hand corner as can be seen in the figure below.
 
@@ -162,7 +162,7 @@ This opens the white canvas and you can edit your code.  Once done, click the gr
 \clearpage
 In the next section I will describe GitHub Pages.
 
-\subsection{Configuring GitHub Pages}
+### Configuring GitHub Pages
 
 In this section we will learn how to configure GitHub Pages. This will allow our HTML files with PyScript to be found on the internet using regular urls. Usually, the url is just your GitHub user name followed by github.io followed by the full path to your repo and your html files. To start configuring Pages, select your repo. In the image below you can see my repo for this book series. Click it.
 
@@ -224,7 +224,7 @@ Your screen should look like this and you should have a url for your account sim
 
 This should conclude our GitHub discussion.
 
-\section{HTML}
+## HTML
 
 HTML is what makes the internet run. HTML stands for Hyper Text Markup Language and it was invented at the dawn of the internet. It has proven to be very versatile and useful. You use it to create web pages with nice buttons and text boxes. I will not cover all of HTML of course and instead only cover the parts required to complete this simple project. The basic principle in HTML is that of encapsulation. You say this is an HTML document by using a pair of open and close HTML tags. Closing tags are the ones that have the forward slash before the keyword. 
 
@@ -253,7 +253,7 @@ HTML code looks like this:
 
 Those are in fact the tags that surround everything else. HTML tags can encapsulate many other types of tags but the 2 main tags are the HEAD tags and the BODY tags. HEAD tags are usually for configurations, styles, or functions you can call. BODY tags are for adding elements to your site such as textboxes, images, buttons, and many, many other things.
 
-\section{JavaScript }
+## JavaScript 
 
 Whereas HTML is static, JavaScript is dynamic. What that means is that JavaScript runs on the browser dynamically and can be used to dynamically change a website. We actually will not use a lot of JavaScript in this project since we will be using PyScript instead. To use JavaScript we usually include a new set of tags in our HTML code. The tags are \textbf{<script>} and \textbf{</script>} like in the listing below.
 
@@ -287,7 +287,7 @@ Whereas HTML is static, JavaScript is dynamic. What that means is that JavaScrip
 
 
 
-\section{PyScript}
+## PyScript
 
 As I previously described, PyScript (\babelEN{\cite{pyscriptref}}) is like JavaScript but for running Python code on the web browser.  It consists of a set of tags that we use to enclose Python code. It supports powerful Python libraries like Numpy and Pandas. Wow! You can do a lot with these. JavaScript is its own very powerful language and you can do a lot with it. Python is an amazing programming language but it was not made to run on web browsers like JavaScript. That is why PyScript has been created. It allows you to write the same Python code but on the browser as long as it is enclosed in PyScript tags. So, PyScript is not a new programming language to learn. If you already know Python, then you will be able to unleash all your knowledge in the browser very quickly. If you do not know Python, do not worry. It is super easy to learn. There are many, many tutorials on line. I even have some videos on learning Python in my YouTube channel. So, you can also try those. 
 
@@ -334,7 +334,7 @@ And the following tags are the heart of it all. They are the PyScript tags where
 
 
 
-\section{Python}
+## Python
 
 Python is a programming language. It is used quite extensively for data science, AI, and machine learning. But Python does not run on a web browser. So, with Python alone, we cannot deploy our AI models on a browser. That is why we need PyScript. PyScript allows us to write Python code but inside HTML code that runs on a browser. In the next figure, I show how to add simple Python code inside PyScript tags. Do not worry about the Python code for now. In chapter 2, we will do many examples using Python and Numpy with PyScript before we actually build our Project in chapter 3. So, you will get some additional practice with just Python and Numpy.
 
@@ -373,7 +373,7 @@ The following code listing shows an example of using Python with PyScript.   Wit
 \end{minipage}
 
 
-\section{Numpy}
+## Numpy
 
 I was very, very impressed when I first learned that you can run Numpy in PyScript. Numpy is the math and linear algebra library for Python. You can do a lot of physics and math with Numpy. It is very efficient and runs fast. This is what sold me on PyScript. Before getting to KNN in chapter 3, I will do a few fun examples with Numpy and PyScript in chapter 2 just to illustrate its almost infinite power. Okay, maybe not infinite, but I love Numpy :) 
 
@@ -419,11 +419,11 @@ We create the object \textbf{np} which is what we reference every time we want t
 
 
 
-\section{Pandas}
+## Pandas
 
 If Numpy was the cake, then Pandas was the icing on the cake. I really like Pandas as well for data science. It is like having a very powerful Microsoft Excel for manipulating your data. We will mostly use it in this project to read in the data. However, in future volumes, you will no doubt see it again. I have not used too much Pandas in this book, or other libraries for that matter, as I wanted to keep things simple. 
 
-\section{Data}
+## Data
 
 The term machine learning means that the machine, in this case the computer through your browser, running an algorithm, needs to learn from something. So, here we will need some data. AI models can use all kinds of data and future books in the series will show examples of other datasets; but for now, we will start with the classic which is Fisher's Iris Flower dataset (\babelEN{\cite{fisher}}). 
 
@@ -441,7 +441,7 @@ In machine learning, you spend a lot of time processing the data and this can be
 
 
 
-\section{What is KNN anyway?}
+## What is KNN anyway?
 
 
 Finally, we get to KNN. KNN is the AI algorithm. In chapter 3, I will describe the algorithm itself with code and we will deploy it to the web. KNN stands for the K nearest neighbors algorithm. In essence, it is used for classification. Imagine a space where you have many balls. Some are soccer balls, others are baseballs, others are basketballs, tennis balls, etc. They are all floating in this space. Each ball is described by a specific set of characteristics called features. Some balls are smaller than others, etc. Some are greener than others. The main idea is that similar balls in this space will be closer to each other. Imagine all the bigger balls on the top left side of the space and all the smaller balls on the lower right side of the space as can be visualized in the figure below. 
@@ -474,7 +474,7 @@ So, what will you build? For this first project book in the series, your final a
 As you can see, it will be a website with textboxes where you can enter 4 values for the 4 features of a sample of Iris flower. Given those values, KNN will tell you if it is of type Setosa, Virginica, or Versicolor. 
 
 \clearpage
-\section{Resources}
+## Resources
 
 This project book comes with a companion GitHub repository. All the code files and data can be accessed from there. You can run the websites from there as well via links in the README files. I recommend using the project book as much as possible and only looking at the GitHub files when you are stuck. Solving problems on your own will help you to learn more effectively. Color images are also available from the repo.
 
@@ -489,6 +489,6 @@ The links to the resources are as follows:
 I may use my website at https://www.rcalix.com to post additional materials, links, or blog posts, but in general, the GitHub repo should be the official companion site for the book series. As time permits, I may also post related videos on my YouTube channel. 
 
 
-\section{Conclusion}
+## Conclusion
 
 This concludes chapter 1. In it I described a lot of the background on the tools and the development environment that we will use to build our AI project. We also started to discuss the project goals and  some of the key ideas. In chapter 2 we will get into more details about PyScript and how to use it with Python and Numpy. And in chapter 3, we will proceed to build, run and deploy our KNN project to the web. 
