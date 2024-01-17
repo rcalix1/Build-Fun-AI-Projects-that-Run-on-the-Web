@@ -20,19 +20,8 @@
 
 #####################
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-% Check out the accompanying book, Even Better Books with LaTeX the Agile Way in 2023, for a discussion of the template and step-by-step instructions. https://amzn.to/3HqwgXM https://leanpub.com/eBBwLtAW/
-% The template was originally created by Clemens Lode, LODE Publishing (www.lode.de), on 1/1/2023. Feel free to use this template for your book project! 
-% I would be happy if you included a short mention in your book in order to help others to create their own books, too ("Book template based on \textit{Even Better Books with LaTeX the Agile Way in 2023} by Clemens Lode").
-% Contact me at mail@lode.de if you need help with the template or are interested in our editing and publishing services.
-% And don't forget to follow us on Instagram! https://www.instagram.com/lodepublishing/ https://www.instagram.com/betterbookswithlatex/
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%
-% This is an excerpt from the accompanying book, Even Better Books with LaTeX the Agile Way in 2023. https://www.amazon.com/Better-Books-LaTeX-Agile-Book-ebook/dp/B0BMZJ5LF7
-%%%%%%%%%%%%%%%%%
-
-\chapter{Coding with HTML and PyScript}
+## Coding with HTML and PyScript
 
 
 The focus of this chapter is to build up your skills before starting to implement the KNN algorithm in chapter 3. First, we will develop a simple website that uses PyScript. This will be the equivalent of building your first Hello World application. After that, I will show you some examples of the power of PyScript by doing some exercises which include Python and Numpy code. These exercises will gradually help you to better grasp coding in Python with Numpy, and will help you to better understand how to run everything on the browser with PyScript. 
