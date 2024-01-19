@@ -38,7 +38,7 @@ With PyScript you can now build and learn about AI and machine learning, and you
 
 ## Book Covers
 
-<a href="https://amzn.to/3U8CeVo"><img src="images/coverDONEclx.jpg" alt="image" width="600" height="auto"></a>
+<a href="https://amzn.to/3U8CeVo"><img src="images/funAIbookCover.jpg" alt="image" width="600" height="auto"></a>
 
 
 ## Author
