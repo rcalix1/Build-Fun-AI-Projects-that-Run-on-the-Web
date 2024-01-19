@@ -2,13 +2,18 @@
 
 This is the official repo for my series of books titled: Build Fun AI Projects that Run on the Web
 
-<a href=""><img src="images/coverDONEclx.jpg" alt="image" width="600" height="auto"></a>
-
-
-
 ## Description
 
 Each work book is meant to help you to develop an AI project that can be deployed and run on the web just by using a browser. The only things you will need to complete these projects are GitHub, a computer with internet access and a browser, this work book, and some willingness to learn and fave fun. 
+
+
+## FTC and Amazon Disclaimer
+
+This post/page/article includes Amazon Affiliate links to products. This site receives income if you purchase through these links. This income helps support content such as this one.
+
+<a href="https://amzn.to/3S8cK7K"><img src="images/coverDONEclx.jpg" alt="image" width="600" height="auto"></a>
+
+
 
 ## Motivation
 
@@ -16,16 +21,18 @@ I love to tinker in my basement. I am always building puzzles, clocks, electroni
 
 With PyScript you can now build and learn about AI and machine learning, and you can also do it all in the web browser with just GitHub. And the fun aspect of this is that when you are done with your project, you will have a working AI tool that runs in the web from anywhere. Wow! What a time we live in. So, since I could not find these AI hobby projects as I wanted them, I decided to build them. This book is the first one in a series of AI project books I plan to create. Hopefully, now your list and my list of home hobby projects will also include AI models that run on the Web!
 
+
+## Books in this series
+
+
+* [Volume 1: PyScript, GitHub, and KNN](https://github.com/rcalix1/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter1/README.md)
+
+
 ## GitHub Repo
 
 
 * [GitHub Repo](https://github.com/rcalix1/Build-Fun-AI-Projects-that-Run-on-the-Web)
 
-
-## Books in this series
-
-
-* [Volume 1: PyScript, GitHub, and KNN](https://www.amazon.com/dp/B0CDNJ64ZL/ref=sr_1_4?qid=1691173483&refinements=p_27%3ARicardo+A+Calix&s=books&sr=1-4&text=Ricardo+A+Calix)
 
 ## Book Covers
 
