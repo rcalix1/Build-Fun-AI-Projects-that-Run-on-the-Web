@@ -27,7 +27,9 @@ With PyScript you can now build and learn about AI and machine learning, and you
 ## Books in this series
 
 
-* [Volume 1: PyScript, GitHub, and KNN](https://github.com/rcalix1/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter1/README.md)
+
+
+* [Volume 1: PyScript, GitHub, and KNN](https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter1/README.md)
 
 
 ## GitHub Repo
