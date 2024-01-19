@@ -492,3 +492,5 @@ I may use my website at https://www.rcalix.com to post additional materials, lin
 ## Conclusion
 
 This concludes chapter 1. In it I described a lot of the background on the tools and the development environment that we will use to build our AI project. We also started to discuss the project goals and  some of the key ideas. In chapter 2 we will get into more details about PyScript and how to use it with Python and Numpy. And in chapter 3, we will proceed to build, run and deploy our KNN project to the web. 
+
+
