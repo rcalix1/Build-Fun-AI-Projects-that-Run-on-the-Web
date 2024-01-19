@@ -2,6 +2,9 @@
 
 This is the official repo for my series of books titled: Build Fun AI Projects that Run on the Web
 
+<a href=""><img src="coverDONEclx.jpg" alt="image" width="300" height="auto"></a>
+
+
 ![Vol1Cover](images/coverDONEclx.jpg)
 
 ## Description
