@@ -16,7 +16,7 @@
    
 
 <h1>
- Build your AI Project with KNN and PyScript
+ Chapter 3: Build your AI Project with KNN and PyScript
     
 </h1>
 
@@ -44,15 +44,8 @@ Look at the figure again. In the lower right hand corner there are 3 white baseb
 </p>
 
 
+<img src="images/vectorSpaceColorBalls.jpg" height="300" width="auto">
 
-
-\begin{figure}[H]\centering
-\adjustbox{max height=.55\textheight}{
-    \includegraphics{images/vectorSpaceColorBalls.jpg}
-}
-\caption{Vector Space with balls for different sports and KNN}
-\label{RegLin:fig}
-\end{figure}
 
 
 Basically, KNN will take a sample in question, say the green baseball, and measure the distance between it and all other balls in this space (i.e. the soccer balls, basket balls, football balls, tennis balls, and baseballs). Once KNN calculates all the distances, it will rank then from lowest to highest distance. Out of these ranked distances, it will select the top \textbf{k} distances and assign to the ball in question the majority class from the set containing just the top \textbf{k} shortest distances. For the given example, if we selected a k=5 then the 5 closest balls to the ball in question (green baseball) would be 3 baseballs, 1 tennis ball, and one football. Since the majority is baseball, KNN would assign the class baseball to our ball in question. From the figure, that would seem like the right answer. In the next sections, I will proceed to describe how to implement, test, and deploy our KNN machine learning model to the web. 
@@ -67,7 +60,11 @@ In summary, the next 2 sections cover:
 \end{itemize}
 
 
-\section{Basics to get KNN running}
+<h1>
+
+    
+Basics to get KNN running
+    </h1>
 
 As you may remember from the previous chapters, first we need to define the HTML code that encapsulates the PyScript code, which in turn, encapsulates our KNN algorithm implemented in Python and Numpy. The code in the next code listing should be familiar to you by now. Everything in the head section is similar to what we have previously described. The body section also includes the same \textbf{div} tags and the \textbf{button} we discussed in chapters 1 and 2. 
 
@@ -228,7 +225,7 @@ In the next code listing we can see all the libraries needed for our KNN impleme
 
 
 
-    <pre><code class="javascript">
+    <pre><code class="pyscript">
         
         <section class="pyscript"> 
             <div id="mpl"></div>
@@ -249,13 +246,15 @@ In the next code listing we can see all the libraries needed for our KNN impleme
     
 
 
-<pre><code class="python">def fib(n):
+<pre><code class="python">
+def fib(n):
   a, b = 0, 1
     while a < n:
       print(a, end=' ')
       a, b = b, a+b
       print()
-  fib(1000)</code></pre>
+  fib(1000)
+</code></pre>
 
 
 The next section in the code includes  a function called the Euclidean distance as can be seen in the next code listing. 
@@ -295,14 +294,19 @@ The name Euclidean distance comes from a Greek philosopher named Euclid. He is b
 
 So, where does this magical Euclidean distance function come from? Would you believe that it is related to an idea one of the great Greek philosophers (Pytagoras) is credited with? Pytagoras was before Euclid and is credited with coming up with the Pythagorean Theorem (bubble in the figure). 
 
+        <div>
 
-\begin{figure}[H]\centering
-\adjustbox{max height=.55\textheight}{
-    \includegraphics{images/Pythagoras.jpg}
-}
-\caption{Pythagoras}
-\label{RegLin:fig}
-\end{figure}
+               <p>
+<img src="images/Pythagoras.jpg" height="300" width="auto">
+
+        
+            
+        </p>
+        </div>
+     
+
+
+
 
 
 
@@ -311,13 +315,18 @@ The theorem states that given a triangle (see figure below), the sum of the area
 
 If you look closely at the figure below, you can see that I have written down the connection between Pythagoras' theorem, and the euclidean function we used in our code. 
 
-\begin{figure}[H]\centering
-\adjustbox{max height=.55\textheight}{
-    \includegraphics{images/mathPythagoras.jpg}
-}
-\caption{Pythagorean Theorem and the distance function}
-\label{RegLin:fig}
-\end{figure}
+
+
+             <div>
+
+               <p>
+<img src="images/mathPythagoras.jpg" height="300" width="auto">
+
+        
+            
+        </p>
+        </div>
+     
 
 Now, with some of the math history out of the way, let us continue with our code description. In the next code listing we can see the KNN \textbf{predict} function. Actually, the \textbf{predict} function is the actual KNN algorithm. I will describe it in detail next. The variable \textbf{test\_x} is the sample in question. Say, one Iris test sample with 4 features (\textbf{[x1, x2, x3, x4]}). The next line of code:
 
