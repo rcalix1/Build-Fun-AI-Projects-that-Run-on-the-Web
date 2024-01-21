@@ -3,6 +3,10 @@
 
     <head>
  <link href="style.css" rel="stylesheet" type="text/css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+        
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
         
     </head>
 
@@ -221,15 +225,11 @@ Okay, so I always like to see the big picture first. And that is what the previo
 
 In the next code listing we can see all the libraries needed for our KNN implementation. We have Numpy, Pandas, Pyodide, and Matplotlib. Numpy as you know by now is for all the math. Pandas is used in this project book to read in the data. Pyodide is intrinsic to PyScript and it is very important to run Python on the web. Matplotlib is not used in this project book but it is very important for AI research. You will be amazed in future project books by its capabilities for data visualization. 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Libraries needed for KNN}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
 
-<section class="pyscript"> 
+
+
+    <pre><code class="python">
+        <section class="pyscript"> 
             <div id="mpl"></div>
 
               ...
@@ -244,10 +244,17 @@ In the next code listing we can see all the libraries needed for our KNN impleme
 
                 </script>
 </section>
+ </code></pre>
+    
 
 
-\end{lstlisting}
-\end{minipage}
+<pre><code class="python">def fib(n):
+  a, b = 0, 1
+    while a < n:
+      print(a, end=' ')
+      a, b = b, a+b
+      print()
+  fib(1000)</code></pre>
 
 
 The next section in the code includes  a function called the Euclidean distance as can be seen in the next code listing. 
