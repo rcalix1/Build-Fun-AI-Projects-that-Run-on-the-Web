@@ -67,15 +67,15 @@ In summary, the next 2 sections cover:
 
 As you may remember from the previous chapters, first we need to define the HTML code that encapsulates the PyScript code, which in turn, encapsulates our KNN algorithm implemented in Python and Numpy. The code in the next code listing should be familiar to you by now. Everything in the head section is similar to what we have previously described. The body section also includes the same \textbf{div} tags and the \textbf{button} we discussed in chapters 1 and 2. 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Standard HTML code}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
 
-<html>    
+
+
+
+
+<pre>
+  <code>
+
+           <html>    
     <head>
         <title>HTML code for KNN</title>
         <meta charset="utf-8" />
@@ -100,9 +100,13 @@ As you may remember from the previous chapters, first we need to define the HTML
     </body>
 </html>
 
+      
+      
+  </code>
+</pre>
 
-\end{lstlisting}
-\end{minipage}
+
+
 
 In the next code listing we can see the previously discussed PyScript section denoted by 
 
@@ -110,15 +114,14 @@ In the next code listing we can see the previously discussed PyScript section de
 
 This section contains the previously discussed 3 items: the \textbf{div} with \textbf{"mpl"} id  we have used before, the \textbf{config} section for libraries we want to use, and the \textbf{<script type="py">} section where we write out actual Python and Numpy code.
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={PyScript section with HTML tags}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
 
-<section class="pyscript"> 
+
+
+
+<pre>
+  <code>
+
+      <section class="pyscript"> 
 
 
                 <div id="mpl"></div>
@@ -141,22 +144,18 @@ This section contains the previously discussed 3 items: the \textbf{div} with \t
 </section>
 
 
-\end{lstlisting}
-\end{minipage}
+  </code>
+</pre>
 
 
 
 In the next code listing, you can see all the code needed to run KNN. Wow! Pretty short right? This code splits our data into \textbf{train} and \textbf{test} sets. Then grabs every sample in the test set and compares it to every sample in the train set. As previously described, for each test sample, we get all distances between the test samples and all train samples. We then rank them and select the top \textbf{K} distances. Finally, we assign the majority class associated for the top 5 distances. That is it!
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={The whole KNN code}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
 
-<section class="pyscript"> 
+
+ <pre>
+  <code>
+       <section class="pyscript"> 
     <div id="mpl"></div>
         ...
 
@@ -206,8 +205,14 @@ In the next code listing, you can see all the code needed to run KNN. Wow! Prett
 </section>
 
 
-\end{lstlisting}
-\end{minipage}
+  </code>
+</pre>
+      the code
+<pre>
+  <code>
+
+  </code>
+</pre>
 
 
 Okay, so I always like to see the big picture first. And that is what the previous code listing was for. Now we can proceed to break the code down into the various parts and describe what they are doing. 
