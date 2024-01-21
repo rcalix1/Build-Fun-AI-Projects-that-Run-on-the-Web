@@ -222,7 +222,24 @@ Okay, so I always like to see the big picture first. And that is what the previo
 
 In the next code listing we can see all the libraries needed for our KNN implementation. We have Numpy, Pandas, Pyodide, and Matplotlib. Numpy as you know by now is for all the math. Pandas is used in this project book to read in the data. Pyodide is intrinsic to PyScript and it is very important to run Python on the web. Matplotlib is not used in this project book but it is very important for AI research. You will be amazed in future project books by its capabilities for data visualization. 
 
+  <pre><code class="python">
+        
+        <section class="pyscript"> 
+            <div id="mpl"></div>
 
+              ...
+
+                <script type="py">
+                
+                    import numpy as np
+                    import pandas as pd
+                    import matplotlib.pyplot as plt
+                    import matplotlib.tri as tri
+                    from pyodide.http import open_url
+
+                </script>
+         </section>
+ </code></pre>
 
 
     <pre><code class="pyscript">
@@ -749,15 +766,17 @@ Well, that is it! The next figure shows what the final website should look like.
 
 As an example, I grabbed the last test sample. I entered the 4 features into the text boxes, and the KNN model predicted the class 2. If you look at the last data row in the figure, you can see that the label is also 2. Therefore, the model was accurate for that test sample. 
 
+      <div>
+
+               <p>
+<img src="images/appKNNtextboxes.png" height="300" width="auto">
+
+        
+            
+        </p>
+        </div>
 
 
-\begin{figure}[H]\centering
-\adjustbox{max height=.50\textheight}{
-    \includegraphics{images/appKNNtextboxes.png}
-}
-\caption{KNN app for Iris flower classification}
-\label{RegLin:fig}
-\end{figure}
 
 
 <h1>
