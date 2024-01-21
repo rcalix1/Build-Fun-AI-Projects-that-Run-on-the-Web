@@ -47,6 +47,7 @@
 Chapter 2 Code
   
 </h1>
+	  
 <a href="https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/HelloWorld/index.html"> Hello World  </a>
 
 * Numpy 1 Example: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpy1/index.html
@@ -67,8 +68,11 @@ Chapter 2 Code
 
 #####################
 
+<h1> Coding with HTML and PyScript
+</h1>
 
-## Coding with HTML and PyScript
+	
+
 
 
 The focus of this chapter is to build up your skills before starting to implement the KNN algorithm in chapter 3. First, we will develop a simple website that uses PyScript. This will be the equivalent of building your first Hello World application. After that, I will show you some examples of the power of PyScript by doing some exercises which include Python and Numpy code. These exercises will gradually help you to better grasp coding in Python with Numpy, and will help you to better understand how to run everything on the browser with PyScript. 
@@ -460,6 +464,7 @@ In the next code listing we do the same as before but we initialize the array to
 
 
 
+
  You can see that the values can now have decimal points. This gives us [1. 3. 2. 5.] and pressing the button calls the function \textbf{my\_gen\_function} which runs the Numpy code. Again, the array is converted to a string and assigned to the div with \textbf{id} equal to \textbf{mpl} using the following code segment: 
 
   \textbf{Element('mpl').element.innerText =  text }  
@@ -496,17 +501,11 @@ A Numpy matrix (2D np array) can be declared like so:
 This Python list can be converted to a Numpy array using \textbf{np.array()}. The following listing shows the code sequence and how to assign it to the "mpl" div. 
 
 
+	<div>
+ <p>
+<textarea rows="80"  cols="80">
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Numpy Matrix}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
-
-
-        <section class="pyscript"> 
+ <section class="pyscript"> 
             <div id="mpl"></div>
 
                 <py-config>
@@ -531,8 +530,15 @@ This Python list can be converted to a Numpy array using \textbf{np.array()}. Th
                 </script>
         </section>
 
-\end{lstlisting}
-\end{minipage}
+	
+</textarea>    
+</p>
+</div>
+
+
+
+       
+
 
 Running this code gives us a 3x3 matrix as can be seen in the following figure. 
 
@@ -564,13 +570,11 @@ The final tensor is a 3x3 matrix where all the values are 42. This is achieved w
 
 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Initialize 3 matrices}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
+
+	
+<div>
+ <p>
+<textarea rows="80"  cols="80">
 
 <html>    
     ...
@@ -605,8 +609,14 @@ The final tensor is a 3x3 matrix where all the values are 42. This is achieved w
     </body>
 </html>
 
-\end{lstlisting}
-\end{minipage}
+
+	
+</textarea>    
+</p>
+</div>
+
+
+
 
 Notice that the code now includes 3 div tags with ids: \textbf{mpl1}, \textbf{mpl2}, and \textbf{mpl3}. The 3 tensors are assigned to each of these div tags, respectively. The results can be seen in the following figure. 
 
@@ -628,14 +638,9 @@ The function \textbf{np.linspace} is another way of generating Numpy arrays with
 
 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Initialize Sequences}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
-
+	<div>
+ <p>
+<textarea rows="80"  cols="80">
 
 <html>    
     ...
@@ -667,8 +672,15 @@ The function \textbf{np.linspace} is another way of generating Numpy arrays with
     </body>
 </html>
 
-\end{lstlisting}
-\end{minipage}
+
+	
+</textarea>    
+</p>
+</div>
+
+
+
+
 
 The results of using \textbf{np.arange()} and \textbf{np.linspace()} can be seen in the following figure. Go ahead and calculate the differences between each number and the next and you will find that they equal the step size.
 
@@ -709,13 +721,9 @@ Finally, to get the dimensions of matrices we can use \textbf{.shape}, \textbf{.
 
 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Numpy random initialization and shapes}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
+<div>
+ <p>
+<textarea rows="80"  cols="80">
 
 <html>    
     ...
@@ -753,8 +761,14 @@ Finally, to get the dimensions of matrices we can use \textbf{.shape}, \textbf{.
     </body>
 </html>
 
-\end{lstlisting}
-\end{minipage}
+	
+</textarea>    
+</p>
+</div>
+
+
+
+
 
 The result of running the previous Numpy code on the browser can be seen in the figure below. The dimensions from  \textbf{.shape}, \textbf{.ndim}, and \textbf{.size} can be seen at the bottom of the figure.
 
@@ -782,14 +796,9 @@ Before last value 2.0
 
 The next code listing shows the use of indexing for each of the previously mentioned cases. 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{showstringspaces=false}  %% remove weird symbol in spaces
-\lstset{frame=lines}
-\lstset{caption={Indexing}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
+	<div>
+ <p>
+<textarea rows="60"  cols="80">
 
 <html>    
   ...
@@ -826,8 +835,14 @@ The next code listing shows the use of indexing for each of the previously menti
     </body>
 </html>
 
-\end{lstlisting}
-\end{minipage}
+	
+</textarea>    
+</p>
+</div>
+
+
+
+
 
 We can also index matrices. The statements 
 
@@ -1225,7 +1240,13 @@ And so on ...
   Conclusion
 </h1> 
 
-In this chapter, we learned about the basics of PyScript and HTML. We deployed our first Hello World program on the web. We also covered many problems using Numpy and Python and learned how to deploy them to the web. Now we are ready for chapter 3 which will cover our AI project and how to deploy it to the web. 
+
+	<p>
+In this chapter, we learned about the basics of PyScript and HTML. We deployed our first Hello World program on the web. We also covered many problems using 
+	Numpy and Python and learned how to deploy them to the web. Now we are ready for chapter 3 which will cover our AI project and how to deploy it to the web. 
+
+		
+	</p>
 
 
 <h1>
