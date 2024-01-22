@@ -737,19 +737,25 @@ Notice that the code now includes 3 div tags with ids: \textbf{mpl1}, \textbf{mp
 \label{RegLin:fig}
 \end{figure}
 
+<p>
 
-
-Sometimes we need Numpy arrays with different data in them. Numpy has quick ways of creating arrays with different data in them. The \textbf{np.arange} function is useful for this. For example, in the following listing, the code creates a Numpy array with 10 values in the range from 1 to 28 with a step of size 3 like so:
+Sometimes we need Numpy arrays with different data in them. Numpy has quick ways of creating arrays with different data in them. The \textbf{np.arange} function is 
+useful for this. For example, in the following listing, the code creates a Numpy array with 10 values in the range from 1 to 28 with a step of size 3 like so:
 
 \textbf{[1 4 7 10 13 16 19 22 25 28]}
 
-The function \textbf{np.linspace} is another way of generating Numpy arrays with data in them. Here, we generate 20 data points from 0 to 1 spaced by a step size of around 0.05.
+The function \textbf{np.linspace} is another way of generating Numpy arrays with data in them. Here, we generate 20 data points from 0 to 1 spaced by a step size of
+around 0.05.
+
+	
+</p>
 
 
 
-	<div>
+
+<div>
  <p>
-<textarea rows="80"  cols="80">
+<textarea rows="40"  cols="80">
 
 <html>    
     ...
@@ -788,10 +794,15 @@ The function \textbf{np.linspace} is another way of generating Numpy arrays with
 </div>
 
 
+<p>
+
+The results of using \textbf{np.arange()} and \textbf{np.linspace()} can be seen in the following figure. Go ahead and calculate the differences between each number 
+	and the next and you will find that they equal the step size.
+
+	
+</p>
 
 
-
-The results of using \textbf{np.arange()} and \textbf{np.linspace()} can be seen in the following figure. Go ahead and calculate the differences between each number and the next and you will find that they equal the step size.
 
 \begin{figure}[H]\centering
 \adjustbox{max height=.35\textheight}{
@@ -832,7 +843,7 @@ Finally, to get the dimensions of matrices we can use \textbf{.shape}, \textbf{.
 
 <div>
  <p>
-<textarea rows="80"  cols="80">
+<textarea rows="60"  cols="80">
 
 <html>    
     ...
@@ -905,9 +916,9 @@ Before last value 2.0
 
 The next code listing shows the use of indexing for each of the previously mentioned cases. 
 
-	<div>
+<div>
  <p>
-<textarea rows="60"  cols="80">
+<textarea rows="40"  cols="80">
 
 <html>    
   ...
