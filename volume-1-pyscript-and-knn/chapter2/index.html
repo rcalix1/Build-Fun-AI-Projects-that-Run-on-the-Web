@@ -121,7 +121,7 @@ Hello World program with HTML and PyScript
 
             <div>
 
-		      <a href="https://amzn.to/4b7ngVJ"><img src="https://m.media-amazon.com/images/I/61eGjeYXbVL._SL1233_.jpg" ></a>
+		      <a href="https://amzn.to/4b7ngVJ"><img src="https://m.media-amazon.com/images/I/61eGjeYXbVL._SL1233_.jpg" height="300" height="auto" ></a>
 
 	    </div>
 	  
@@ -265,7 +265,7 @@ The following code listing shows the navbar segment. This is what provides a nav
 
 
 
-	<div>
+<div>
     <p>
 <textarea rows="20"  cols="80">
 
@@ -344,7 +344,11 @@ Okay, I saved the best for last. The button tag (\textbf{<button>}) is used to c
 
 <p>
 
-We have now made it to PyScript! In the next code segment you can see that we have made it to the section we wanted to get to. This section is encapsulated within 
+	<div>
+    <p>
+<textarea rows="40"  cols="80">
+
+	We have now made it to PyScript! In the next code segment you can see that we have made it to the section we wanted to get to. This section is encapsulated within 
 	  the  \textbf{<section class="pyscript">} tags. This section includes a div ( \textbf{<div id="mpl"></div>} ) with \textbf{id} equal to \textbf{"mpl"}. Similar
 		  to the previous divs, we can select this div by id and write data to it. In fact, we will write Hello World to this div, but you can write to the other 
 		  divs as well and I recommend you try to do just that as an exercise. 
@@ -358,7 +362,14 @@ The next part in the code is denoted by the \textbf{<py-config>} tag. You can us
 PyScript provides keywords that you can use in the Python code so that Python can interact with the HTML and the website itself. One such keyword is \textbf{Element}. 
 		Notice here that \textbf{Element} grabs the div with id=mpl and assigns to its "innerText" attribute the text "Hello World". And that is it. This is how
 		PyScript and HTML work together to run Python code on the browser. I recommend that you now go try what you learned and build and deploy your Hello World
-		program from your own repo. 
+		program from your own repo.
+
+</textarea>    
+</p>
+</div>
+
+
+ 
 
 </p>
 
@@ -443,12 +454,19 @@ Okay, so let’s get started. In the following code listing we import numpy as n
 
 converts the array to a string and we can finally display it on the website using the statement: 
 
+</p>
+	
+	<div>
+    <p>
+<textarea rows="10"  cols="80">
 
 \textbf{Element('mpl').element.innerText =  text}
 
-
-	
+</textarea>    
 </p>
+</div>
+	
+
 
 
 
