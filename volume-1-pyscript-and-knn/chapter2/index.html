@@ -71,26 +71,38 @@ Chapter 2 Code
 <h1> Coding with HTML and PyScript
 </h1>
 
-	
+	<p>
 
-
-
-The focus of this chapter is to build up your skills before starting to implement the KNN algorithm in chapter 3. First, we will develop a simple website that uses PyScript. This will be the equivalent of building your first Hello World application. After that, I will show you some examples of the power of PyScript by doing some exercises which include Python and Numpy code. These exercises will gradually help you to better grasp coding in Python with Numpy, and will help you to better understand how to run everything on the browser with PyScript. 
+The focus of this chapter is to build up your skills before starting to implement the KNN algorithm in chapter 3. First, we will develop a simple website that uses PyScript. 
+	  This will be the equivalent of building your first Hello World application. After that, I will show you some examples of the power of PyScript by doing some 
+	  exercises which include Python and Numpy code. These exercises will gradually help you to better grasp coding in Python with Numpy, and will help you to better
+	  understand how to run everything on the browser with PyScript. 
 
 \textbf{ \underline{Objective:}} To write my first Hello World program with PyScript.
 
-The chapter has 2 basic sections. One section focuses on creating your first Hello World program. The second section consists of a set of exercises to get more comfortable with Numpy and PyScript. I often give exercises like these to my machine learning students. I often recommend that they should type up the code themselves (instead of copying) and run it line by line. I feel that by doing this one can develop a type of muscle memory. Hopefully, after doing many of these problems, you will start to become more comfortable with how Numpy works with Python.
+The chapter has 2 basic sections. One section focuses on creating your first Hello World program. The second section consists of a set of exercises to get more comfortable
+	  with Numpy and PyScript. I often give exercises like these to my machine learning students. I often recommend that they should type up the code themselves (instead 
+	  of copying) and run it line by line. I feel that by doing this one can develop a type of muscle memory. Hopefully, after doing many of these problems, you will 
+	  start to become more comfortable with how Numpy works with Python.
 
 
 So, in summary, this chapter will focus on the following tasks:
 
-\begin{itemize}
+		\begin{itemize}
 \item Build a Hello World program with HTML and PyScript
 \item Practice and appreciate the power of Numpy and PyScript
 \end{itemize}
 
 
 This chapter assumes that you have completed chapter 1, and that you have now completed the setup of your GitHub account and completed all other related configurations.
+
+		
+	</p>
+
+
+
+
+
 
 	  
 	<h1>
@@ -115,7 +127,7 @@ The following code listing shows the entire program using HTML, PyScript, and Py
 	  
 <div>
     <p>
-<textarea rows="80"  cols="80">
+<textarea rows="60"  cols="80">
 
 
     
@@ -167,10 +179,14 @@ The following code listing shows the entire program using HTML, PyScript, and Py
 </div>
 
 
+<p>
+The listings following the next figure in this section will focus on the different parts of the Hello World rogram. It will make it easier for me to discuss what each part
+	  is doing. Your Hello World program should look like this when you finish and run it: 
+
+	
+</p>
 
 
-
-The listings following the next figure in this section will focus on the different parts of the Hello World rogram. It will make it easier for me to discuss what each part is doing. Your Hello World program should look like this when you finish and run it: 
 
 \begin{figure}[H]\centering
 \adjustbox{max height=.35\textheight}{
@@ -180,15 +196,28 @@ The listings following the next figure in this section will focus on the differe
 \label{RegLin:fig}
 \end{figure}
 
-In the next listing, I will only discuss the head section of the code denoted by the head tags: \textbf{<head> ... </head>}. The title tag \textbf{<title>} is used to provide a title for your website and is useful for search engine indexing. The \textbf{<meta charset="utf-8" />} is used to define character encoding for your website.  The next 2 lines are very important and we will be using them on all our programs. They are both provided by the PyScript project (\babelEN{\cite{pyscriptref}}). The line denoted by the \textbf{<link>} tag references the stylesheet which is a file with extension .css. This style sheet just makes our website look more slick when it is running. We could do without it or create our own. But let us just use what the PyScript project provided. CSS files are especially formatted files where we define common things realted to style about our website like fonts, positioning, colors, etc. The last line with the \textbf{<script>} tag is required. It imports pyscript.js. Websites can import many other code modules from the internet. This helps to extend their capabilities. So, websites import these .js files. This \textbf{pyscript.js} file will help us to run PyScript on our browser. 
+
+	  <p>
+
+			  
+In the next listing, I will only discuss the head section of the code denoted by the head tags: \textbf{<head> ... </head>}. The title tag \textbf{<title>} is used to 
+	provide a title for your website and is useful for search engine indexing. The \textbf{<meta charset="utf-8" />} is used to define character encoding for your
+	website.  The next 2 lines are very important and we will be using them on all our programs. They are both provided by 
+	the PyScript project (\babelEN{\cite{pyscriptref}}). The line denoted by the \textbf{<link>} tag references the stylesheet which is a file with extension .css. 
+	This style sheet just makes our website look more slick when it is running. We could do without it or create our own. But let us just use what the PyScript
+	project provided. CSS files are especially formatted files where we define common things realted to style about our website like fonts, positioning, colors, etc.
+	The last line with the \textbf{<script>} tag is required. It imports pyscript.js. Websites can import many other code modules from the internet. This helps
+	to extend their capabilities. So, websites import these .js files. This \textbf{pyscript.js} file will help us to run PyScript on our browser. 
 
 
+  
+	  </p>
 
 
 	
 <div>
     <p>
-<textarea rows="80"  cols="80">
+<textarea rows="60"  cols="80">
 
 
     <html>
@@ -201,24 +230,30 @@ In the next listing, I will only discuss the head section of the code denoted by
     
      ...
      
-</html>
+   </html>
 
 
 </textarea>    
 </p>
 </div>
 
+<p>
+
+The following code listing shows the navbar segment. This is what provides a navigation bar at the top of the page. Here, it is  used mostly for presentation. 
+	  You can ignore this part or consider removing it once you understand how the code works. It is a good exercise to test your understanding. This 
+	  nav bar can work in conjunction with the .css file we previously discussed. 
 
 
 
+	
+</p>
 
-The following code listing shows the navbar segment. This is what provides a navigation bar at the top of the page. Here, it is  used mostly for presentation. You can ignore this part or consider removing it once you understand how the code works. It is a good exercise to test your understanding. This nav bar can work in conjunction with the .css file we previously discussed. 
 
 
 
 	<div>
     <p>
-<textarea rows="80"  cols="80">
+<textarea rows="60"  cols="80">
 
 
     <html>
@@ -235,7 +270,7 @@ The following code listing shows the navbar segment. This is what provides a nav
         ...
     
     </body>
-</html>
+    </html>
 
 
 </textarea>    
@@ -243,20 +278,31 @@ The following code listing shows the navbar segment. This is what provides a nav
 </div>
 	
 
+<p>
+
+The next listing shows the part of the Hello World code related to triggering events. There are 2 \textbf{div} tags, one \textbf{p} tag, and one \textbf{button} tag. 
+	  The \textbf{p} tag defines paragraphs in your website. You can reference the \textbf{p} tag by its \textbf{id=current-val}. In general, tags can have ids 
+	  so they can be referenced. As we will see later, we can call our tags by \textbf{id} and write something to them. The \textbf{div} with \textbf{id=test-output} can 
+	  be used in the same way. Notice the first \textbf{div} does not have an \textbf{id} and it is just used to write out some instructions to the website once it is
+	  running. 
+
+Okay, I saved the best for last. The button tag (\textbf{<button>}) is used to create a button on your website. When you press the button, it will call 
+	the function name \textbf{my\_gen\_function()}. Notice that it is associated with the \textbf{py-click} option. This means that this is a function 
+	written in Python. And just like that, this is how from HTML, we can call Python code. Now all that remains is to encapsulate our python code. We will see that
+	in the next code listing. 
+
+
+	
+</p>
 
 
 
 
-The next listing shows the part of the Hello World code related to triggering events. There are 2 \textbf{div} tags, one \textbf{p} tag, and one \textbf{button} tag. The \textbf{p} tag defines paragraphs in your website. You can reference the \textbf{p} tag by its \textbf{id=current-val}. In general, tags can have ids so they can be referenced. As we will see later, we can call our tags by \textbf{id} and write something to them. The \textbf{div} with \textbf{id=test-output} can be used in the same way. Notice the first \textbf{div} does not have an \textbf{id} and it is just used to write out some instructions to the website once it is running. 
-
-Okay, I saved the best for last. The button tag (\textbf{<button>}) is used to create a button on your website. When you press the button, it will call the function name \textbf{my\_gen\_function()}. Notice that it is associated with the \textbf{py-click} option. This means that this is a function written in Python. And just like that, this is how from HTML, we can call Python code. Now all that remains is to encapsulate our python code. We will see that in the next code listing. 
 
 
-
-
-	<div>
+<div>
     <p>
-<textarea rows="80"  cols="80">
+<textarea rows="40"  cols="80">
 
 <html>
    ...
@@ -282,21 +328,34 @@ Okay, I saved the best for last. The button tag (\textbf{<button>}) is used to c
 	
 
 
+<p>
+
+	We have now made it to PyScript! In the next code segment you can see that we have made it to the section we wanted to get to. This section is encapsulated within 
+	  the  \textbf{<section class="pyscript">} tags. This section includes a div ( \textbf{<div id="mpl"></div>} ) with \textbf{id} equal to \textbf{"mpl"}. Similar
+		  to the previous divs, we can select this div by id and write data to it. In fact, we will write Hello World to this div, but you can write to the other 
+		  divs as well and I recommend you try to do just that as an exercise. 
+
+The next part in the code is denoted by the \textbf{<py-config>} tag. You can use this to add any packages you want into the list packages = []. In the future, we will 
+	add packages like Numpy, etc. Finally, we have made it to the tag where we actually write our Python code. The tag is called  \textbf{<script type="py">}. It is
+		a script tag just like for JavaScript but with type "py", which you guessed it, stands for Python. And inside this tag we can define all the python code
+		we want. Here, we define the function \textbf{my\_gen\_function()} that is invoked by pressing the button. The rules of Python apply here such as 
+		indentation. Make sure all your Python code here has the exact same indentation or you will have errors and will need to debug. The Python syntax is the same. 
+
+PyScript provides keywords that you can use in the Python code so that Python can interact with the HTML and the website itself. One such keyword is \textbf{Element}. 
+		Notice here that \textbf{Element} grabs the div with id=mpl and assigns to its "innerText" attribute the text "Hello World". And that is it. This is how
+		PyScript and HTML work together to run Python code on the browser. I recommend that you now go try what you learned and build and deploy your Hello World
+		program from your own repo. 
+
+</p>
 
 
-
-We have now made it to PyScript! In the next code segment you can see that we have made it to the section we wanted to get to. This section is encapsulated within the  \textbf{<section class="pyscript">} tags. This section includes a div ( \textbf{<div id="mpl"></div>} ) with \textbf{id} equal to \textbf{"mpl"}. Similar to the previous divs, we can select this div by id and write data to it. In fact, we will write Hello World to this div, but you can write to the other divs as well and I recommend you try to do just that as an exercise. 
-
-The next part in the code is denoted by the \textbf{<py-config>} tag. You can use this to add any packages you want into the list packages = []. In the future, we will add packages like Numpy, etc. Finally, we have made it to the tag where we actually write our Python code. The tag is called  \textbf{<script type="py">}. It is a script tag just like for JavaScript but with type "py", which you guessed it, stands for Python. And inside this tag we can define all the python code we want. Here, we define the function \textbf{my\_gen\_function()} that is invoked by pressing the button. The rules of Python apply here such as indentation. Make sure all your Python code here has the exact same indentation or you will have errors and will need to debug. The Python syntax is the same. 
-
-PyScript provides keywords that you can use in the Python code so that Python can interact with the HTML and the website itself. One such keyword is \textbf{Element}. Notice here that \textbf{Element} grabs the div with id=mpl and assigns to its "innerText" attribute the text "Hello World". And that is it. This is how PyScript and HTML work together to run Python code on the browser. I recommend that you now go try what you learned and build and deploy your Hello World program from your own repo. 
 
 
 
 
 <div>
     <p>
-<textarea rows="80"  cols="80">
+<textarea rows="30"  cols="80">
 
 
     
@@ -332,22 +391,37 @@ PyScript provides keywords that you can use in the Python code so that Python ca
 </div>
 	
 
+<p>
 
 
+That concludes the Hello World program discussion. Even though most of our websites going forward will include these same sections, I will not discuss or describe 
+them again. Instead, going forward I will only focus on the PyScript section and specifically in the Python or Numpy code. I will describe any new PyScript or HTML 
+elements as needed.
+	
+</p>
 
-That concludes the Hello World program discussion. Even though most of our websites going forward will include these same sections, I will not discuss or describe them again. Instead, going forward I will only focus on the PyScript section and specifically in the Python or Numpy code. I will describe any new PyScript or HTML elements as needed. 
+ <h1>
+The Power of Numpy and PyScript
+	 
+ </h1>
 
 
-\section{The Power of Numpy and PyScript}
+<p>
+In this section, I will present some of the most useful techniques used in this book, or in the deep learning field as a whole, for dealing with data. 
+In general, we want to be very efficient in our processing of the data so we do not use Python lists and “for” loops for everything. Instead, we use Numpy 
+to process tensors in very efficient and clever ways. Numpy borrows many techniques from a field of mathematics called linear algebra. Numpy arrays of different 
+dimensions (scalars, vectors, matrices, hyper-matrices) are more generally  referred to as tensors. 
 
 
-In this section, I will present some of the most useful techniques used in this book, or in the deep learning field as a whole, for dealing with data. In general, we want to be very efficient in our processing of the data so we do not use Python lists and “for” loops for everything. Instead, we use Numpy to process tensors in very efficient and clever ways. Numpy borrows many techniques from a field of mathematics called linear algebra. Numpy arrays of different dimensions (scalars, vectors, matrices, hyper-matrices) are more generally  referred to as tensors. 
+The advantage of this approach is that we can perform a lot of linear algebra based math operations like the matrix multiplication, the transpose, etc. 
+on our data using Python’s Numpy library.
+I will not go into any linear algebra theory. Instead, the best way to learn about this approach for AI projects is to do a series of exercises. Eventually
+you can study the math background if you want to. And because you already have examples of its use, you will be more motivated to study it. I will start with 
+simple examples of Numpy array operations and then move to more complex operations. Along the way, I will point out some terminology or concepts from math. 
 
-
-The advantage of this approach is that we can perform a lot of linear algebra based math operations like the matrix multiplication, the transpose, etc. on our data using Python’s Numpy library.
-I will not go into any linear algebra theory. Instead, the best way to learn about this approach for AI projects is to do a series of exercises. Eventually you can study the math background if you want to. And because you already have examples of its use, you will be more motivated to study it. I will start with simple examples of Numpy array operations and then move to more complex operations. Along the way, I will point out some terminology or concepts from math. 
-
-As previously described, this section assumes you have completed chapter 1. In this chapter, I will mainly focus on describing the Python and Numpy code that goes inside the PyScript section of the HTML code. For a few examples, I will include the whole HTML code, but as we move through the material, I will include less and less of the HTML and just focus on the specific parts we want to cover. 
+As previously described, this section assumes you have completed chapter 1. In this chapter, I will mainly focus on describing the Python and Numpy code that goes
+inside the PyScript section of the HTML code. For a few examples, I will include the whole HTML code, but as we move through the material, I will include less and
+less of the HTML and just focus on the specific parts we want to cover. 
 
 Okay, so let’s get started. In the following code listing we import numpy as np. Then we initialize a Numpy array with values [4 5 2 6 8].  The statement 
 
@@ -359,10 +433,14 @@ converts the array to a string and we can finally display it on the website usin
 \textbf{Element('mpl').element.innerText =  text}
 
 
+	
+</p>
+
+
 
 <div>
     <p>
-<textarea rows="80"  cols="80">
+<textarea rows="70"  cols="80">
 
 
     <html>    
@@ -411,16 +489,21 @@ converts the array to a string and we can finally display it on the website usin
 </div>
 
 
+<p>
+
+In the next code listing we do the same as before but we initialize the array to type float. Notice that we provide a Python list and change the data type with 
+the \textbf{dtype} field. 
+
+	
+</p>
 
 
 
-
-In the next code listing we do the same as before but we initialize the array to type float. Notice that we provide a Python list and change the data type with the \textbf{dtype} field. 
 
 
 <div>
  <p>
-<textarea rows="80"  cols="80">
+<textarea rows="50"  cols="80">
 
 
     <html>    
@@ -462,15 +545,20 @@ In the next code listing we do the same as before but we initialize the array to
 </div>
 
 
+<p>
 
-
-
- You can see that the values can now have decimal points. This gives us [1. 3. 2. 5.] and pressing the button calls the function \textbf{my\_gen\_function} which runs the Numpy code. Again, the array is converted to a string and assigned to the div with \textbf{id} equal to \textbf{mpl} using the following code segment: 
+ You can see that the values can now have decimal points. This gives us [1. 3. 2. 5.] and pressing the button calls the function \textbf{my\_gen\_function} which 
+runs the Numpy code. Again, the array is converted to a string and assigned to the div with \textbf{id} equal to \textbf{mpl} using the following code segment: 
 
   \textbf{Element('mpl').element.innerText =  text }  
 
  The following figure shows the result of running this in the browser. 
  
+	
+</p>
+
+
+
 
 \begin{figure}[H]\centering
 \adjustbox{max height=.35\textheight}{
@@ -480,6 +568,7 @@ In the next code listing we do the same as before but we initialize the array to
 \label{RegLin:fig}
 \end{figure}
 
+<p>
 Going forward, to reduce copying too much repetitive code, I will only discuss and show the parts inside the PyScript section denoted by: 
 
 \begin{center}
@@ -500,10 +589,16 @@ A Numpy matrix (2D np array) can be declared like so:
                       
 This Python list can be converted to a Numpy array using \textbf{np.array()}. The following listing shows the code sequence and how to assign it to the "mpl" div. 
 
+	
+</p>
 
-	<div>
+
+
+
+
+<div>
  <p>
-<textarea rows="80"  cols="80">
+<textarea rows="40"  cols="80">
 
  <section class="pyscript"> 
             <div id="mpl"></div>
@@ -536,11 +631,14 @@ This Python list can be converted to a Numpy array using \textbf{np.array()}. Th
 </div>
 
 
+<p>
+Running this code gives us a 3x3 matrix as can be seen in the following figure. 
 
+
+	
+</p>
        
 
-
-Running this code gives us a 3x3 matrix as can be seen in the following figure. 
 
 
 
@@ -551,6 +649,8 @@ Running this code gives us a 3x3 matrix as can be seen in the following figure.
 \caption{Numpy Matrix}
 \label{RegLin:fig}
 \end{figure}
+
+<p>
 
 Numpy has special functions to initialize a matrix. In the next code listing, three Numpy tensors are created. The first generates a Numpy array of size 10 made up of all zeros like so: 
 
@@ -568,13 +668,17 @@ The final tensor is a 3x3 matrix where all the values are 42. This is achieved w
 
 \textbf{b3 = np.full((3, 3), 42)}
 
+	
+</p>
+
+
 
 
 
 	
 <div>
  <p>
-<textarea rows="80"  cols="80">
+<textarea rows="50"  cols="80">
 
 <html>    
     ...
@@ -615,10 +719,15 @@ The final tensor is a 3x3 matrix where all the values are 42. This is achieved w
 </p>
 </div>
 
+<p>
 
 
+Notice that the code now includes 3 div tags with ids: \textbf{mpl1}, \textbf{mpl2}, and \textbf{mpl3}. The 3 tensors are assigned to each of these div tags, respectively.
+	The results can be seen in the following figure. 
 
-Notice that the code now includes 3 div tags with ids: \textbf{mpl1}, \textbf{mpl2}, and \textbf{mpl3}. The 3 tensors are assigned to each of these div tags, respectively. The results can be seen in the following figure. 
+	
+</p>
+
 
 \begin{figure}[H]\centering
 \adjustbox{max height=.35\textheight}{
