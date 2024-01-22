@@ -301,7 +301,7 @@ Okay, I saved the best for last. The button tag (\textbf{<button>}) is used to c
 
 
 <div>
-    <p>
+<p>
 <textarea rows="40"  cols="80">
 
 <html>
@@ -330,7 +330,7 @@ Okay, I saved the best for last. The button tag (\textbf{<button>}) is used to c
 
 <p>
 
-	We have now made it to PyScript! In the next code segment you can see that we have made it to the section we wanted to get to. This section is encapsulated within 
+We have now made it to PyScript! In the next code segment you can see that we have made it to the section we wanted to get to. This section is encapsulated within 
 	  the  \textbf{<section class="pyscript">} tags. This section includes a div ( \textbf{<div id="mpl"></div>} ) with \textbf{id} equal to \textbf{"mpl"}. Similar
 		  to the previous divs, we can select this div by id and write data to it. In fact, we will write Hello World to this div, but you can write to the other 
 		  divs as well and I recommend you try to do just that as an exercise. 
@@ -889,7 +889,6 @@ Finally, to get the dimensions of matrices we can use \textbf{.shape}, \textbf{.
 
 
 
-
 The result of running the previous Numpy code on the browser can be seen in the figure below. The dimensions from  \textbf{.shape}, \textbf{.ndim}, and \textbf{.size} can be seen at the bottom of the figure.
 
 \begin{figure}[H]\centering
@@ -1284,14 +1283,10 @@ print(m1_m2_concat)
 
 You can concatenate on \textbf{axis=1} like in the code listing below. Try it out. Go ahead and deploy this to your GitHub repo.
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Numpy matrix concatenate on dimension 1}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
-
+<div>
+ <p>
+<textarea rows="30"  cols="80">
+	
 m1 = np.array([ [1,2,3], 
                 [4,5,6],
                 [7,8,9] ])
@@ -1305,22 +1300,27 @@ m1_m2_concat = np.concatenate([m1, m2], axis=1)
 
 print(m1_m2_concat)
 
-\end{lstlisting}
-\end{minipage}
+</textarea>    
+</p>
+</div>
 
-\clearpage
-\subsection{Problem 8}
+
+
+
+<h1>
+
+	Problem 8
+</h1>
+
 
 Obviously, having data means that you want to perform many kinds of math operations on this data. The following are some examples of some of the most common operations. Try it out. Go ahead and deploy this to your GitHub repo.
 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Numpy math operations}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
+
+
+<div>
+ <p>
+<textarea rows="30"  cols="80">
 
 x = np.array([1,2,3,4])
 
@@ -1335,9 +1335,16 @@ print(np.log(x))
 print(np.log2(x)) 
 print(np.log10(x) )
 
-\end{lstlisting}
-\end{minipage}
+</textarea>    
+</p>
+</div>
 
+
+
+
+
+
+<p>
 The results of the previous math operations on vector [1 2 3 4] are as follows:
 
 
@@ -1352,6 +1359,10 @@ For the operation x/2 we get [0.5  1.0  1.5  2.0]
 For the operation -x we get [-1 -2 -3 -4] 
 
 And so on ...
+	
+</p>
+
+
 
 
 
@@ -1374,10 +1385,16 @@ In this chapter, we learned about the basics of PyScript and HTML. We deployed o
    Chapter 3
 </h1>
 
+<p>
+
 <ul>
 
    <li>    <a href="https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter3/index.html"> Chapter 3 </a>     </li>
 </ul>
+	
+</p>
+
+
 
  </body>
   
