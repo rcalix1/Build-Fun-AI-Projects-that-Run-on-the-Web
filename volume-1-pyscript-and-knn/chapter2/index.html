@@ -66,7 +66,6 @@ Chapter 2 Code
 
 * Numpy 9 Numpy Slicing: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpySlicing/index.html
 
-#####################
 
 <h1> Coding with HTML and PyScript
 </h1>
@@ -127,7 +126,7 @@ The following code listing shows the entire program using HTML, PyScript, and Py
 	  
 <div>
     <p>
-<textarea rows="60"  cols="80">
+<textarea rows="40"  cols="80">
 
 
     
@@ -197,9 +196,13 @@ The listings following the next figure in this section will focus on the differe
 \end{figure}
 
 
-	  <p>
+	 
 
-			  
+
+<div>
+    <p>
+<textarea rows="40"  cols="80">
+		  
 In the next listing, I will only discuss the head section of the code denoted by the head tags: \textbf{<head> ... </head>}. The title tag \textbf{<title>} is used to 
 	provide a title for your website and is useful for search engine indexing. The \textbf{<meta charset="utf-8" />} is used to define character encoding for your
 	website.  The next 2 lines are very important and we will be using them on all our programs. They are both provided by 
@@ -209,15 +212,16 @@ In the next listing, I will only discuss the head section of the code denoted by
 	The last line with the \textbf{<script>} tag is required. It imports pyscript.js. Websites can import many other code modules from the internet. This helps
 	to extend their capabilities. So, websites import these .js files. This \textbf{pyscript.js} file will help us to run PyScript on our browser. 
 
+</textarea>    
+</p>
+</div>   
 
   
-	  </p>
-
-
+	
 	
 <div>
     <p>
-<textarea rows="60"  cols="80">
+<textarea rows="40"  cols="80">
 
 
     <html>
@@ -253,7 +257,7 @@ The following code listing shows the navbar segment. This is what provides a nav
 
 	<div>
     <p>
-<textarea rows="60"  cols="80">
+<textarea rows="20"  cols="80">
 
 
     <html>
@@ -302,7 +306,7 @@ Okay, I saved the best for last. The button tag (\textbf{<button>}) is used to c
 
 <div>
 <p>
-<textarea rows="40"  cols="80">
+<textarea rows="30"  cols="80">
 
 <html>
    ...
@@ -1016,16 +1020,11 @@ Once you understand slicing, you will be able to do all that and it will be real
 \textbf{Note}: Whenever we want the last value of a matrix, vector, or tensor, we can just use the -1 index.
 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{showstringspaces=false}  %% remove weird symbol in spaces
-\lstset{frame=lines}
-\lstset{caption={Numpy Slicing}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
 
-...
+<div>
+    <p>
+<textarea rows="30"  cols="80">
+	...
     <script type="py">
         import numpy as np
         def my_gen_function():
@@ -1048,8 +1047,15 @@ Once you understand slicing, you will be able to do all that and it will be real
     </script>
  ...
 
-\end{lstlisting}
-\end{minipage}
+</textarea>    
+</p>
+</div>
+
+
+
+
+
+
 
 As we can see in the previous code listing, the answers are as follows:
 
@@ -1062,14 +1068,11 @@ c) For all even indeces we can use \textbf{b1[::2]} where the first colon indica
 d) For all uneven indeces we can use \textbf{b1[1::2]} where this is the same as before but the start is at 1 instead of zero. Remember that in Python, array indeces start at 0. 
 
 
-
-\begin{figure}[H]  \centering
-\adjustbox{max height=.60\textheight}{
-    \includegraphics{images/numpySlicing.png}
-}
-\caption{Numpy Slicing}
-\label{RegLin:fig}
-\end{figure}
+<div>  
+	<p>
+		<img src="images/numpySlicing.png" height="300" width="auto">
+	</p>
+</div>
 
 
 
@@ -1083,7 +1086,14 @@ For the matrix \textbf{b2} in  our previous code listing, we can slice it with \
 
 Okay, so I have given you a lot of examples. As this is a project and work book, how about you try to implement a few Numpy and PyScript problems on your own. For the following I will provide the problem description and the working Python and Numpy code. What you have to do is to run it on your Browser using PyScript and make sure it works correctly as required by the problem. 
 
-\subsection{Problem 1}
+
+
+<h1>
+
+Problem 1
+	
+</h1>
+
 
 In the following code listing we want to slice the second column (column 1). The statement 
 
@@ -1095,14 +1105,9 @@ should do it, and the answer should be:
 
 Go ahead and deploy this to your GitHub repo.
 
-
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Slicing - All rows of the second column}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
+<div>
+    <p>
+<textarea rows="20"  cols="80">
 
 a = np.array([[1, 2, 3, 4], 
               [5, 6, 7, 8],
@@ -1112,10 +1117,23 @@ print(a)
 print("column1") 
 print(a[:, 1])
 
-\end{lstlisting}
-\end{minipage}
 
-\subsection{Problem 2}
+</textarea>    
+</p>
+</div>
+
+
+
+
+
+
+<h1>
+
+
+	Problem 2
+</h1>
+
+
 
 In the following code listing we want to slice the second row (row 1). The statement 
 
@@ -1127,15 +1145,10 @@ should do it, and the answer should be:
 
 Go ahead and deploy this to your GitHub repo.
 
-
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Slicing - extract a row vector}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
-
+<div>
+    <p>
+<textarea rows="20"  cols="80">
+   
 a = np.array([ [1, 2, 3, 4], 
                [5, 6, 7, 8],
                [9, 10, 11, 12] ] )
@@ -1143,11 +1156,22 @@ a = np.array([ [1, 2, 3, 4],
 print(a) 
 print("row1") 
 print(a[1, :])
+	
+</textarea>    
+</p>
+</div>
 
-\end{lstlisting}
-\end{minipage}
 
-\subsection{Problem 3}
+
+
+
+
+
+<h1>
+
+	Problem 3
+</h1>
+
 
 Okay, that is it for slicing. Now let us try a few other things. The next problem is about reshaping. In the following code listing, we first initialize a vector \textbf{"a"} with 9 values like so
 
@@ -1156,55 +1180,61 @@ Okay, that is it for slicing. Now let us try a few other things. The next proble
 We then reshape it into \textbf{"b"} with \textbf{a.reshape( (3,3) )}. This gives us the matrix:
 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Reshaped 3x3 matrix}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
 
+<div>
+    <p>
+<textarea rows="40"  cols="80">
+   
 [[1 2 3] 
  [4 5 6] 
  [7 8 9]]
+	
+</textarea>    
+</p>
+</div>
 
-\end{lstlisting}
-\end{minipage}
+
+
+
+
+
 
 
 Go ahead and deploy this to your GitHub repo.
 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Numpy Reshaping}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
+
+<div>
+    <p>
+<textarea rows="20"  cols="80">
 
 a = np.arange(1, 10)
 b = a.reshape( (3,3) ) 
 print(a)
 print(b)
 
-\end{lstlisting}
-\end{minipage}
+</textarea>    
+</p>
+</div>
 
 
-\subsection{Problem 4}
+
+
+
+<h1>
+Problem 4
+	
+</h1>
+
 
 
 Besides using the reshaping operation, we can sometimes use \textbf{np.newaxis}. The \textbf{np.newaxis} function is critical when we wish to make a row vector into a column vector. The \textbf{np.newaxis()} function is used extensibly in Numpy for broadcasting operations (Advanced topic not needed for this project). An example of creating a new axis can be seen in the code listing below. Try it out. Go ahead and deploy this to your GitHub repo.
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{showstringspaces=false}  %% remove weird symbol in spaces
-\lstset{frame=lines}
-\lstset{caption={Numpy newaxis}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
+
+
+<div>
+    <p>
+<textarea rows="40"  cols="80">
 
 v =np.array( [1,2,3,4,5] ) 
 v1=np.array( [5,5,5,5,5] )
@@ -1222,22 +1252,32 @@ print( v1[:, np.newaxis] )
 print("reshape matrix_m[:, np.newaxis, np.newaxis, :] with newaxis") 
 print( m[:, np.newaxis, np.newaxis, :] )
 
-\end{lstlisting}
-\end{minipage}
+</textarea>    
+</p>
+</div>
 
-\subsection{Problem 5}
+
+
+
+
+
+<h1>
+Problem 5
+	
+</h1>
+
 
 Another important Numpy array or tensor technique is concatenation. Natural Language Processing (NLP) approaches use concatenation extensively on some of the models. For example, for language translation and language generation.
 In the following code listing we see how we can use concatenation with the Numpy function \textbf{np.concatenate()}. Try it out. Go ahead and deploy this to your GitHub repo.
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Numpy concatenation}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
 
+
+
+
+
+<div>
+ <p>
+<textarea rows="20"  cols="80">
 a = np.array([1,2,3,4]) 
 b = np.array([5,6,7,8]) 
 c = np.array([9,10,11])
@@ -1248,23 +1288,24 @@ abc = np.concatenate( [a, b, c] )
 print(ab) 
 print(abc)
 
-\end{lstlisting}
-\end{minipage}
+</textarea>    
+</p>
+</div>
 
-\subsection{Problem 6}
+
+<h1>
+
+	Problem 6
+</h1>
+
+
 
 An example of concatenation with matrices can be seen in the code listing below. Notice the use of \textbf{axis=0} to indicate on what dimension to concatenate. Try it out. Go ahead and deploy this to your GitHub repo.
 
-
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Numpy matrix concatenate on dimension 0 }}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
-
-m1 = np.array([ [1,2,3], 
+<div>
+ <p>
+<textarea rows="20"  cols="80">
+	m1 = np.array([ [1,2,3], 
                 [4,5,6],
                 [7,8,9] ])
                 
@@ -1276,10 +1317,21 @@ m1_m2_concat = np.concatenate([m1, m2], axis=0)
 
 print(m1_m2_concat)
 
-\end{lstlisting}
-\end{minipage}
 
-\subsection{Problem 7}
+</textarea>    
+</p>
+</div>
+
+
+
+
+
+<h1>
+
+Problem 7
+	
+</h1>
+
 
 You can concatenate on \textbf{axis=1} like in the code listing below. Try it out. Go ahead and deploy this to your GitHub repo.
 
