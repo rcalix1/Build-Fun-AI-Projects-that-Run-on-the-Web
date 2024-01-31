@@ -567,7 +567,7 @@ converts the array to a string and we can finally display it on the website usin
 	
 <div>
     <p>
-<textarea rows="10"  cols="80">
+<textarea rows="4"  cols="80">
 
 Element('mpl').element.innerText =  text
 
@@ -709,33 +709,52 @@ runs the Numpy code. Again, the array is converted to a string and assigned to t
 
 <div>  
 	<p>
-		<img src="images/numpyFloats.png" height="500" width="auto">
+		
 	</p>
 </div>
 
+<center>
+            <div>
 
+		  <img src="images/numpyFloats.png" height="500" width="auto">
+
+	    </div>
+</center>
+	 
 
 
 <p>
 Going forward, to reduce copying too much repetitive code, I will only discuss and show the parts inside the PyScript section denoted by: 
+</p>
 
-\begin{center}
-   \textbf{<section class="pyscript"> </section>}
-\end{center}
+	
+<div>
+    <p>
+<textarea rows="4"  cols="80">
 
+<section class="pyscript"> </section>
 
-Everything else should be the same. 
+</textarea>    
+</p>
+</div>
 
+<p>
+	Everything else should be the same. 
+<br/>
 
 A Numpy matrix (2D np array) can be declared like so:
 
-\begin{center}
-  \textbf{list\_of\_lists = [ [1, 2, 3], [4, 4, 5] , [6, 2, 11] ] }
-\end{center}
+</p>
 
 
+<center>
+	list_of_lists = [ [1, 2, 3], [4, 4, 5] , [6, 2, 11] ] 
+</center>
+
+
+<p>
                       
-This Python list can be converted to a Numpy array using \textbf{np.array()}. The following listing shows the code sequence and how to assign it to the "mpl" div. 
+This Python list can be converted to a Numpy array using "np.array()". The following listing shows the code sequence and how to assign it to the "mpl" div. 
 
 	
 </p>
@@ -746,7 +765,7 @@ This Python list can be converted to a Numpy array using \textbf{np.array()}. Th
 
 <div>
  <p>
-<textarea rows="40"  cols="80">
+<textarea rows="30"  cols="80">
 
  <section class="pyscript"> 
             <div id="mpl"></div>
@@ -787,32 +806,43 @@ Running this code gives us a 3x3 matrix as can be seen in the following figure.
 </p>
        
 
-
+<center>
 <div>  
 	<p>
-		<img src="images/numpyMatrx.png" height="300" width="auto">
+		<img src="images/numpyMatrx.png" height="500" width="auto">
 	</p>
 </div>
+</center>
+
 
 
 
 <p>
 
-Numpy has special functions to initialize a matrix. In the next code listing, three Numpy tensors are created. The first generates a Numpy array of size 10 made up of all zeros like so: 
+Numpy has special functions to initialize a matrix. In the next code listing, three Numpy tensors are created. 
+	The first generates a Numpy array of size 10 made up of all zeros like so: 
 
-\textbf{[0 0 0 0 0 0 0 0 0 0] }
-
+<br/>
+[0 0 0 0 0 0 0 0 0 0] 
+<br/>
+	<br/>
 This is achieved with the following code segment: 
-
-\textbf{b1 = np.zeros(10, dtype=int)}
+<br/>
+	<br/>
+b1 = np.zeros(10, dtype=int)
+	<br/>
+	<br/>
 
 The second tensor consists of a 4x6 matrix of all ones. This is achieved with the Numpy statement: 
-
-\textbf{b2 = np.ones((4, 6), dtype=float)}
-
+<br/>
+	<br/>
+b2 = np.ones((4, 6), dtype=float)
+<br/>
+	<br/>
 The final tensor is a 3x3 matrix where all the values are 42. This is achieved with the statement: 
-
-\textbf{b3 = np.full((3, 3), 42)}
+<br/>
+	<br/>
+b3 = np.full((3, 3), 42)
 
 	
 </p>
@@ -824,7 +854,7 @@ The final tensor is a 3x3 matrix where all the values are 42. This is achieved w
 	
 <div>
  <p>
-<textarea rows="50"  cols="80">
+<textarea rows="35"  cols="80">
 
 <html>    
     ...
@@ -868,18 +898,20 @@ The final tensor is a 3x3 matrix where all the values are 42. This is achieved w
 <p>
 
 
-Notice that the code now includes 3 div tags with ids: \textbf{mpl1}, \textbf{mpl2}, and \textbf{mpl3}. The 3 tensors are assigned to each of these div tags, respectively.
+Notice that the code now includes 3 div tags with ids: "mpl1", "mpl2", and "mpl3". The 3 tensors are assigned to each of these div tags, respectively.
 	The results can be seen in the following figure. 
 
 	
 </p>
 
-
-<div>  
+<center>
+	<div>  
 	<p>
-		<img src="images/numpyInitializeSeveral.png" height="300" width="auto">
+		<img src="images/numpyInitializeSeveral.png" height="500" width="auto">
 	</p>
 </div>
+</center>
+
 
 
 
@@ -887,10 +919,12 @@ Notice that the code now includes 3 div tags with ids: \textbf{mpl1}, \textbf{mp
 
 Sometimes we need Numpy arrays with different data in them. Numpy has quick ways of creating arrays with different data in them. The \textbf{np.arange} function is 
 useful for this. For example, in the following listing, the code creates a Numpy array with 10 values in the range from 1 to 28 with a step of size 3 like so:
-
-\textbf{[1 4 7 10 13 16 19 22 25 28]}
-
-The function \textbf{np.linspace} is another way of generating Numpy arrays with data in them. Here, we generate 20 data points from 0 to 1 spaced by a step size of
+<br/>
+	<br/>
+[1 4 7 10 13 16 19 22 25 28]
+<br/>
+	<br/>
+The function "np.linspace" is another way of generating Numpy arrays with data in them. Here, we generate 20 data points from 0 to 1 spaced by a step size of
 around 0.05.
 
 	
@@ -901,7 +935,7 @@ around 0.05.
 
 <div>
  <p>
-<textarea rows="40"  cols="80">
+<textarea rows="30"  cols="80">
 
 <html>    
     ...
@@ -942,52 +976,66 @@ around 0.05.
 
 <p>
 
-The results of using \textbf{np.arange()} and \textbf{np.linspace()} can be seen in the following figure. Go ahead and calculate the differences between each number 
+The results of using "np.arange()"and "np.linspace()" can be seen in the following figure. Go ahead and calculate the differences between each number 
 	and the next and you will find that they equal the step size.
 
 	
 </p>
 
-<div>  
+	<center>
+		<div>  
 	<p>
-		<img src="images/numpyCreateVectorSequences.png" height="300" width="auto">
+		<img src="images/numpyCreateVectorSequences.png" height="500" width="auto">
 	</p>
 </div>
+	</center>
 
+
+<p>
 
 
 The following code listing introduces us to some of Numpy's random functions. With 
-
-\textbf{np.random.random((4, 4))  }
+<br/>
+	<br/>
+np.random.random((4, 4))
+	<br/>
+	<br/>
 
 we can generate random data in the form of  a 4x4 matrix with random values.
-
+<br/>
+	<br/>
 
 If we want random data with a mean of 0 and standard deviation of 1 we can write: 
-
-\textbf{np.random.normal(0, 1, (4,4))}
-
+<br/>
+	<br/>
+np.random.normal(0, 1, (4,4))
+<br/>
+	<br/>
 Here, we get a 4x4 matrix of random data with mean 0 and standard deviation 1.
 
+<br/>
+	<br/>
+Finally, to get the dimensions of matrices we can use ".shape", ".ndim", ".size". In our below code listing, this is done with the following statements:
+<br/>
+	<br/>
 
-Finally, to get the dimensions of matrices we can use \textbf{.shape}, \textbf{.ndim}, \textbf{.size}. In our below code listing, this is done with the following statements:
+text3a = str(b3a.ndim)
+
+<br/>
+	<br/>
+
+text3b = str(b3b.shape)
+<br/>
+	<br/>
 
 
-\textbf{text3a = str(b3a.ndim)}
+text3c = str(b3c.size)
 
-
-
-\textbf{text3b = str(b3b.shape)}
-
-
-
-\textbf{text3c = str(b3c.size)}
-
-
+</p>
 
 <div>
  <p>
-<textarea rows="60"  cols="80">
+<textarea rows="50"  cols="80">
 
 <html>    
     ...
@@ -1030,38 +1078,47 @@ Finally, to get the dimensions of matrices we can use \textbf{.shape}, \textbf{.
 </p>
 </div>
 
+<p>
+	The result of running the previous Numpy code on the browser can be seen in the figure below. 
+	The dimensions from  \textbf{.shape}, \textbf{.ndim}, and \textbf{.size} can be seen at the bottom of the figure.
+
+</p>
 
 
 
-The result of running the previous Numpy code on the browser can be seen in the figure below. The dimensions from  \textbf{.shape}, \textbf{.ndim}, and \textbf{.size} can be seen at the bottom of the figure.
-
-<div>  
+	<center>
+		<div>  
 	<p>
-		<img src="images/numpyRandomShapes.png" height="300" width="auto">
+		<img src="images/numpyRandomShapes.png" height="500" width="auto">
 	</p>
 </div>
+	</center>
 
 
-
+<p>
 Knowing how to index a Numpy array is very important. The following code listing shows different ways of indexing a Numpy array. Indexing just means extracting values from the Numpy array or matrix by index value. For example, for the vector 
-
+<br/>
 [1. 3. 2. 5.]
-
+<br/>
 We can get the following by index: 
-
+<br/>
 First value 1.0 
-
+<br/>
 Third value 2.0
-
+<br/>
 Last value 5.0 
-
+<br/>
 Before last value 2.0
-
+<br/>
 The next code listing shows the use of indexing for each of the previously mentioned cases. 
+<br/>
+	
+</p>
+
 
 <div>
  <p>
-<textarea rows="40"  cols="80">
+<textarea rows="35"  cols="80">
 
 <html>    
   ...
@@ -1104,65 +1161,90 @@ The next code listing shows the use of indexing for each of the previously menti
 </div>
 
 
+<p>
 
-
-
-We can also index matrices. The statements 
-
-\textbf{b2[0,0]} and \textbf{b2[2, -1] }
-
+	We can also index matrices. The statements 
+<br/>
+b2[0,0]} and \textbf{b2[2, -1] 
+<br/>
 are examples of indexing matrix b2 as defined in the previous code listing. The results can be seen in the following figure. 
+<br/>
+</p>
 
+<center>
 <div>  
 	<p>
-		<img src="images/numpyIndexing.png" height="300" width="auto">
+		<img src="images/numpyIndexing.png" height="500" width="auto">
+	</p>
+</div>
+	
+</center>
+
+<p>
+
+One important concept when dealing with Numpy arrays or tensors is slicing. I was almost tempted to create a section just for slicing since it is so important. 
+	However, given that it is just another Numpy operation, I decided not to do that. That being said, slicing is very important and you will use it a lot. 
+	So, instead of giving it a whole section,  I decided to make it a cake. Here it is. 
+
+
+	
+</p>
+
+
+<center>
+	<div>  
+	<p>
+		<img src="images/numpySliceCake.jpg" height="500" width="auto">
 	</p>
 </div>
 
+</center>
 
 
-
-
-One important concept when dealing with Numpy arrays or tensors is slicing. I was almost tempted to create a section just for slicing since it is so important. However, given that it is just another Numpy operation, I decided not to do that. That being said, slicing is very important and you will use it a lot. So, instead of giving it a whole section,  I decided to make it a cake. Here it is. 
-
-
-
-<div>  
-	<p>
-		<img src="images/numpySliceCake.jpg" height="300" width="auto">
-	</p>
-</div>
-
-
-Slicing helps us to extract slices of data from a vector, matrix, or any other tensor, like extracting 2 middle column vectors in a matrix. We can slice any tensor. As previously mentioned, Tensor is the generic name for an array of any dimension. From a vector to hyper dimensional matrices. 
-
+<p>
+Slicing helps us to extract slices of data from a vector, matrix, or any other tensor, like extracting 2 middle column vectors in a matrix. 
+	We can slice any tensor. As previously mentioned, Tensor is the generic name for an array of any dimension. From a vector to hyper dimensional matrices. 
+<br/>
 Let us do an example with a vector. Given a Numpy array \textbf{x} with 15 values like so:
-
-\textbf{[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14]}
-
+<br/>
+	<br/>
+[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14]
+<br/>
+	<br/>
 How can you get the following?
-
+<br/>
+	<br/>
 a) The first 4 elemets: [0 1 2 3]
-
+<br/>
+	<br/>
 b) All values after 3: [3 4 5 6 7 8 9 10 11 12 13 14] 
-
+<br/>
+	<br/>
 c) All even indeces: [0 2 4 6 8 10 12 14]
-
+<br/>
+	<br/>
 d) All uneven indeces: [1 3 5 7 9 11 13]
-
+<br/>
+	<br/>
 e) The reverse:  [14 13 12 11 10 9 8 7 6 5 4 3 2 1 0]
 
 
-
+<br/>
 Once you understand slicing, you will be able to do all that and it will be really easy. The following code listing shows the programming statements to do just that. And the figure after shows the results. 
+<br/>
+	<br/>
+Note: Whenever we want the last value of a matrix, vector, or tensor, we can just use the -1 index.
 
-\textbf{Note}: Whenever we want the last value of a matrix, vector, or tensor, we can just use the -1 index.
+	
+</p>
+
+
 
 
 
 <div>
     <p>
-<textarea rows="30"  cols="80">
+<textarea rows="25"  cols="80">
 	...
     <script type="py">
         import numpy as np
@@ -1194,36 +1276,55 @@ Once you understand slicing, you will be able to do all that and it will be real
 
 
 
-
-
+<p>
 As we can see in the previous code listing, the answers are as follows:
-
+<br/>
+	<br/>
 a) For the first 4 elements we can use: \textbf{b1[:4]} where the colon indicates range from blank (the start) to 4. 
-
+<br/>
+	<br/>
 b) For all after 3 we can use: \textbf{b1[3:]} where 3 is the start and the colon indicates range until blank (the end).
-
+<br/>
+	<br/>
 c) For all even indeces we can use \textbf{b1[::2]} where the first colon indicates the range from start to finish. The second colon indicates a step of 2. 
-
+<br/>
+	<br/>
 d) For all uneven indeces we can use \textbf{b1[1::2]} where this is the same as before but the start is at 1 instead of zero. Remember that in Python, array indeces start at 0. 
+<br/>
+	<br/>
+
+	
+</p>
 
 
-<div>  
+	<center>
+		<div>  
 	<p>
-		<img src="images/numpySlicing.png" height="300" width="auto">
+		<img src="images/numpySlicing.png" height="500" width="auto">
 	</p>
 </div>
+	</center>
 
 
+<p>
+
+	For the matrix \textbf{b2} in  our previous code listing, we can slice it with \textbf{b2[:-1,:-2]} and get a 2x2 matrix as can be seen
+	in the Numpy Slicing figure.
+
+</p>
+	
+<h1>
+Solve these Problems
+	
+</h1>
+
+<p>
+	Okay, so I have given you a lot of examples. As this is a project and work book, how about you try to implement a few Numpy and PyScript problems 
+	on your own. For the following I will provide the problem description and the working Python and Numpy code. What you have to do is to run it on
+	your Browser using PyScript and make sure it works correctly as required by the problem. 
 
 
-For the matrix \textbf{b2} in  our previous code listing, we can slice it with \textbf{b2[:-1,:-2]} and get a 2x2 matrix as can be seen in the Numpy Slicing figure.
-
-
-\section{Solve these Problems}
-
-
-
-Okay, so I have given you a lot of examples. As this is a project and work book, how about you try to implement a few Numpy and PyScript problems on your own. For the following I will provide the problem description and the working Python and Numpy code. What you have to do is to run it on your Browser using PyScript and make sure it works correctly as required by the problem. 
+</p>
 
 
 
@@ -1233,20 +1334,29 @@ Problem 1
 	
 </h1>
 
-
+<p>
 In the following code listing we want to slice the second column (column 1). The statement 
-
-\textbf{a[:, 1] }
-
+<br/>
+	<br/>
+a[:, 1] 
+<br/>
+	<br/>
 should do it, and the answer should be: 
-
-\textbf{[2 6 10]}
-
+<br/>
+	<br/>
+[2 6 10]
+<br/>
+	<br/>
 Go ahead and deploy this to your GitHub repo.
+
+	
+</p>
+	
+
 
 <div>
     <p>
-<textarea rows="20"  cols="80">
+<textarea rows="10"  cols="80">
 
 a = np.array([[1, 2, 3, 4], 
               [5, 6, 7, 8],
@@ -1272,21 +1382,30 @@ print(a[:, 1])
 	Problem 2
 </h1>
 
-
+<p>
 
 In the following code listing we want to slice the second row (row 1). The statement 
-
-\textbf{a[1, :] }
-
+<br/>
+	<br/>
+a[1, :] 
+<br/>
+	<br/>
 should do it, and the answer should be: 
-
-\textbf{[5, 6, 7, 8]}
-
+<br/>
+	<br/>
+[5, 6, 7, 8]
+<br/>
+	<br/>
 Go ahead and deploy this to your GitHub repo.
+<br/>
+	<br/>
+	
+</p>
+
 
 <div>
     <p>
-<textarea rows="20"  cols="80">
+<textarea rows="10"  cols="80">
    
 a = np.array([ [1, 2, 3, 4], 
                [5, 6, 7, 8],
@@ -1311,18 +1430,23 @@ print(a[1, :])
 	Problem 3
 </h1>
 
-
-Okay, that is it for slicing. Now let us try a few other things. The next problem is about reshaping. In the following code listing, we first initialize a vector \textbf{"a"} with 9 values like so
-
-\textbf{[1 2 3 4 5 6 7 8 9]}
-
+<p>
+Okay, that is it for slicing. Now let us try a few other things. The next problem is about reshaping. In the following code listing,
+	we first initialize a vector "a" with 9 values like so
+<br/>
+	<br/>
+[1 2 3 4 5 6 7 8 9]
+<br/>
+	<br/>
 We then reshape it into \textbf{"b"} with \textbf{a.reshape( (3,3) )}. This gives us the matrix:
 
+
+</p>
 
 
 <div>
     <p>
-<textarea rows="40"  cols="80">
+<textarea rows="70"  cols="80">
    
 [[1 2 3] 
  [4 5 6] 
@@ -1334,18 +1458,21 @@ We then reshape it into \textbf{"b"} with \textbf{a.reshape( (3,3) )}. This give
 
 
 
+<p>
 
-
-
-
-
+	
 Go ahead and deploy this to your GitHub repo.
+
+
+</p>
+
+
 
 
 
 <div>
     <p>
-<textarea rows="20"  cols="80">
+<textarea rows="10"  cols="80">
 
 a = np.arange(1, 10)
 b = a.reshape( (3,3) ) 
@@ -1364,16 +1491,22 @@ print(b)
 Problem 4
 	
 </h1>
+<p>
+
+Besides using the reshaping operation, we can sometimes use \textbf{np.newaxis}. The \textbf{np.newaxis} function is critical when we wish to make
+	a row vector into a column vector. The \textbf{np.newaxis()} function is used extensibly in Numpy for broadcasting operations 
+	(Advanced topic not needed for this project). An example of creating a new axis can be seen in the code listing below. Try it out.
+	Go ahead and deploy this to your GitHub repo.
 
 
-
-Besides using the reshaping operation, we can sometimes use \textbf{np.newaxis}. The \textbf{np.newaxis} function is critical when we wish to make a row vector into a column vector. The \textbf{np.newaxis()} function is used extensibly in Numpy for broadcasting operations (Advanced topic not needed for this project). An example of creating a new axis can be seen in the code listing below. Try it out. Go ahead and deploy this to your GitHub repo.
+	
+</p>
 
 
 
 <div>
     <p>
-<textarea rows="40"  cols="80">
+<textarea rows="25"  cols="80">
 
 v =np.array( [1,2,3,4,5] ) 
 v1=np.array( [5,5,5,5,5] )
@@ -1406,8 +1539,15 @@ Problem 5
 </h1>
 
 
-Another important Numpy array or tensor technique is concatenation. Natural Language Processing (NLP) approaches use concatenation extensively on some of the models. For example, for language translation and language generation.
-In the following code listing we see how we can use concatenation with the Numpy function \textbf{np.concatenate()}. Try it out. Go ahead and deploy this to your GitHub repo.
+<p>
+Another important Numpy array or tensor technique is concatenation. Natural Language Processing (NLP) approaches use concatenation 
+	extensively on some of the models. For example, for language translation and language generation.
+In the following code listing we see how we can use concatenation with the Numpy function \textbf{np.concatenate()}. Try it out. 
+	Go ahead and deploy this to your GitHub repo.
+
+
+	
+</p>
 
 
 
@@ -1416,7 +1556,8 @@ In the following code listing we see how we can use concatenation with the Numpy
 
 <div>
  <p>
-<textarea rows="20"  cols="80">
+<textarea rows="10"  cols="80">
+
 a = np.array([1,2,3,4]) 
 b = np.array([5,6,7,8]) 
 c = np.array([9,10,11])
@@ -1437,13 +1578,17 @@ print(abc)
 	Problem 6
 </h1>
 
+<p>
+An example of concatenation with matrices can be seen in the code listing below. Notice the use of \textbf{axis=0} to indicate on what dimension to concatenate. 
+	Try it out. Go ahead and deploy this to your GitHub repo.
 
+	
+</p>
 
-An example of concatenation with matrices can be seen in the code listing below. Notice the use of \textbf{axis=0} to indicate on what dimension to concatenate. Try it out. Go ahead and deploy this to your GitHub repo.
 
 <div>
  <p>
-<textarea rows="20"  cols="80">
+<textarea rows="15"  cols="80">
 	m1 = np.array([ [1,2,3], 
                 [4,5,6],
                 [7,8,9] ])
@@ -1471,12 +1616,15 @@ Problem 7
 	
 </h1>
 
-
+<p>
 You can concatenate on \textbf{axis=1} like in the code listing below. Try it out. Go ahead and deploy this to your GitHub repo.
+
+	
+</p>
 
 <div>
  <p>
-<textarea rows="30"  cols="80">
+<textarea rows="15"  cols="80">
 	
 m1 = np.array([ [1,2,3], 
                 [4,5,6],
@@ -1503,15 +1651,20 @@ print(m1_m2_concat)
 	Problem 8
 </h1>
 
+<p>
+Obviously, having data means that you want to perform many kinds of math operations on this data. The following are some examples of some of the most common operations. 
+	Try it out. Go ahead and deploy this to your GitHub repo.
 
-Obviously, having data means that you want to perform many kinds of math operations on this data. The following are some examples of some of the most common operations. Try it out. Go ahead and deploy this to your GitHub repo.
 
+	
+</p>
+	
 
 
 
 <div>
  <p>
-<textarea rows="30"  cols="80">
+<textarea rows="15"  cols="80">
 
 x = np.array([1,2,3,4])
 
@@ -1536,19 +1689,20 @@ print(np.log10(x) )
 
 
 <p>
+	<br/>
 The results of the previous math operations on vector [1 2 3 4] are as follows:
 
-
+<br/>
 For the operation x+10 we get [11 12 13 14] 
-
+<br/>
 For the operation x-10 we get [-9 -8 -7 -6] 
-
+<br/>
 For the operation x*10  we get [10 20 30 40] 
-
+<br/>
 For the operation x/2 we get [0.5  1.0  1.5  2.0] 
-
+<br/>
 For the operation -x we get [-1 -2 -3 -4] 
-
+<br/>
 And so on ...
 	
 </p>
@@ -1575,31 +1729,22 @@ In this chapter, we learned about the basics of PyScript and HTML. We deployed o
     Links to deployed examples
 
 
-</h1
+</h1>
 
-	<p>
+	<ul>
+<li><a href="https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/HelloWorld/index.html"> Hello World  </a></li>
 
-<a href="https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/HelloWorld/index.html"> Hello World  </a>
+<li><a href="https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpy1/index.html"> Numpy 1 Example </a></li>
+<li><a href="https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpy2floats/index.html"> Numpy 2 Floats  </a></li>
+<li><a href="https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpy3matrix/index.html"> Numpy 3 Matrix  </a></li>
+<li><a href="https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpy5initializeMatrixOnes/index.html"> Numpy 5 Initialize Tensors  </a></li>
+<li><a href="https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpyCreateVectors/index.html"> Numpy 6 Create vector sequences </a></li>
+<li><a href="https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpyRandom/index.html"> Numpy 7 Create random initialization </a></li>
+<li><a href="https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpyIndexing/index.html"> Numpy 8 Numpy Indexing  </a></li>					
+<li><a href="https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpySlicing/index.html"> Numpy 9 Numpy Slicing  </a></li>
+	
+	</ul>
 
-* Numpy 1 Example: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpy1/index.html
-
-* Numpy 2 Floats: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpy2floats/index.html
-
-* Numpy 3 Matrix: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpy3matrix/index.html
-
-* Numpy 5 Initialize Tensors: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpy5initializeMatrixOnes/index.html
-
-* Numpy 6 Create vector sequences: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpyCreateVectors/index.html
-
-* Numpy 7 Create random initialization: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpyRandom/index.html
-
-* Numpy 8 Numpy Indexing: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpyIndexing/index.html
-
-* Numpy 9 Numpy Slicing: https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter2/numpySlicing/index.html
-
-
-		
-	</p>
 
 
 <h1>
@@ -1607,14 +1752,14 @@ In this chapter, we learned about the basics of PyScript and HTML. We deployed o
    Chapter 3
 </h1>
 
-<p>
+
 
 <ul>
 
    <li>    <a href="https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter3/index.html"> Chapter 3 </a>     </li>
 </ul>
 	
-</p>
+
 
 
 
