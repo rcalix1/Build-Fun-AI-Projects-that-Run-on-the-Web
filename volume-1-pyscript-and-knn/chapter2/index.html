@@ -195,7 +195,7 @@ The listings following the next figure in this section will focus on the differe
 
 <div>
     <p>
-<textarea rows="5"  cols="80">
+<textarea rows="4"  cols="80">
 		  
 <title> 
 
@@ -216,7 +216,7 @@ The listings following the next figure in this section will focus on the differe
 
 <div>
     <p>
-<textarea rows="5"  cols="80">
+<textarea rows="4"  cols="80">
 		  
 <meta charset="utf-8" /> 
 
@@ -241,7 +241,7 @@ The listings following the next figure in this section will focus on the differe
 
 <div>
     <p>
-<textarea rows="5"  cols="80">
+<textarea rows="4"  cols="80">
 		  
 <link>
 
@@ -262,7 +262,7 @@ This tag references the stylesheet which is a file with extension .css.
 
 <div>
     <p>
-<textarea rows="5"  cols="80">
+<textarea rows="4"  cols="80">
 		  
 <script>
 
@@ -373,7 +373,7 @@ Okay, I saved the best for last. The button tag "button" is used to create a but
 
 <div>
 <p>
-<textarea rows="15"  cols="80">
+<textarea rows="17"  cols="80">
 
 <html>
    ...
@@ -399,48 +399,100 @@ Okay, I saved the best for last. The button tag "button" is used to create a but
 	
 
 
-
-	  
-
-<div>
-    <p>
-<textarea rows="40"  cols="80">
+<p>
 
 	We have now made it to PyScript! In the next code segment you can see that we have made it to the section we wanted to get to. This section is encapsulated within 
-	  the  \textbf{<section class="pyscript">} tags. This section includes a div ( \textbf{<div id="mpl"></div>} ) with \textbf{id} equal to \textbf{"mpl"}. Similar
+	  the tag:
+</p>
+
+<div>
+<p>
+<textarea rows="4"  cols="80">
+
+<section class="pyscript">
+    
+</textarea>    
+</p>
+</div>
+	
+<p>
+
+	This section includes a div
+</p>	  
+
+
+<div>
+<p>
+<textarea rows="4"  cols="80">
+
+<div id="mpl"></div>
+    
+</textarea>    
+</p>
+</div>
+
+<p>
+ with "id" equal to "mpl". Similar
 		  to the previous divs, we can select this div by id and write data to it. In fact, we will write Hello World to this div, but you can write to the other 
 		  divs as well and I recommend you try to do just that as an exercise. 
+<br/>
+The next part in the code is denoted by the 
+	
+</p>
 
-The next part in the code is denoted by the \textbf{<py-config>} tag. You can use this to add any packages you want into the list packages = []. In the future, we will 
-	add packages like Numpy, etc. Finally, we have made it to the tag where we actually write our Python code. The tag is called  \textbf{<script type="py">}. It is
-		a script tag just like for JavaScript but with type "py", which you guessed it, stands for Python. And inside this tag we can define all the python code
-		we want. Here, we define the function \textbf{my\_gen\_function()} that is invoked by pressing the button. The rules of Python apply here such as 
-		indentation. Make sure all your Python code here has the exact same indentation or you will have errors and will need to debug. The Python syntax is the same. 
 
-PyScript provides keywords that you can use in the Python code so that Python can interact with the HTML and the website itself. One such keyword is \textbf{Element}. 
-		Notice here that \textbf{Element} grabs the div with id=mpl and assigns to its "innerText" attribute the text "Hello World". And that is it. This is how
-		PyScript and HTML work together to run Python code on the browser. I recommend that you now go try what you learned and build and deploy your Hello World
-		program from your own repo.
 
+<div>
+<p>
+<textarea rows="4"  cols="80">
+
+<py-config>
+    
+</textarea>    
+</p>
+</div>
+
+<p>
+ You can use this to add any packages you want into the list packages = []. In the future, we will 
+	add packages like Numpy, etc. Finally, we have made it to the tag where we actually write our Python code. 
+	
+	<br/>
+	The tag is called 
+	
+</p>
+
+
+<div>
+<p>
+<textarea rows="4"  cols="80">
+
+<script type="py">
+    
 </textarea>    
 </p>
 </div>
 
 
-
-
-
-
+<p>
+ It is
+		a script tag just like for JavaScript but with type "py", which you guessed it, stands for Python. And inside this tag we can define all the python code
+		we want. Here, we define the function "my_gen_function()" that is invoked by pressing the button. The rules of Python apply here such as 
+		indentation. Make sure all your Python code here has the exact same indentation or you will have errors and will need to debug. The Python syntax is the same. 
+<br/>
+PyScript provides keywords that you can use in the Python code so that Python can interact with the HTML and the website itself. One such keyword is "Element". 
+		Notice here that "Element" grabs the div with id=mpl and assigns to its "innerText" attribute the text "Hello World". And that is it. This is how
+		PyScript and HTML work together to run Python code on the browser. I recommend that you now go try what you learned and build and deploy your Hello World
+		program from your own repo.
+	
+</p>
 
 
 
 
 <div>
     <p>
-<textarea rows="30"  cols="80">
+<textarea rows="30"  cols="90">
 
-
-    
 <html>
    ...
 
@@ -494,42 +546,45 @@ In general, we want to be very efficient in our processing of the data so we do 
 to process tensors in very efficient and clever ways. Numpy borrows many techniques from a field of mathematics called linear algebra. Numpy arrays of different 
 dimensions (scalars, vectors, matrices, hyper-matrices) are more generally  referred to as tensors. 
 
-
+<br/>
 The advantage of this approach is that we can perform a lot of linear algebra based math operations like the matrix multiplication, the transpose, etc. 
 on our data using Python’s Numpy library.
 I will not go into any linear algebra theory. Instead, the best way to learn about this approach for AI projects is to do a series of exercises. Eventually
 you can study the math background if you want to. And because you already have examples of its use, you will be more motivated to study it. I will start with 
 simple examples of Numpy array operations and then move to more complex operations. Along the way, I will point out some terminology or concepts from math. 
-
+<br/>
 As previously described, this section assumes you have completed chapter 1. In this chapter, I will mainly focus on describing the Python and Numpy code that goes
 inside the PyScript section of the HTML code. For a few examples, I will include the whole HTML code, but as we move through the material, I will include less and
 less of the HTML and just focus on the specific parts we want to cover. 
-
+<br/>
 Okay, so let’s get started. In the following code listing we import numpy as np. Then we initialize a Numpy array with values [4 5 2 6 8].  The statement 
-
-\textbf{text = str(a)}
-
+<br/>
+"text = str(a)"
+<br/>
 converts the array to a string and we can finally display it on the website using the statement: 
 
 </p>
 	
-	<div>
+<div>
     <p>
 <textarea rows="10"  cols="80">
 
-\textbf{Element('mpl').element.innerText =  text}
+Element('mpl').element.innerText =  text
 
 </textarea>    
 </p>
 </div>
 	
 
+<p>
 
+	and the first numpy example is
+</p>
 
 
 <div>
     <p>
-<textarea rows="70"  cols="80">
+<textarea rows="45"  cols="100">
 
 
     <html>    
@@ -581,7 +636,7 @@ converts the array to a string and we can finally display it on the website usin
 <p>
 
 In the next code listing we do the same as before but we initialize the array to type float. Notice that we provide a Python list and change the data type with 
-the \textbf{dtype} field. 
+the "dtype" field. 
 
 	
 </p>
@@ -592,8 +647,7 @@ the \textbf{dtype} field.
 
 <div>
  <p>
-<textarea rows="50"  cols="80">
-
+<textarea rows="40"  cols="80">
 
     <html>    
     ...
@@ -638,23 +692,24 @@ the \textbf{dtype} field.
 
  You can see that the values can now have decimal points. This gives us [1. 3. 2. 5.] and pressing the button calls the function \textbf{my\_gen\_function} which 
 runs the Numpy code. Again, the array is converted to a string and assigned to the div with \textbf{id} equal to \textbf{mpl} using the following code segment: 
+<br/>
+	<center>
 
-  \textbf{Element('mpl').element.innerText =  text }  
+		Element('mpl').element.innerText =  text 
+	</center>
+
+	<br/>
+	
 
  The following figure shows the result of running this in the browser. 
 
-
-
-
-
-
-	  
+  
 	
 </p>
 
 <div>  
 	<p>
-		<img src="images/numpyFloats.png" height="300" width="auto">
+		<img src="images/numpyFloats.png" height="500" width="auto">
 	</p>
 </div>
 
