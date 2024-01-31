@@ -39,20 +39,22 @@ The focus of this chapter is to build up your skills before starting to implemen
 	  exercises which include Python and Numpy code. These exercises will gradually help you to better grasp coding in Python with Numpy, and will help you to better
 	  understand how to run everything on the browser with PyScript. 
 
-\textbf{ \underline{Objective:}} To write my first Hello World program with PyScript.
-
+<br/>
 The chapter has 2 basic sections. One section focuses on creating your first Hello World program. The second section consists of a set of exercises to get more comfortable
 	  with Numpy and PyScript. I often give exercises like these to my machine learning students. I often recommend that they should type up the code themselves (instead 
 	  of copying) and run it line by line. I feel that by doing this one can develop a type of muscle memory. Hopefully, after doing many of these problems, you will 
 	  start to become more comfortable with how Numpy works with Python.
 
-
+<br/>
 So, in summary, this chapter will focus on the following tasks:
+</b>
 
-		\begin{itemize}
-\item Build a Hello World program with HTML and PyScript
-\item Practice and appreciate the power of Numpy and PyScript
-\end{itemize}
+	<ul>
+		<li>Build a Hello World program with HTML and PyScript</li>
+		<li>Practice and appreciate the power of Numpy and PyScript</li>
+	</ul>
+		
+<p>
 
 
 This chapter assumes that you have completed chapter 1, and that you have now completed the setup of your GitHub account and completed all other related configurations.
@@ -81,12 +83,13 @@ Hello World program with HTML and PyScript
 		  
 	  </h1>
 
+	<center>
             <div>
 
-		      <a href="https://amzn.to/4b7ngVJ"><img src="https://m.media-amazon.com/images/I/61eGjeYXbVL._SL1233_.jpg" height="300" height="auto" ></a>
+		      <a href="https://amzn.to/4b7ngVJ"><img src="https://m.media-amazon.com/images/I/61eGjeYXbVL._SL1233_.jpg" height="400" height="auto" ></a>
 
 	    </div>
-
+</center>
 	 
 	  
 	
@@ -104,10 +107,8 @@ The following code listing shows the entire program using HTML, PyScript, and Py
 	  
 <div>
     <p>
-<textarea rows="40"  cols="80">
+<textarea rows="40"  cols="90">
 
-
-    
 <html>
     <head>
         <title>Hello World</title>
@@ -163,42 +164,128 @@ The listings following the next figure in this section will focus on the differe
 	
 </p>
 
+	<center>
 <div>  
 	<p>
-		<img src="images/HelloWorld.png" height="300" width="auto">
+		<img src="images/HelloWorld.png" height="500" width="auto">
 	</p>
 </div>
+</center>
 
 
+<p>
 
-
+	In the next listing, I will only discuss the head section of the code denoted by the head tags:
+</p>
 	 
+<div>
+    <p>
+<textarea rows="5"  cols="80">
+		  
+<head> ... </head> 
+
+</textarea>    
+</p>
+</div> 
+
+
+<p>
+	The title tag 
+</p>
+
+<div>
+    <p>
+<textarea rows="5"  cols="80">
+		  
+<title> 
+
+</textarea>    
+</p>
+</div> 
+
+
+<p>
+	 is used to 
+	provide a title for your website and is useful for search engine indexing. 
+
+	<br/>
+	
+	The following tag
+</p>
 
 
 <div>
     <p>
-<textarea rows="40"  cols="80">
+<textarea rows="5"  cols="80">
 		  
-In the next listing, I will only discuss the head section of the code denoted by the head tags: \textbf{<head> ... </head>}. The title tag \textbf{<title>} is used to 
-	provide a title for your website and is useful for search engine indexing. The \textbf{<meta charset="utf-8" />} is used to define character encoding for your
-	website.  The next 2 lines are very important and we will be using them on all our programs. They are both provided by 
-	the PyScript project (\babelEN{\cite{pyscriptref}}). The line denoted by the \textbf{<link>} tag references the stylesheet which is a file with extension .css. 
-	This style sheet just makes our website look more slick when it is running. We could do without it or create our own. But let us just use what the PyScript
-	project provided. CSS files are especially formatted files where we define common things realted to style about our website like fonts, positioning, colors, etc.
-	The last line with the \textbf{<script>} tag is required. It imports pyscript.js. Websites can import many other code modules from the internet. This helps
-	to extend their capabilities. So, websites import these .js files. This \textbf{pyscript.js} file will help us to run PyScript on our browser. 
+<meta charset="utf-8" /> 
 
 </textarea>    
 </p>
-</div>   
+</div> 
+
+
+<p>
+ is used to define character encoding for your
+	website.  The next 2 lines are very important and we will be using them on all our programs. They are both provided by 
+	the PyScript project.
+
+	<br/>
+
+	The line denoted by the following tag
+	
+</p>
+
+
+
+
+<div>
+    <p>
+<textarea rows="5"  cols="80">
+		  
+<link>
+
+</textarea>    
+</p>
+</div> 
+
+
+<p>
+This tag references the stylesheet which is a file with extension .css. 
+	This style sheet just makes our website look more slick when it is running. We could do without it or create our own. But let us just use what the PyScript
+	project provided. CSS files are especially formatted files where we define common things realted to style about our website like fonts, positioning, colors, etc.
+<br/>
+	
+	The last line is  for javascripts as denoted by the following tag
+	
+</p>
+
+<div>
+    <p>
+<textarea rows="5"  cols="80">
+		  
+<script>
+
+</textarea>    
+</p>
+</div> 
+
+<p>
+ This tag is required to import pyscript.js. Websites can import many other code modules from the internet. This helps
+	to extend their capabilities. So, websites import these .js files. This "pyscript.js" file will help us to run PyScript on our browser. 
+
+	
+</p>
+	
+	
+  
 
   
 	
 	
 <div>
     <p>
-<textarea rows="40"  cols="80">
-
+<textarea rows="15"  cols="80">
 
     <html>
     <head>
@@ -235,7 +322,6 @@ The following code listing shows the navbar segment. This is what provides a nav
     <p>
 <textarea rows="20"  cols="80">
 
-
     <html>
 
    ...
@@ -270,7 +356,7 @@ The next listing shows the part of the Hello World code related to triggering ev
 	  so they can be referenced. As we will see later, we can call our tags by \textbf{id} and write something to them. The \textbf{div} with \textbf{id=test-output} can 
 	  be used in the same way. Notice the first "div" does not have an \textbf{id} and it is just used to write out some instructions to the website once it is
 	  running. 
-
+<br/>
 Okay, I saved the best for last. The button tag "button" is used to create a button on your website. When you press the button, it will call 
 	the function name "my_gen_function()". Notice that it is associated with the "py-click" option. This means that this is a function 
 	written in Python. And just like that, this is how from HTML, we can call Python code. Now all that remains is to encapsulate our python code. We will see that
@@ -287,7 +373,7 @@ Okay, I saved the best for last. The button tag "button" is used to create a but
 
 <div>
 <p>
-<textarea rows="30"  cols="80">
+<textarea rows="15"  cols="80">
 
 <html>
    ...
