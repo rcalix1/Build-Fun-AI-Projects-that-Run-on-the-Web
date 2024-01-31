@@ -480,14 +480,10 @@ Whereas HTML is static, JavaScript is dynamic. What that means is that JavaScrip
         We actually will not use a lot of JavaScript in this project since we will be using PyScript instead. To use JavaScript we usually include a new set of tags
         in our HTML code. The tags are \textbf{<script>} and \textbf{</script>} like in the listing below.
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={HTML with JavaScript tags}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
-
+<center>
+<div>
+<textarea rows="10" cols="100">
+	
 <html>
 <head>
       <script>
@@ -502,9 +498,13 @@ Whereas HTML is static, JavaScript is dynamic. What that means is that JavaScrip
 
 </body>
 </html>
+	
+</textarea>
+  
+</div>
+</center>
+	
 
-\end{lstlisting}
-\end{minipage}
 
 
 
@@ -536,16 +536,11 @@ And the following tags are the heart of it all. They are the PyScript tags where
 
     
 </p>
-        
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={PyScript Tags}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
-
+<center>
+<div>
+<textarea rows="10" cols="100">
+	
 <html>
 <head>
       <script>
@@ -565,9 +560,13 @@ And the following tags are the heart of it all. They are the PyScript tags where
         </script>
 </body>
 </html>
+	
+</textarea>
+  
+</div>
+</center>
 
-\end{lstlisting}
-\end{minipage}
+
 
 
 <h1>
@@ -584,14 +583,11 @@ Python is a programming language. It is used quite extensively for data science,
 
 The following code listing shows an example of using Python with PyScript.   With this simple Python code, we create a variable, a Python list, and print the word \textbf{hello}. 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Numpy inside PyScript tags}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
 
+<center>
+<div>
+<textarea rows="10" cols="100">
+	
 <html>
 <head>
       <script>
@@ -612,9 +608,14 @@ The following code listing shows an example of using Python with PyScript.   Wit
         </script>
 </body>
 </html>
+	
+</textarea>
+  
+</div>
+</center>
 
-\end{lstlisting}
-\end{minipage}
+
+
 
 
 ## Numpy
@@ -633,14 +634,11 @@ The code listing below is similar to previous examples. We add Numpy instruction
 We create the object \textbf{np} which is what we reference every time we want to use Numpy. Here, the Python list is now converted to a Numpy array and then printed. 
         Later we will see that instead of the \textbf{print} statement, we will want to display Python data with HTML tags such as the \textbf{div} tag.
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Add Numpy library and code with PyScript}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
 
+<center>
+<div>
+<textarea rows="10" cols="100">
+	
 <html>
 <head>
       <script>
@@ -660,9 +658,16 @@ We create the object \textbf{np} which is what we reference every time we want t
         </script>
 </body>
 </html>
+	
+</textarea>
+  
+</div>
+</center>
 
-\end{lstlisting}
-\end{minipage}
+
+
+	
+
 
 
 
@@ -691,7 +696,7 @@ This dataset includes 150 samples. Each sample is for a flower and it is represe
     
     <center>
       <div>
-        <img src="images/irisData.png" width="500" height="auto">
+        <img src="images/irisData.png" width="700" height="auto">
       </div>
 
     </center>
@@ -719,7 +724,7 @@ Finally, we get to KNN. KNN is the AI algorithm. In chapter 3, I will describe t
         of the space as can be visualized in the figure below. 
 
         <div>
-<img src="images/vectorSpaceColorBalls.jpg" width="500" height="auto">
+<img src="images/vectorSpaceColorBalls.jpg" width="700" height="auto">
       
 
             
@@ -745,7 +750,7 @@ So, what will you build? For this first project book in the series, your final a
 
    <center>
       <div>
-        <img src="images/appKNNtextboxes.png" width="500" height="auto">
+        <img src="images/appKNNtextboxes.png" width="700" height="auto">
       </div>
 
     </center>
