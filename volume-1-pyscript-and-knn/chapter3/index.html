@@ -435,7 +435,7 @@ The next section in the code includes  a function called the Euclidean distance 
         
 <div>
 <p>
-<textarea rows="20"  cols="80">
+<textarea rows="20"  cols="100">
 		  
 <section class="pyscript"> 
             <div id="mpl"></div>
@@ -459,87 +459,107 @@ The next section in the code includes  a function called the Euclidean distance 
 </div> 
 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Insert code directly in your document}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
+<p>
 
+This is the function that measures the distance between 2 points in a vector space. These 2 point need to have the same size but the size can be of any dimension. 
+	For instance, for our Iris data, every point has 4 features. So in the code the 2 points v1 and v2 would be of size 4 each. However, we could also have points 
+	(samples) of many more dimensions. For instance, points with 100 features. So in this case v1 and v2 would both need to have size 100. But the cool thing is that 
+	the function for distance calculation would still work. That is the power of Numpy. 
 
+<br/>
+<br/>	
+The name Euclidean distance comes from a Greek philosopher named Euclid. He is best known for putting together one of the earliest books on geometry. 
+	The book was so good for its time that the type of mathematics it discussed became known as Euclidean geometry.
+<br/>
+<br/>
+So, where does this magical Euclidean distance function come from? Would you believe that it is related to an idea one of the great Greek philosophers 
+	(Pytagoras) is credited with? Pytagoras was before Euclid and is credited with coming up with the Pythagorean Theorem (bubble in the figure). 
+	
+</p>
 
+<center>
+  <div>
 
-\end{lstlisting}
-\end{minipage}
+          
+<img src="images/Pythagoras.jpg" height="500" width="auto">
 
-This is the function that measures the distance between 2 points in a vector space. These 2 point need to have the same size but the size can be of any dimension. For instance, for our Iris data, every point has 4 features. So in the code the 2 points v1 and v2 would be of size 4 each. However, we could also have points (samples) of many more dimensions. For instance, points with 100 features. So in this case v1 and v2 would both need to have size 100. But the cool thing is that the function for distance calculation would still work. That is the power of Numpy. 
-
-
-The name Euclidean distance comes from a Greek philosopher named Euclid. He is best known for putting together one of the earliest books on geometry. The book was so good for its time that the type of mathematics it discussed became known as Euclidean geometry.
-
-So, where does this magical Euclidean distance function come from? Would you believe that it is related to an idea one of the great Greek philosophers (Pytagoras) is credited with? Pytagoras was before Euclid and is credited with coming up with the Pythagorean Theorem (bubble in the figure). 
-
-        <div>
-
-               <p>
-<img src="images/Pythagoras.jpg" height="300" width="auto">
-
-        
-            
-        </p>
         </div>
+	
+</center>
+      
      
 
+<p>
 
-
-
-
-
-
-The theorem states that given a triangle (see figure below), the sum of the areas of the two squares on the legs (a and b in green) equals the area of the square on the hypotenuse (c in green). 
-
+	The theorem states that given a triangle (see figure below), the sum of the areas of the two squares on the legs (a and b in green) equals the area
+	of the square on the hypotenuse (c in green). 
+<br/>
 If you look closely at the figure below, you can see that I have written down the connection between Pythagoras' theorem, and the euclidean function we used in our code. 
 
 
+</p>
 
-             <div>
 
-               <p>
-<img src="images/mathPythagoras.jpg" height="300" width="auto">
+<center>
+         <div>
 
-        
-            
-        </p>
+<img src="images/mathPythagoras.jpg" height="500" width="auto">
+
         </div>
-     
+	
+</center>
 
-Now, with some of the math history out of the way, let us continue with our code description. In the next code listing we can see the KNN \textbf{predict} function. Actually, the \textbf{predict} function is the actual KNN algorithm. I will describe it in detail next. The variable \textbf{test\_x} is the sample in question. Say, one Iris test sample with 4 features (\textbf{[x1, x2, x3, x4]}). The next line of code:
 
-\textbf{distances = [ euclidean\_distance(test\_x , x)  for x in X\_train    ]}
 
-calculates all the distances between \textbf{test\_x} and all the training samples. The way this statement is written is called a list comprehension in Python. The \textbf{"for x"} part of the statement means that each sample in the train set is grabbed and passed to the \textbf{euclidean\_distance} function along with the test sample. Both points are passed to the Euclidean equation and the distance between them is returned. This is done for every training sample and in the end, the list \textbf{"distances"} contains all the measured distances. 
+<p>
 
+Now, with some of the math history out of the way, let us continue with our code description. In the next code listing we can see the KNN 
+	\textbf{predict} function. Actually, the \textbf{predict} function is the actual KNN algorithm. I will describe it in detail next. 
+	The variable \textbf{test\_x} is the sample in question. Say, one Iris test sample with 4 features (\textbf{[x1, x2, x3, x4]}). 
+	The next line of code:
+
+	
+</p>
+    
+   <center>
+distances = [ euclidean_distance(test_x , x)  for x in X_train    ]
+   </center>  
+
+<p>
+calculates all the distances between "test_x" and all the training samples. The way this statement is written is called a list comprehension in Python.
+	The "for x" part of the statement means that each sample in the train set is grabbed and passed to the 
+	"euclidean_distance" function along with the test sample. Both points are passed to the Euclidean equation and the distance between them is returned. 
+	This is done for every training sample and in the end, the list \textbf{"distances"} contains all the measured distances. 
+<br/>
 The next statement:
 
-\textbf{k\_neighbor\_indices = np.argsort(distances)[:k]}
+	
+</p>
 
-takes all the distances and, using \textbf{np.argsort()}, sorts them. Then we slice the sorted vector with \textbf{[:k]}. This slicing only returns the indeces for the k smallest distances. The indeces are assigned to the variable named \textbf{k\_neighbor\_indices}. One important note is that argsort returns only the indeces in the vector and not the values themselves. Since the indeces in the \textbf{"X"} data and \textbf{"y"} labels are aligned, then we can use these same indeces to extract the corresponding labels from \textbf{"y"}. And that is exactly what we do with the following statement:
+<p>
+k_neighbor_indices = np.argsort(distances)[:k]
+<br/>
+	<br/>
+takes all the distances and, using np.argsort(), sorts them. Then we slice the sorted vector with \textbf{[:k]}. This slicing only returns the indeces for the 
+	k smallest distances. The indeces are assigned to the variable named \textbf{k\_neighbor\_indices}. One important note is that argsort returns only 
+	the indeces in the vector and not the values themselves. Since the indeces in the \textbf{"X"} data and \textbf{"y"} labels are aligned, then we can use
+	these same indeces to extract the corresponding labels from \textbf{"y"}. And that is exactly what we do with the following statement:
+<br/>
+	<br/>
+labels = [ y_train[i]  for i in k_neighbor_indices  ]
+<br/>
+	<br/>
+Finally, the list labels} is converted into a Numpy array of the labels which are numbers, and the mean of them is calculated. That is it. You have found the label.
+<br/>
+	
+</p>
+	
 
-\textbf{labels = [ y\_train[i]  for i in k\_neighbor\_indices  ]}
 
-Finally, the list \textbf{labels} is converted into a Numpy array of the labels which are numbers, and the mean of them is calculated. That is it. You have found the label.
-
-
-
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={The KNN predict function}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
-
+<div>
+<p>
+<textarea rows="20"  cols="100">
+		  
 <section class="pyscript"> 
             <div id="mpl"></div>
 
@@ -558,29 +578,38 @@ Finally, the list \textbf{labels} is converted into a Numpy array of the labels 
                     ...
 
                 </script>
-        </section>
+</section>
 
 
-\end{lstlisting}
-\end{minipage}
 
+</textarea>    
+</p>
+</div> 
+	
+
+
+
+<p>
 
 Wasn't that easy. We have described the whole KNN algorithm. Wow! 
 
-Now let us proceed to talk about the data. As previously described, we are using the Iris dataset. The file is provided in the companion GitHub repo for this project book. It is stored as a file in .csv format. This is a very common format for AI/ML research and development.  
+Now let us proceed to talk about the data. As previously described, we are using the Iris dataset. The file is provided in the companion GitHub repo for this 
+	project book. It is stored as a file in .csv format. This is a very common format for AI/ML research and development.  
 
-As can be seen in the next code listing, we read the data with Pandas. We then convert the labels from words to numbers, and then convert the Pandas object to a Numpy matrix. 
-                    
-                        
+As can be seen in the next code listing, we read the data with Pandas. We then convert the labels from words to numbers, and then convert the Pandas object 
+	to a Numpy matrix. 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Reading in the data}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
+	
+</p>
 
+
+
+
+
+<div>
+<p>
+<textarea rows="20"  cols="100">
+		  
 <section class="pyscript"> 
             <div id="mpl"></div>
                ...
@@ -595,28 +624,42 @@ As can be seen in the next code listing, we read the data with Pandas. We then c
                     iris_np = iris_pd.to_numpy() 
                   ...
                 </script>
-        </section>
+</section>
 
 
-\end{lstlisting}
-\end{minipage}
+</textarea>    
+</p>
+</div> 
+	
+
+	
+                        
 
 
+
+
+
+<p>
 
 In the next code listing we shuffle the data using the following statement: 
-
-\textbf{np.random.shuffle(iris\_np)}
-
+<br/>
+	<br/>
+np.random.shuffle(iris_np)
+<br/>
+	<br/>
  This statement randomizes the rows in the iris Numpy array. Randomizing the data is a standard step in AI/ML research and development. 
+<br/>
+	
+</p>
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Shuffle the data}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
 
+
+
+
+<div>
+<p>
+<textarea rows="20"  cols="100">
+		  
 <section class="pyscript"> 
             <div id="mpl"></div>
                 ...
@@ -630,23 +673,33 @@ In the next code listing we shuffle the data using the following statement:
 </section>
 
 
-\end{lstlisting}
-\end{minipage}
+</textarea>    
+</p>
+</div> 
+	
+
+	
+<p>
+
+The code in the following code listing is not necessary but it can be handy to view and debug the data. I recommend that you try it out and view the details about the data. 
+	The trick is to take Numpy data and display it on the web page. To do that we can use statements such as this one:
+
+Element('test-output').element.innerText =  text 
+
+Here you can see that "Element" grabs HTML tags by id ('test-output'), and can assign to its "innerText" field, a string from Python passed in the variable 
+	"text". 
 
 
-The code in the following code listing is not necessary but it can be handy to view and debug the data. I recommend that you try it out and view the details about the data. The trick is to take Numpy data and display it on the web page. To do that we can use statements such as this one:
+	
+</p>
 
-\textbf{Element('test-output').element.innerText =  text }
 
-Here you can see that \textbf{"Element"} grabs HTML tags by id ('test-output'), and can assign to its \textbf{"innerText"} field, a string from Python passed in the variable \textbf{"text"}. 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Debug and view data}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
+
+<div>
+<p>
+<textarea rows="20"  cols="100">
+		  
 
 <section class="pyscript"> 
             <div id="mpl"></div>
@@ -672,22 +725,32 @@ Here you can see that \textbf{"Element"} grabs HTML tags by id ('test-output'), 
                  ...
                 
                 </script>
-        </section>
+</section>
 
 
-\end{lstlisting}
-\end{minipage}
+</textarea>    
+</p>
+</div> 
+	
+
+	
+<p>
+Since you are a "slicing" master by now, the following code listing should be starting to make sense. The following code listing shows how to slice the Iris Numpy 
+	array into 4 new Numpy arrays. In machine learning you usually have train and test sets, and for convenience for each set (train and test), 
+	we want to have, for each row, the feature data  in "X", and the labels data in "y". That is why we get 4 new Numpy tensors. It is more convenient
+	and practical. Basically, all of chapter 2 was developed just so that you can understand this part of the code :)
 
 
-Since you are a \textbf{slicing} master by now, the following code listing should be starting to make sense. The following code listing shows how to slice the Iris Numpy array into 4 new Numpy arrays. In machine learning you usually have \textbf{train} and \textbf{test} sets, and for convenience for each set (train and test), we want to have, for each row, the feature data  in \textbf{"X"}, and the labels data in \textbf{"y"}. That is why we get 4 new Numpy tensors. It is more convenient and practical. Basically, all of chapter 2 was developed just so that you can understand this part of the code :)
+	
+</p>
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Slicing the data into Train and Test}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
+
+
+
+<div>
+<p>
+<textarea rows="20"  cols="100">
+		  
 
 <section class="pyscript"> 
             <div id="mpl"></div>
@@ -707,19 +770,26 @@ Since you are a \textbf{slicing} master by now, the following code listing shoul
 </section>
 
 
-\end{lstlisting}
-\end{minipage}
+</textarea>    
+</p>
+</div> 
+	
 
 
-The following code listing is similar to our previously described debugging code segment. The code is not necessary and that is why it is commented out with the pound side. But you can use it if you wish to display the data to the website (debugging). 
+<p>
+The following code listing is similar to our previously described debugging code segment. The code is not necessary and that is why it is commented out with the pound side. 
+	But you can use it if you wish to display the data to the website (debugging). 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={To look at the data}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
+
+	
+</p>
+
+
+
+<div>
+<p>
+<textarea rows="20"  cols="100">
+		  
 
 <section class="pyscript"> 
     <div id="mpl"></div>
@@ -737,29 +807,47 @@ The following code listing is similar to our previously described debugging code
 </section>
 
 
-\end{lstlisting}
-\end{minipage}
+</textarea>    
+</p>
+</div> 
+	
 
+
+	
+<p>
 
 We finally get to our last function which is:
+<br/>
+	<br/>
+my_gen_function()
+<br/>
+	<br/>
+This is the function that is invoked when you press the button of your website. Some would call it an event handler. As can be seen in the following code listing, 
+	the function has a "for" loop which grabs, for every iteration, a vector in X_test. Each value from X_test will be compared to
+	every valued in X_train (i.e. calculate the Euclidean distance). In the next section when we build our inference KNN app, we will not use 
+	this "for" loop since we will pass the test sample from values collected with text boxes. 
+<br/>
+	<br/>
+Now back to the code. For every iteration of the "for" loop, we pass test_x to the predict function. 
+	As previously described, this function returns the label into the variable 
+<br/>
+	<br/>
+"the_pred"
+<br/>
+	<br/>
+And that is it. After that we just convert the "x" data and predicted label to a string. Using the "Element" object, we grab 
+	the div tag with id="mpl" and display our data there on the website. That is it! 
 
-\textbf{my\_gen\_function()}
+	
+</p>
 
-This is the function that is invoked when you press the button of your website. Some would call it an event handler. As can be seen in the following code listing, the function has a \textbf{"for"} loop which grabs, for every iteration, a vector in \textbf{X\_test}. Each value from \textbf{X\_test} will be compared to every valued in \textbf{X\_train} (i.e. calculate the Euclidean distance). In the next section when we build our inference KNN app, we will not use this \textbf{"for"} loop since we will pass the test sample from values collected with text boxes. 
 
-Now back to the code. For every iteration of the \textbf{"for"} loop, we pass \textbf{test\_x} to the predict function. As previously described, this function returns the label into the variable 
 
-\textbf{"the\_pred"}
 
-And that is it. After that we just convert the \textbf{"x"} data and predicted label to a string. Using the \textbf{"Element"} object, we grab the div tag with \textbf{id="mpl"} and display our data there on the website. That is it! 
-
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={My Generate Function}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
+<div>
+<p>
+<textarea rows="20"  cols="100">
+		  
 
 <section class="pyscript"> 
     <div id="mpl"></div>
@@ -780,30 +868,45 @@ And that is it. After that we just convert the \textbf{"x"} data and predicted l
 </section>
 
 
-\end{lstlisting}
-\end{minipage}
 
+</textarea>    
+</p>
+</div> 
 
+	
+<p>
 We are done describing KNN. In the next section, I will just describe the additional statements we need to make to complete and deploy our KNN website.
 
-
-\section{A KNN app for Iris Flower classification}
-
-In this section you will bring everything together and build the web site that runs KNN. Since this is a KNN based AI model for classifying Iris flowers, all our input samples will have 4 features. The input features can be entered into 4 text boxes. When you press the button, the application will convert the 4 values into a list. The list will be converted into a Numpy array (i.e. a vector). And then, finally, through the KNN algorithm, the model will predict the class. In this section I will only describe the parts of the code that are different from what was described in the previous section. 
-
-While I like to look at all the code as a whole, the whole AI App for Iris classification is too big to fit here. The companion book repo on GitHub includes the file with all the code in it. However, I would recommend that you try to build the KNN Iris classification website yourself from the parts. There really isn't too much code that is new or different from what was described in the previous section.
+	
+</p>
 
 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{showstringspaces=false}  %% remove weird symbol in spaces
-\lstset{frame=lines}
-\lstset{caption={The text boxes}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
 
+<h1>
+A KNN app for Iris Flower classification
+	
+</h1>
+	
+<p>
+In this section you will bring everything together and build the web site that runs KNN. Since this is a KNN based AI model for classifying Iris flowers,
+	all our input samples will have 4 features. The input features can be entered into 4 text boxes. When you press the button, the application will convert the
+	4 values into a list. The list will be converted into a Numpy array (i.e. a vector). And then, finally, through the KNN algorithm, the model will predict the class. 
+	In this section I will only describe the parts of the code that are different from what was described in the previous section. 
+
+While I like to look at all the code as a whole, the whole AI App for Iris classification is too big to fit here. The companion book repo on GitHub includes the file 
+	with all the code in it. However, I would recommend that you try to build the KNN Iris classification website yourself from the parts. There really isn't too 
+	much code that is new or different from what was described in the previous section.
+
+
+	
+</p>
+
+
+<div>
+<p>
+<textarea rows="30"  cols="100">
+		  
 <html>   
 <body>
 <div>Type features here and then press the button: </div>
@@ -837,36 +940,49 @@ While I like to look at all the code as a whole, the whole AI App for Iris class
 </html>
 
 
-\end{lstlisting}
-\end{minipage}
+</textarea>    
+</p>
+</div> 
 
 
+<p>
 
-One of the main things we need to add is 4 text boxes. That is really easy to do. HTML has a special tag called <input> that we can use for this purpose. We make sure to give an id name to each of the 4 input text boxes so we can reference them in the code to get the values. To better display the text boxes, we enclose them in a table which can also be constructed on a website using HTML. This is shown in the previous code listing.
+One of the main things we need to add is 4 text boxes. That is really easy to do. HTML has a special tag called <input> that we can use for this purpose. 
+	We make sure to give an id name to each of the 4 input text boxes so we can reference them in the code to get the values. To better display the text boxes, 
+	we enclose them in a table which can also be constructed on a website using HTML. This is shown in the previous code listing.
+<br/>
+	<br/>
+The next new piece of code can be seen in the following code listing. We need to obtain the values from the text boxes and convert then into one single Numpy array 
+	of size 4 (for the four features). Here once again we use the "Element" object to grab the values in the 4 text boxes by \textbf{id} name. We then create 
+	a Python list with the values like so:
+<br/>
+	<br/>
 
-The next new piece of code can be seen in the following code listing. We need to obtain the values from the text boxes and convert then into one single Numpy array of size 4 (for the four features). Here once again we use the \textbf{"Element"} object to grab the values in the 4 text boxes by \textbf{id} name. We then create a Python list with the values like so:
-
-
-\textbf{conditions\_list = [c1, c2, c3, c4]}
-
+conditions_list = [c1, c2, c3, c4]
+<br/>
+	<br/>
 
 we then convert the list into a Numpy array. As previously described, the statement is:
-
-\textbf{np\_conditions\_list = np.expand\_dims(np\_conditions\_list, axis=0)}
-
-which can convert our Numpy array from shape (4,) to shape (1, 4). This will help us when we calculate the Euclidean distance ensuring the vector has the proper arrangement of dimensions that Numpy expects. 
-
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Get the data from text boxes and convert to numpy vector}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
+<br/>
+	<br/>
+np_conditions_list = np.expand\_dims(np_conditions_list, axis=0)
+<br/>
+	<br/>
+which can convert our Numpy array from shape (4,) to shape (1, 4). This will help us when we calculate the Euclidean distance ensuring the vector has the proper 
+	arrangement of dimensions that Numpy expects. 
 
 
+	
+</p>
 
-            <script type="py"> 
+
+
+
+<div>
+<p>
+<textarea rows="30"  cols="100">
+		  
+    <script type="py"> 
                     ...
      
                     def get_np_conditions_vector():
@@ -883,31 +999,35 @@ which can convert our Numpy array from shape (4,) to shape (1, 4). This will hel
 
                    ...
                     
-             </script>
-     
-
-\end{lstlisting}
-\end{minipage}
+    </script>
 
 
-The final code listing is for our new \textbf{my\_gen\_function()}. Now we modify it to read the data from the text boxes. Notice the call to:
-
-\textbf{test\_x = get\_np\_conditions\_vector()}
-
-This gets the data from the text boxes and assigns it as a Numpy vector to \textbf{test\_x}. After that, the code is pretty much the same as before.
+</textarea>    
+</p>
+</div> 
 
 
+<p>
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{showstringspaces=false}  %% remove weird symbol in spaces
-\lstset{frame=lines}
-\lstset{caption={Gen Function that reads from text boxes}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
+The final code listing is for our new \textbf{my_gen_function()}. Now we modify it to read the data from the text boxes. Notice the call to:
+<br/>
+	<br/>
+test_x = get_np_conditions_vector()
+<br/>
+	<br/>
+This gets the data from the text boxes and assigns it as a Numpy vector to "test_x". After that, the code is pretty much the same as before.
 
 
+	
+</p>
+
+
+
+
+<div>
+<p>
+<textarea rows="20"  cols="100">
+		  
 <script type="py">
                 
         ...
@@ -922,28 +1042,47 @@ This gets the data from the text boxes and assigns it as a Numpy vector to \text
                     
        ...
 </script>
-   
 
 
-\end{lstlisting}
-\end{minipage}
+</textarea>    
+</p>
+</div> 
+
+	
 
 
-Well, that is it! The next figure shows what the final website should look like. For your convenience I have displayed in the website all the test samples with their associated classes. If you notice, each row is a vector of 5 values separated by comma. The first four values are the 4 features (\textbf{[x1, x2, x3, x4]}), and the fifth value is the label. You can use this to make sure your model is predicting correctly. Since it should not have seen the test samples before, it is possible that the model could make a few mistakes. However, if it is a good model, for the majority of the cases, the predicted class should match the real class. With this idea, could you devise a metric to quantify performance? You can call it the accuracy metric.
 
-\textbf{Note}: you will get a few mis-classifications. But out of 30, it should be less that 5. 
 
-As an example, I grabbed the last test sample. I entered the 4 features into the text boxes, and the KNN model predicted the class 2. If you look at the last data row in the figure, you can see that the label is also 2. Therefore, the model was accurate for that test sample. 
+<p>
 
-      <div>
+	Well, that is it! The next figure shows what the final website should look like. For your convenience I have displayed in the website all the 
+	test samples with their associated classes. If you notice, each row is a vector of 5 values separated by comma. The first four values are the 4 
+	features (\textbf{[x1, x2, x3, x4]}), and the fifth value is the label. You can use this to make sure your model is predicting correctly. 
+	Since it should not have seen the test samples before, it is possible that the model could make a few mistakes. However, if it is a good model, 
+	for the majority of the cases, the predicted class should match the real class. With this idea, could you devise a metric to quantify performance?
+	You can call it the accuracy metric.
+<br/>
+	<br/>
+Note: you will get a few mis-classifications. But out of 30, it should be less that 5. 
+<br/>
+	<br/>
+As an example, I grabbed the last test sample. I entered the 4 features into the text boxes, and the KNN model predicted the class 2. 
+	If you look at the last data row in the figure, you can see that the label is also 2. Therefore, the model was accurate for that test sample. 
 
-               <p>
-<img src="images/appKNNtextboxes.png" height="300" width="auto">
 
-        
-            
-        </p>
+</p>
+	
+
+
+<center>
+	   <div>
+
+<img src="images/appKNNtextboxes.png" height="500" width="auto">
+
         </div>
+</center>
+	
+   
 
 
 
