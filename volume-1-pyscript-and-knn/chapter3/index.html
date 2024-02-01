@@ -50,8 +50,32 @@ This chapter focuses  on the development of a simple website that uses PyScript,
 	book and the project we are trying to complete and deploy to the web using GitHub. We previously described KNN as the K Nearest Neighbors algorithm. 
 	It is our first machine learning algorithm in this book series. KNN is a great algorithm to start your journey into the world of AI. It is simple enough, 
 	very useful, and can be coded from scratch efficiently using only a few lines of code with Python and Numpy.
+</p>
 
 
+
+	    	<h1>
+FTC and Amazon Disclaimer
+		
+	</h1>
+	
+<p>
+This post/page/article includes Amazon Affiliate links to products. This site receives income if you purchase through these links. 
+	This income helps support content such as this one.
+</p>
+
+
+<center>
+
+	  <div>
+
+		      <a href="https://amzn.to/4b7ngVJ"><img src="https://m.media-amazon.com/images/I/61eGjeYXbVL._SL1233_.jpg" height="400" width="auto"></a>
+
+	    </div>
+</center>
+
+	
+<p>
 <br/>
 So, what can KNN do? KNN is what is known as a machine learning algorithm for classification. If you recall, in chapter 1,
 	I gave a quick explanation of KNN using a vector space of different balls used in sports. I said that, in essence, KNN is used
@@ -77,38 +101,43 @@ Look at the figure again. In the lower right hand corner there are 3 white baseb
 
     
 </p>
+
+
+
+
+
+	
 <center>
    <div>
-<img src="images/vectorSpaceColorBalls.jpg" height="500" width="auto">
+    <img src="images/vectorSpaceColorBalls.jpg" height="500" width="auto">
 </div>
-	
 </center>
      
 
-
-
-
-
-Basically, KNN will take a sample in question, say the green baseball, and measure the distance between it and all other balls in this space (i.e. the soccer balls, basket balls, football balls, tennis balls, and baseballs). Once KNN calculates all the distances, it will rank then from lowest to highest distance. Out of these ranked distances, it will select the top \textbf{k} distances and assign to the ball in question the majority class from the set containing just the top \textbf{k} shortest distances. For the given example, if we selected a k=5 then the 5 closest balls to the ball in question (green baseball) would be 3 baseballs, 1 tennis ball, and one football. Since the majority is baseball, KNN would assign the class baseball to our ball in question. From the figure, that would seem like the right answer. In the next sections, I will proceed to describe how to implement, test, and deploy our KNN machine learning model to the web. 
-
-In the next 2 sections, I will describe the KNN algorithm. The first of the 2 sections is the basic implementation of KNN. It involves building the model and running it. Usually this is where you figure out the performance metric of your model. We will still run it on the browser and deploy it but it will not be a general use App where we can add our inputs and do inference. Inference is a term used in AI which usually means prediction. The second of these 2 sections will do just that and use what we learned in the first section to build our inference application. A lot will be the same but it will take data from text boxes and we will need to make changes to execute this new functionality. 
-
-In summary, the next 2 sections cover:
-
-\begin{itemize}
-\item Basics to get KNN running
-\item A KNN app that you can use with user supplied data for Iris flower classification
-\end{itemize}
-
-	    	<h1>
-FTC and Amazon Disclaimer
-		
-	</h1>
-	
 <p>
-This post/page/article includes Amazon Affiliate links to products. This site receives income if you purchase through these links. 
-	This income helps support content such as this one.
+
+	
+Basically, KNN will take a sample in question, say the green baseball, and measure the distance between it and all other balls in this space (i.e. the soccer balls, 
+	basket balls, football balls, tennis balls, and baseballs). Once KNN calculates all the distances, it will rank then from lowest to highest distance.
+	Out of these ranked distances, it will select the top \textbf{k} distances and assign to the ball in question the majority class from the set containing just 
+	the top "k" shortest distances. For the given example, if we selected a k=5 then the 5 closest balls to the ball in question (green baseball) would be 3 
+	baseballs, 1 tennis ball, and one football. Since the majority is baseball, KNN would assign the class baseball to our ball in question. From the figure, 
+	that would seem like the right answer. In the next sections, I will proceed to describe how to implement, test, and deploy our KNN machine learning model to the web. 
+<br/>
+In the next 2 sections, I will describe the KNN algorithm. The first of the 2 sections is the basic implementation of KNN. It involves building the model and running it. 
+	Usually this is where you figure out the performance metric of your model. We will still run it on the browser and deploy it but it will not be a general use 
+	App where we can add our inputs and do inference. Inference is a term used in AI which usually means prediction. The second of these 2 sections will do just that 
+	and use what we learned in the first section to build our inference application. A lot will be the same but it will take data from text boxes and we will need to
+	make changes to execute this new functionality. 
+<br/>
+In summary, the next 2 sections cover:
 </p>
+
+<ul>
+<li>Basics to get KNN running</li>
+	<li>A KNN app that you can use with user supplied data for Iris flower classification</li>
+</ul>
+
 
 
 <h1>
@@ -116,6 +145,8 @@ This post/page/article includes Amazon Affiliate links to products. This site re
     
 Basics to get KNN running
     </h1>
+
+	
 <p>
 As you may remember from the previous chapters, first we need to define the HTML code that encapsulates the PyScript code, which in turn, encapsulates our KNN 
 	    algorithm implemented in Python and Numpy. The code in the next code listing should be familiar to you by now. Everything in the head section is similar to
@@ -125,18 +156,13 @@ As you may remember from the previous chapters, first we need to define the HTML
 </p>
 
 
-	       <div>
 
-		      <a href="https://amzn.to/4b7ngVJ"><img src="https://m.media-amazon.com/images/I/61eGjeYXbVL._SL1233_.jpg" height="200" width="auto"></a>
-
-	    </div>
+	
+	     
 
 <div>
-
     <p>
-
-<textarea rows="20"  cols="30">
-
+<textarea rows="20"  cols="100">
 
            <html>    
     <head>
@@ -164,32 +190,63 @@ As you may remember from the previous chapters, first we need to define the HTML
 </html>
 
 
-</textarea>
-
-
-        
+</textarea>      
 </p>
 </div>
 
 
 
+<p>
 
+	
+</p>
 
 
 
 
 In the next code listing we can see the previously discussed PyScript section denoted by 
 
-\textbf{<section class="pyscript">}
 
-This section contains the previously discussed 3 items: the \textbf{div} with \textbf{"mpl"} id  we have used before, the \textbf{config} section for libraries we want to use, and the \textbf{<script type="py">} section where we write out actual Python and Numpy code.
+<div>
+    <p>
+<textarea rows="4"  cols="80">
+		  
+<section class="pyscript"> 
+
+</textarea>    
+</p>
+</div> 
+
+
+<p>
+This section contains the previously discussed 3 items: the "div" with "mpl" id  we have used before, the "config" section for 
+	libraries we want to use, and the 
+	
+</p>	
+
+	<div>
+    <p>
+<textarea rows="4"  cols="80">
+		  
+<script type="py">
+
+</textarea>    
+</p>
+</div> 
+	
+
+<p>
+	section where we write out actual Python and Numpy code.
+
+		
+</p>	
+
+
 
 
     <div>
     <p>
-<textarea rows="20"  cols="30">
-
-
+<textarea rows="20"  cols="100">
 
       <section class="pyscript"> 
 
@@ -211,7 +268,7 @@ This section contains the previously discussed 3 items: the \textbf{div} with \t
                    ..the python code
  
                 </script>
-</section>
+         </section>
 
 </textarea>      
 </p>
@@ -219,15 +276,21 @@ This section contains the previously discussed 3 items: the \textbf{div} with \t
 
 
 
+<p>
+In the next code listing, you can see all the code needed to run KNN. Wow! Pretty short right? This code splits our data into
+	"train" and "test" sets. Then grabs every sample in the test set and compares it to every sample in the train set. 
+	As previously described, for each test sample, we get all distances between the test samples and all train samples. We then rank them and select the 
+	top "K" distances. Finally, we assign the majority class associated for the top 5 distances. That is it!
 
 
+	
+</p>
 
-In the next code listing, you can see all the code needed to run KNN. Wow! Pretty short right? This code splits our data into \textbf{train} and \textbf{test} sets. Then grabs every sample in the test set and compares it to every sample in the train set. As previously described, for each test sample, we get all distances between the test samples and all train samples. We then rank them and select the top \textbf{K} distances. Finally, we assign the majority class associated for the top 5 distances. That is it!
 
 
     <div>
     <p>
-<textarea rows="40"  cols="40">
+<textarea rows="40"  cols="100">
 
   <section class="pyscript"> 
     <div id="mpl"></div>
@@ -286,16 +349,25 @@ In the next code listing, you can see all the code needed to run KNN. Wow! Prett
         
 
      
+<p>
+Okay, so I always like to see the big picture first. And that is what the previous code listing was for. Now we can proceed to break the code down into
+	the various parts and describe what they are doing. 
+
+In the next code listing we can see all the libraries needed for our KNN implementation. We have Numpy, Pandas, Pyodide, and Matplotlib. Numpy as
+	you know by now is for all the math. Pandas is used in this project book to read in the data. Pyodide is intrinsic to PyScript and it is very
+	important to run Python on the web. Matplotlib is not used in this project book but it is very important for AI research. You will be amazed in future project
+	books by its capabilities for data visualization. 
+
+	
+</p>
 
 
 
-Okay, so I always like to see the big picture first. And that is what the previous code listing was for. Now we can proceed to break the code down into the various parts and describe what they are doing. 
-
-In the next code listing we can see all the libraries needed for our KNN implementation. We have Numpy, Pandas, Pyodide, and Matplotlib. Numpy as you know by now is for all the math. Pandas is used in this project book to read in the data. Pyodide is intrinsic to PyScript and it is very important to run Python on the web. Matplotlib is not used in this project book but it is very important for AI research. You will be amazed in future project books by its capabilities for data visualization. 
-
-  <pre><code class="python">
-        
-        <section class="pyscript"> 
+<div>
+<p>
+<textarea rows="18"  cols="100">
+		  
+  <section class="pyscript"> 
             <div id="mpl"></div>
 
               ...
@@ -310,12 +382,25 @@ In the next code listing we can see all the libraries needed for our KNN impleme
 
                 </script>
          </section>
- </code></pre>
+
+</textarea>    
+</p>
+</div> 
 
 
-    <pre><code class="pyscript">
-        
-        <section class="pyscript"> 
+
+<p>
+
+	and
+</p>
+
+
+
+<div>
+<p>
+<textarea rows="20"  cols="100">
+		  
+   <section class="pyscript"> 
             <div id="mpl"></div>
 
               ...
@@ -330,31 +415,28 @@ In the next code listing we can see all the libraries needed for our KNN impleme
 
                 </script>
          </section>
- </code></pre>
-    
 
 
-<pre><code class="python">
-def fib(n):
-  a, b = 0, 1
-    while a < n:
-      print(a, end=' ')
-      a, b = b, a+b
-      print()
-  fib(1000)
-</code></pre>
+</textarea>    
+</p>
+</div> 
 
+
+
+
+<p>
 
 The next section in the code includes  a function called the Euclidean distance as can be seen in the next code listing. 
 
-\begin{minipage}{\linewidth}
-\lstset{language=Python}
-\lstset{frame=lines}
-\lstset{caption={Insert code directly in your document}}
-\lstset{label={lst:code_direct}}
-\lstset{basicstyle=\footnotesize}
-\begin{lstlisting}[backgroundcolor = \color{white}]
+	
+</p>
+	
 
+        
+<div>
+<p>
+<textarea rows="20"  cols="80">
+		  
 <section class="pyscript"> 
             <div id="mpl"></div>
 
@@ -369,7 +451,23 @@ The next section in the code includes  a function called the Euclidean distance 
 
                    
                 </script>
-        </section>
+</section>
+
+
+</textarea>    
+</p>
+</div> 
+
+
+\begin{minipage}{\linewidth}
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Insert code directly in your document}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+\begin{lstlisting}[backgroundcolor = \color{white}]
+
+
 
 
 \end{lstlisting}
