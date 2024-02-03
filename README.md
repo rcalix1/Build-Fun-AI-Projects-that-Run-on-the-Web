@@ -2,9 +2,11 @@
 
 This is the official repo for my series of books titled: Build Fun AI Projects that Run on the Web. Each work book is meant to help you to develop an AI project that can be deployed and run on the web just by using a browser. The only things you will need to complete these projects are GitHub, a computer with internet access, a web browser, this work book, and some willingness to learn and fave fun. 
 
-## FTC and Amazon Disclaimer
+## Copyright, License, Amazon and FTC Disclaimer
 
-This post/page/article includes Amazon Affiliate links to products. This site receives income if you purchase through these links. This income helps support content such as this one.
+Copyright © by Ricardo A. Calix.
+All rights reserved. No part of this work may be reproduced or transmitted in any form or by any means, without written permission of the copyright owner.
+This post/page/article includes Amazon Affiliate links to products. This site receives income if you purchase through these links. This income helps support content such as this one. License: MIT.
 
 <a href="https://amzn.to/3S8cK7K"><img src="images/coverDONEclx.jpg" alt="image" width="600" height="auto"></a>
 
