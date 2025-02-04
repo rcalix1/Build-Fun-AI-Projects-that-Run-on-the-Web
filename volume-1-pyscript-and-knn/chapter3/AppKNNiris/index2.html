@@ -90,7 +90,7 @@
                     testDataXandy = iris_np[130:150, :]
                     str_np = np.array2string( testDataXandy, precision=2, separator=',', suppress_small=True)
                     text = str(str_np)
-                    pydom['test-output'].innerText =  text   
+                    pydom['test-output'] =  text   
                     
                     ######################################################################
 
@@ -114,7 +114,7 @@
                         text1 = np.array2string( test_x , precision=2, separator=',', suppress_small=True)
                         text3 = str( the_pred )
                         accum_res = "*******************\n" + "Predicted Class: " + text1 + "___"  + text3 + "\n"
-                        pydom['mpl'].innerText =  accum_res
+                        pydom['mpl'] =  accum_res
                     
  
                 </script>
