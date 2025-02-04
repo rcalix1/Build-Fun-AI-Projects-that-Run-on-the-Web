@@ -37,16 +37,9 @@
         <section class="pyscript"> 
             <div id="mpl"></div>
 
-                <py-config>
-                    packages = [
-                          "pandas",
-                          "matplotlib",
-                          "numpy"
-                    ]
-                    plugins = []
-                </py-config>
+          
 
-                <script type="py">
+                <script type="py" config="pyscript.toml">
                 
                     import numpy as np
                     import pandas as pd
