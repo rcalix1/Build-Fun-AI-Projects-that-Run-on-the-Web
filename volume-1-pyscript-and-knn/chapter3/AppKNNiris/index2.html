@@ -1,0 +1,128 @@
+<html>   
+    
+    <head>
+        <title>First Numpy Example</title>
+        <meta charset="utf-8" />
+        <!--   <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />    -->
+        <!--     <script defer src="https://pyscript.net/latest/pyscript.js"></script>     -->
+       <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+        <!-- CSS for examples -->
+        
+         <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+    </head>
+
+    <body>
+    <div>Type features here and then press the button: </div>
+    <table>
+     <tr>
+     <td>x1 </td>
+     <td> <input type="text" style="border:3px solid #F7730E;" value="3" id="testInput1"/> </td>
+
+     <td> x2 </td>
+     <td>   <input type="text" style="border:3px solid #F7730E;" value="3" id="testInput2"/> </td>
+
+     <td> x3 </td>
+     <td>  <input type="text" style="border:3px solid #F7730E;" value="2" id="testInput3"/> </td>
+
+     <td> x4 </td>
+     <td>   <input type="text" style="border:3px solid #F7730E;" value="3.4" id="testInput4"/> </td>
+     </tr>
+     </table>
+        
+     <button id="get-time" py-click="my_gen_function()"  class="py-button">Generate</button>
+
+     <div id="test-output"></div>
+
+        <section class="pyscript"> 
+            <div id="mpl"></div>
+
+                <py-config>
+                    packages = [
+                          "pandas",
+                          "matplotlib",
+                          "numpy"
+                    ]
+                    plugins = []
+                </py-config>
+
+                <script type="py">
+                
+                    import numpy as np
+                    import pandas as pd
+                    import matplotlib.pyplot as plt
+                    import matplotlib.tri as tri
+                    from pyodide.http import open_url
+
+                    #############################################################################
+
+                    def euclidean_distance(v1, v2):
+                        return np.sqrt( np.sum(   (v1 - v2)**2   )   )
+
+                    #############################################################################
+
+                    def predict(test_x):
+                        k = 5
+                        distances = [ euclidean_distance(test_x , x)  for x in X_train    ]
+                        k_neighbor_indices = np.argsort(distances)[:k]
+                        labels = [ y_train[i]  for i in k_neighbor_indices  ]
+                        labels_np = np.array( labels  )
+                        pred = int( np.mean(labels_np)  )
+                        return pred
+
+                    #####################################################################
+
+                    url1 = ("https://rcalix1.github.io/Build-Fun-AI-Projects-that-Run-on-the-Web/volume-1-pyscript-and-knn/chapter3/knn/iris.csv")
+                    iris_pd = pd.read_csv(open_url(url1))
+                    iris_pd['species'] = iris_pd['species'].replace({'setosa':0, 'versicolor':1 , 'virginica':2})
+                    iris_np = iris_pd.to_numpy()
+                 
+                    #####################################################################
+
+                    np.random.shuffle(iris_np)
+
+                    #####################################################################
+
+                    X_train   = iris_np[1:130, :4]
+                    y_train   = iris_np[1:130,  4]
+                    
+                    X_test    = iris_np[130:150, :4]
+                    y_test    = iris_np[130:150, 4]
+
+                    #####################################################################
+
+                    ## look at the test data
+                    testDataXandy = iris_np[130:150, :]
+                    str_np = np.array2string( testDataXandy, precision=2, separator=',', suppress_small=True)
+                    text = str(str_np)
+                    Element('test-output').element.innerText =  text   
+                    
+                    ######################################################################
+
+                    def get_np_conditions_vector():
+                        c1 = float( Element('testInput1').element.value )
+                        c2 = float( Element('testInput2').element.value )
+                        c3 = float( Element('testInput3').element.value )
+                        c4 = float( Element('testInput4').element.value )
+                       
+                        conditions_list = [c1, c2, c3, c4]
+                        np_conditions_list = np.array(conditions_list)
+                        np_conditions_list = np.expand_dims(np_conditions_list, axis=0)
+
+                        return np_conditions_list
+
+                    ######################################################################
+
+                    def my_gen_function():
+                        test_x = get_np_conditions_vector()
+                        the_pred = predict(test_x)
+                        text1 = np.array2string( test_x , precision=2, separator=',', suppress_small=True)
+                        text3 = str( the_pred )
+                        accum_res = "*******************\n" + "Predicted Class: " + text1 + "___"  + text3 + "\n"
+                        Element('mpl').element.innerText =  accum_res
+                    
+ 
+                </script>
+        </section>
+    </body>
+</html>
