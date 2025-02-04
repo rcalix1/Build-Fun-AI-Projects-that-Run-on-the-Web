@@ -46,6 +46,7 @@
                     import matplotlib.pyplot as plt
                     import matplotlib.tri as tri
                     from pyodide.http import open_url
+                    from pyweb import pydom
 
                     #############################################################################
 
@@ -88,15 +89,15 @@
                     testDataXandy = iris_np[130:150, :]
                     str_np = np.array2string( testDataXandy, precision=2, separator=',', suppress_small=True)
                     text = str(str_np)
-                    Element('test-output').element.innerText =  text   
+                    pydom('test-output').element.innerText =  text   
                     
                     ######################################################################
 
                     def get_np_conditions_vector():
-                        c1 = float( Element('testInput1').element.value )
-                        c2 = float( Element('testInput2').element.value )
-                        c3 = float( Element('testInput3').element.value )
-                        c4 = float( Element('testInput4').element.value )
+                        c1 = float( pydom('testInput1').element.value )
+                        c2 = float( pydom('testInput2').element.value )
+                        c3 = float( pydom('testInput3').element.value )
+                        c4 = float( pydom('testInput4').element.value )
                        
                         conditions_list = [c1, c2, c3, c4]
                         np_conditions_list = np.array(conditions_list)
@@ -112,7 +113,7 @@
                         text1 = np.array2string( test_x , precision=2, separator=',', suppress_small=True)
                         text3 = str( the_pred )
                         accum_res = "*******************\n" + "Predicted Class: " + text1 + "___"  + text3 + "\n"
-                        Element('mpl').element.innerText =  accum_res
+                        pydom('mpl').element.innerText =  accum_res
                     
  
                 </script>
