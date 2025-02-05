@@ -48,7 +48,7 @@
                     import matplotlib.pyplot as plt
                     import matplotlib.tri as tri
                     from pyodide.http import open_url
-                    ## from pyscript import pydom
+                    from pyscript import display
                     from pyweb import pydom
 
                     #############################################################################
@@ -102,6 +102,8 @@
                         c2 = float( pydom['testInput2'].value )
                         c3 = float( pydom['testInput3'].value )
                         c4 = float( pydom['testInput4'].value )
+
+                        display(c1)
                        
                         conditions_list = [c1, c2, c3, c4]
                         np_conditions_list = np.array(conditions_list)
