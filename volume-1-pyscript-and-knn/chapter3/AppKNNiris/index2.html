@@ -113,7 +113,7 @@
 
                     ######################################################################
 
-                    def my_gen_function():
+                    def my_gen_function(event):
                         test_x = get_np_conditions_vector()
                         the_pred = predict(test_x)
                         text1 = np.array2string( test_x , precision=2, separator=',', suppress_small=True)
