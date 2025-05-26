@@ -71,3 +71,8 @@ async function initialize() {
 
             document.getElementById("predict").addEventListener("click", predict);
 }
+
+
+initialize();
+
+
