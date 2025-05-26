@@ -73,6 +73,7 @@ async function initialize() {
 }
 
 
-initialize();
+document.addEventListener("DOMContentLoaded", initialize);
+
 
 
